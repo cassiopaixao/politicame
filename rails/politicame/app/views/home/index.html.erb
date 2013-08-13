@@ -1,0 +1,54 @@
+<div class="container-narrow">
+  <div class="landing-page">
+
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <li class="active">
+          <%= link_to 'Inicial', root_path, :class => 'brand' %>
+        </li>
+        <!--
+        <li>
+          <%= link_to 'Contribua', url_for(:controller => 'home', :action => 'contribute'), :class => 'brand' %>
+        </li>
+        -->
+        <li>
+          <%= mail_to 'cassio.paixao@gmail.com', 'Contato', :class => 'brand' %>
+        </li>
+      </ul>
+      <h3 class="muted">Politic@Me</h3>
+    </div>
+
+    <hr>
+
+    <div class="jumbotron">
+      <h1>Suas ideias na gestão pública!</h1>
+    </div>
+    <div class="jumbotron problem">
+      <p class="lead">
+        Chegam as eleições, você pensa em alguns candidatos para votar, mas fica difícil saber quem pode melhor representar suas opiniões na gestão pública?
+      </p>
+    </div>
+
+    <div class="jumbotron question">
+      <p class="lead">
+        Imagina se houvesse um meio de identificar os políticos que pensam de maneira semelhante à sua ao votar em projetos de lei?
+      </p>
+    </div>
+
+    <div class="jumbotron propose">
+      <p class="lead">
+        Com base em métodos computacionais e em suas opiniões sobre alguns projetos, lhe apresentaremos políticos que tem mais chances de, de fato, lhe representar no governo.
+      </p>
+    </div>
+
+    <hr>
+    <div class="footer">
+      <p>
+        &copy; Politic@Me 2013
+      </p>
+    </div>
+
+  </div>
+
+</div>
+<!-- /container -->
