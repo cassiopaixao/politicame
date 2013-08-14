@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: politicame_production
+  database: <%= ENV['POLITICAME_DB_DATABASE'] %>
   pool: 5
-  username: root
-  password:
-  host: localhost
+  username: <%= ENV['POLITICAME_DB_USER'] %>
+  password: <%= ENV['POLITICAME_DB_PASS'] %>
+  socket: <%= ENV['POLITICAME_DB_SOCKET'] %>
