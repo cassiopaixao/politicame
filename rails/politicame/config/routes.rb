@@ -2,7 +2,8 @@ Politicame::Application.routes.draw do
   root :to => 'home#index'
   
   match 'contribua' => 'home#contribute', :via => [:get]
-  match 'assine' => 'home#subscribe', :via => [:get, :post]
+  match 'assine' => 'home#subscribe', :via => [:post]
+  get 'assine', :to => redirect('/')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

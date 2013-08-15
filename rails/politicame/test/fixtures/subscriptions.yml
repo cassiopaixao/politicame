@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  name: MyString
+  email: MyString
+  subscribed_at: 2013-08-15 12:16:22
+
+two:
+  id: 
+  name: MyString
+  email: MyString
+  subscribed_at: 2013-08-15 12:16:22
