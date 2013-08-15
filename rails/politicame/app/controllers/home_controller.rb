@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     s.subscribed_at = Time.now
 
     if s.save
-      flash.now[:success] = 'Obrigado por se registrar. Lhe manteremos atualizad@ com as novidades do projeto!'
+      flash.now[:success] = 'Obrigado por se registrar. Lhe manteremos atualizado(a) com as novidades do projeto!'
     else
       if !s.valid?
         flash.now[:error] = 'Houve problema no preenchimento dos campos. Favor verificá-los e tentar novamente. Obrigado.'
