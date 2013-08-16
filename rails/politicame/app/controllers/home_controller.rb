@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
   end
 
-  def contribute
+  def about
   end
 
   def subscribe

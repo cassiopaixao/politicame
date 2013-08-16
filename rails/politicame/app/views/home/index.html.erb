@@ -1,85 +1,51 @@
+<% content_for :page_class, 'landing-page' %>
 <% @subscription ||= Subscription.new %>
-<div class="container-narrow">
-  <div class="landing-page">
-
-    <div class="masthead">
-      <ul class="nav nav-pills pull-right">
-        <li class="active">
-          <%= link_to 'Inicial', root_path, :class => 'brand' %>
-        </li>
-        <!--
-        <li>
-        <%= link_to 'Contribua', url_for(:controller => 'home', :action => 'contribute'), :class => 'brand' %>
-        </li>
-        -->
-        <li>
-          <%= mail_to 'cassio.paixao@gmail.com', 'Contato', :class => 'brand' %>
-        </li>
-      </ul>
-      <h3 class="muted">Politic@Me</h3>
-    </div>
-
-    <hr>
-
-    <div class="jumbotron">
-      <h1>Suas ideias na gestão pública!</h1>
-    </div>
-    <div class="jumbotron problem">
-      <p class="lead">
-        Chegam as eleições, você pensa em alguns candidatos para votar, mas fica difícil saber quem pode melhor representar suas opiniões na gestão pública?
-      </p>
-    </div>
-
-    <div class="jumbotron question">
-      <p class="lead">
-        Imagina se houvesse um meio de identificar os políticos que pensam de maneira semelhante à sua ao votar em projetos de lei?
-      </p>
-    </div>
-
-    <div class="jumbotron propose">
-      <p class="lead">
-        Com base em métodos computacionais e em suas opiniões sobre alguns projetos, lhe apresentaremos políticos que podem, de fato, melhor lhe representar no governo.
-      </p>
-    </div>
-
-    <!-- <div class="jumbotron"> -->
-    <div class="thumbnail center well well-small text-center">
-      <h2>Receba novidades!</h2>
-      <p>
-        Preencha seus dados abaixo e receba as novidades sobre o Politic@Me.
-      </p>
-      <% @subscription.errors.messages.each_pair do |key, message| %>
-      <% if [:name, :email].include? key %>
-      <div class="alert alert-error">
-        <a class="close" data-dismiss="alert">&#215;</a>
-        <%= message %>
-      </div>
-      <% end %>
-      <% end %>
-      <%= form_tag url_for(:controller => 'home', :action => 'subscribe'), :method => :post do %>
-      <div class="input-prepend<% if @subscription.errors.include? :name %> control-group error<% end %>">
-        <span class="add-on"><label for="name"><i class="icon-user"></i></label></span>
-        <%= text_field_tag :name, @subscription.name, :placeholder => 'seu nome' %>
-      </div>
-      <br/>
-      <div class="input-prepend<% if @subscription.errors.include? :email %> control-group error<% end %>">
-        <span class="add-on"><label for="email"><i class="icon-envelope"></i></label></span>
-        <%= text_field_tag :email, @subscription.email, :placeholder => 'seu@email.com', :required => 'true' %>
-      </div>
-      <br/>
-      <%= submit_tag 'Assine!', :class => 'btn btn-large btn-primary' %>
-      <% end %>
-    </div>
-    <!-- </div> -->
-
-    <hr>
-    <div class="footer">
-      <p>
-        &copy; Politic@Me 2013
-      </p>
-    </div>
-
-  </div>
-
+<div class="jumbotron">
+  <h1>Suas ideias na gestão pública!</h1>
 </div>
-<!-- /container -->
+
+<div class="jumbotron problem">
+  <p class="lead">
+    Chegam as eleições, você pensa em alguns candidatos para votar, mas fica difícil saber quem pode melhor representar suas opiniões na gestão pública?
+  </p>
+</div>
+
+<div class="jumbotron question">
+  <p class="lead">
+    Imagina se houvesse um meio de identificar os políticos que pensam de maneira semelhante à sua ao votar em projetos de lei?
+  </p>
+</div>
+
+<div class="jumbotron propose">
+  <p class="lead">
+    Com base em métodos computacionais e em suas opiniões sobre alguns projetos, lhe apresentaremos políticos que podem, de fato, melhor lhe representar no governo.
+  </p>
+</div>
+
+<div class="thumbnail center well well-small text-center">
+  <h2>Receba novidades!</h2>
+  <p>
+    Preencha seus dados abaixo e receba as novidades sobre o Politic@Me.
+  </p>
+  <% @subscription.errors.messages.each_pair do |key, message| %>
+  <% if [:name, :email].include? key %>
+  <div class="alert alert-error">
+    <a class="close" data-dismiss="alert">&#215;</a>
+    <%= message %>
+  </div>
+  <% end %>
+  <% end %>
+  <%= form_tag url_for(:controller => 'home', :action => 'subscribe'), :method => :post do %>
+  <div class="input-prepend<% if @subscription.errors.include? :name %> control-group error<% end %>">
+    <span class="add-on"><label for="name"><i class="icon-user"></i></label></span>
+    <%= text_field_tag :name, @subscription.name, :placeholder => 'seu nome' %>
+  </div>
+  <br/>
+  <div class="input-prepend<% if @subscription.errors.include? :email %> control-group error<% end %>">
+    <span class="add-on"><label for="email"><i class="icon-envelope"></i></label></span>
+    <%= text_field_tag :email, @subscription.email, :placeholder => 'seu@email.com', :required => 'true' %>
+  </div>
+  <br/>
+  <%= submit_tag 'Assine!', :class => 'btn btn-large btn-primary' %>
+  <% end %>
+</div>

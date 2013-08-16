@@ -1,0 +1,87 @@
+<% content_for :page_class, 'about-page' %>
+
+<div class="jumbotron">
+  <h1>O projeto</h1>
+  <p class="lead">
+    Conheça mais detalhes sobre o projeto Politic@Me e algumas formas de contribuição.
+  </p>
+</div>
+
+<h2>Contexto</h2>
+<p>
+  Muito se critica sobre projetos de lei e emendas constitucionais que são propostos e discutidos pelos políticos. A população em geral não se vê bem representada pelos políticos mais votados, e a discussão de "como mudar o Brasil?" muitas vezes direciona para o processo eleitoral: cada cidadão deve votar nos candidatos de modo que eles o representem no congresso.
+</p>
+<p>
+  Mas... como escolher meus representantes? Como avaliar se estou votando em alguém mais por afinidade de ideias do que pelo fato de seu nome estar na mídia?
+</p>
+
+<h2>Missão</h2>
+<p>
+  Aproximar os cidadãos de representantes, ou candidatos a, no poder legislativo.
+</p>
+
+<h2>Objetivo</h2>
+<p>
+  Com base em ferramentas de tecnologia da informação, apresentar aos cidadãos os candidatos a cargos no legislativo que podem melhor representá-los no mesmo.
+</p>
+
+<h2>Como realizar</h2>
+<p>
+  Em um sistema web teremos informações de projetos de lei e emendas constitucionais, bem como os votos de políticos aos mesmos (quando disponíveis). Com base nessas informações, o usuário poderá votar nos projetos cadastrados, e então um algoritmo calculará a afinidade de ideias entre o usuário e cada político.
+</p>
+<p>
+  O intuito é apresentar ao cidadão os políticos (ou candidatos) cujas ideias sejam semelhantes, de forma que o cidadão terá mais insumos no momento do voto, podendo escolher melhor um candidato para representá-lo no poder legislativo.
+</p>
+
+<h2>Lista de tarefas/necessidades</h2>
+<dl">
+  <dt>
+    Buscar dados de projetos de lei
+  </dt>
+  <dd>
+    Pesquisar onde e como estão disponibilizados os dados de projetos de lei no Portal da Transparência; Baixar os dados necessários para o sistema; Disponibilizá-los na interface.
+  </dd>
+  <dt>
+    Buscar dados de políticos
+  </dt>
+  <dd>
+    Pesquisar onde e como estão disponibilizados os dados de deputados federais no Portal da Transparência; Baixar os dados necessários para o sistema; Disponibilizá-los na interface.
+  </dd>
+  <dt>
+    Buscar dados de votos de políticos
+  </dt>
+  <dd>
+    Pesquisar onde e como estão disponibilizados os dados de votos de deputados federais a projetos de lei no Portal da Transparência; Baixar os dados necessários para o sistema; Disponibilizá-los na interface.
+  </dd>
+  <dt>
+    Implementar algoritmo de 'afinidade'
+  </dt>
+  <dd>
+    Implementar algoritmo para classificar, para cada usuário, que políticos votam de maneira mais semelhante a ele.
+  </dd>
+</dl>
+
+<h2>Como contribuir</h2>
+<p>
+  No momento nosso maior entrave é quanto a informações: quem pode propôr leis, em que instâncias elas devem ser aprovadas, se pode haver mudança de voto, onde estão os dados de projetos de lei, políticos e votos...
+</p>
+<p>
+  Caso tenha algum conhecimento nessa área ou conheça alguém que possa ajudar nessa parte, pedimos que entre em contato. Com certeza será de grande valia para o projeto e sua missão.
+</p>
+<p>
+  Tem alguma sugestão, crítica, dúvida, ou mesmo comentário sobre o projeto? Diga-nos! Ficaremos gratos em entender melhor como o projeto está sendo visto e, claro, levaremos sua ideia em consideração nas próximas atualizações.
+</p>
+<p>
+  Gostou do projeto? Divulgue! Sei que ainda não temos um sistema funcional no ar, mas esperamos tê-lo o quanto antes. Cadastrando seu e-mail na página inicial irá receber novidades em primeira mão!
+</p>
+
+<h2>Questões técnicas</h2>
+<p>
+  O código-fonte do sistema está disponível no GitHub: <a href="https://github.com/cassiopaixao/politicame" target="_blank">https://github.com/cassiopaixao/politicame</a>. Contribuições no código também são bem vindas :D
+</p>
+
+<p class="text-center">
+  <br/>
+  <%= mail_to 'cassio.paixao@gmail.com', 'Entre em contato: cassio.paixao@gmail.com', :class => 'btn btn-large btn-info' %>
+  <br/>
+</p>

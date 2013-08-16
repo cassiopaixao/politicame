@@ -1,7 +1,7 @@
 Politicame::Application.routes.draw do
   root :to => 'home#index'
   
-  match 'contribua' => 'home#contribute', :via => [:get]
+  match 'sobre' => 'home#about', :via => [:get]
   match 'assine' => 'home#subscribe', :via => [:post]
   get 'assine', :to => redirect('/')
 
