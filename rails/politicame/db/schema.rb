@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821000435) do
+ActiveRecord::Schema.define(:version => 20130821033639) do
+
+  create_table "data_requests", :force => true do |t|
+    t.string   "host"
+    t.string   "path"
+    t.string   "query_str"
+    t.datetime "when"
+    t.integer  "status_code"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "proposicaos", :force => true do |t|
     t.string   "tipo"

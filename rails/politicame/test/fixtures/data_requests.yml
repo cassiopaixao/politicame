@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  host: MyString
+  path: MyString
+  query_str: MyString
+  when: 2013-08-21 00:36:39
+  status_code: 1
+
+two:
+  id: 
+  host: MyString
+  path: MyString
+  query_str: MyString
+  when: 2013-08-21 00:36:39
+  status_code: 1
