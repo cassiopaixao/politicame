@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  nome: MyString
+  partido: MyString
+  uf: MyString
+  voto: 1
+  votacao_id: 1
+
+two:
+  id: 
+  nome: MyString
+  partido: MyString
+  uf: MyString
+  voto: 1
+  votacao_id: 1

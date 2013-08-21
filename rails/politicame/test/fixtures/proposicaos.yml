@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  tipo: MyString
+  numero: 1
+  ano: 1
+  autor_nome: MyString
+  autor_partido: MyString
+  autor_uf: MyString
+  qtd_autores: 1
+  data_apresentacao: 2013-08-20 20:53:11
+  ementa: MyString
+  ementa_explicacao: MyString
+
+two:
+  id: 
+  tipo: MyString
+  numero: 1
+  ano: 1
+  autor_nome: MyString
+  autor_partido: MyString
+  autor_uf: MyString
+  qtd_autores: 1
+  data_apresentacao: 2013-08-20 20:53:11
+  ementa: MyString
+  ementa_explicacao: MyString

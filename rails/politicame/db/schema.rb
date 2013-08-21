@@ -10,7 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130815185026) do
+ActiveRecord::Schema.define(:version => 20130821000435) do
+
+  create_table "proposicaos", :force => true do |t|
+    t.string   "tipo"
+    t.integer  "numero"
+    t.integer  "ano"
+    t.string   "autor_nome"
+    t.string   "autor_partido"
+    t.string   "autor_uf"
+    t.integer  "qtd_autores"
+    t.datetime "data_apresentacao"
+    t.string   "ementa"
+    t.string   "ementa_explicacao"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
@@ -19,6 +34,26 @@ ActiveRecord::Schema.define(:version => 20130815185026) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.datetime "unsubscribed_at"
+  end
+
+  create_table "votacaos", :force => true do |t|
+    t.string   "resumo"
+    t.datetime "data_hora"
+    t.string   "obj_votacao"
+    t.boolean  "master",        :default => false
+    t.integer  "proposicao_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "voto_deputados", :force => true do |t|
+    t.string   "nome"
+    t.string   "partido"
+    t.string   "uf"
+    t.integer  "voto"
+    t.integer  "votacao_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
