@@ -1,0 +1,10 @@
+<tr>
+  <td><%= "#{p.tipo} #{p.numero}/#{p.ano}"%></td>
+  <td><%= p.data_apresentacao.strftime('%d/%m/%Y') %></td>
+  <td><%= p.autor_nome %></td>
+  <td><%= p.ementa %></td>
+  <td><%= p.ementa_explicacao %></td>
+  <% if defined? show_errors and show_errors %>
+  <td><%= p.errors.messages.values.join(', ') %></td>
+  <% end %>
+</tr>

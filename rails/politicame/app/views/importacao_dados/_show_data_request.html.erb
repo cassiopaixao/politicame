@@ -1,0 +1,24 @@
+<div>
+  <ul>
+    <li>
+      <strong>host: </strong>
+      <%= data_request.host %>
+    </li>
+    <li>
+      <strong>path: </strong>
+      <%= data_request.path %>
+    </li>
+    <li>
+      <strong>query_str: </strong>
+      <%= data_request.query_str %>
+    </li>
+    <li>
+      <strong>status_code: </strong>
+      <%= data_request.status_code %>
+    </li>
+    <li>
+      <strong>go there (get request): </strong>
+      <%= link_to 'acesse', "#{data_request.host}#{data_request.path}?#{data_request.query_str}", :target => '_blank'  %>
+    </li>
+  </ul>
+</div>

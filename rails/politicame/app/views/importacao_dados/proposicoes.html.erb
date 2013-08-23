@@ -1,0 +1,40 @@
+<% @proposicoes ||= [] %>
+<script>
+  $(document).ready(function() {
+    $('.datepicker').datepicker();
+  }); 
+</script>
+
+<h1>Proposições</h1>
+<div>
+  <%= form_tag :controller => 'importacao_dados', :action => 'fetch_proposicoes' do %>
+  <%= label_tag :initial_date, 'Período' %>
+  <%= text_field_tag :initial_date, @initial_date, :class => 'datepicker input-small', :placeholder => '01/01/2013', 'data-date-format' => 'dd/mm/yyyy', 'data-date-viewMode' => 'years' %>
+  <%= text_field_tag :end_date, @end_date, :class => 'datepicker input-small', :placeholder => '31/12/2013', 'data-date-format' => 'dd/mm/yyyy', 'data-date-viewMode' => 'years' %>
+  <br/>
+  <%= submit_tag 'Buscar proposições desse período', :class => 'btn' %>
+  <% end %>
+</div>
+
+<h2>Proposições cadastradas</h2>
+<% if @proposicoes.empty? %>
+<p>
+  Nenhuma proposição cadastrada.
+</p>
+<% else %>
+<p>
+  <%= @proposicoes.size %> proposições cadastradas.
+</p>
+<table class="table table-condensed table-striped">
+  <tr>
+    <th>tipo numero/ano</th>
+    <th>data_apresentacao</th>
+    <th>autor_nome</th>
+    <th>ementa</th>
+    <th>ementa_explicacao</th>
+  </tr>
+  <% @proposicoes.each do |proposicao| %>
+  <%= render :partial => 'show_proposicao_tr', :locals => {:p => proposicao } %>
+  <% end %>
+</table>
+<% end %>

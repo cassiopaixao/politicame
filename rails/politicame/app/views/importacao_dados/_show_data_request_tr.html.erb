@@ -1,0 +1,6 @@
+<tr class="<%= data_request.status_code == 200 ? 'success' : 'error' %>">
+  <td> <%= data_request.when %> </td>
+  <td> <%= data_request.path %> </td>
+  <td> <%= data_request.status_code %> </td>
+  <td> <%= link_to 'acesse', "#{data_request.host}#{data_request.path}?#{data_request.query_str}", :target => '_blank'  %> </td>
+</tr>

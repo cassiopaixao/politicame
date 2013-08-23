@@ -1,0 +1,20 @@
+<% @data_requests ||= [] %>
+
+<h1>Importação de dados</h1>
+
+<p>
+  <%= link_to 'Proposicoes', :action => 'proposicoes' %>
+</p>
+
+<h2>Requests</h2>
+<table class="table table-hover table-condensed">
+  <tr>
+    <th>when</th>
+    <th>path</th>
+    <th>status_code</th>
+    <th>link</th>
+  </tr>
+  <% @data_requests.each do |request| %>
+    <%= render :partial => 'show_data_request_tr', :locals => {:data_request => request} %>
+  <% end %>
+</table>

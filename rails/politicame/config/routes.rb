@@ -5,6 +5,10 @@ Politicame::Application.routes.draw do
   match 'assine' => 'home#subscribe', :via => [:post]
   get 'assine', :to => redirect('/')
 
+  match 'importacao' => 'importacao_dados#index', :via => [:get]
+  match 'importacao/proposicoes' => 'importacao_dados#proposicoes', :via => [:get]
+  match 'importacao/proposicoes' => 'importacao_dados#fetch_proposicoes', :via => [:post]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

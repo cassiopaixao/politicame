@@ -2,6 +2,7 @@ module ImportacaoDadosHelper
   require 'net/http'
   require 'uri'
   require 'nokogiri'
+  require 'open-uri'
 
   def buscar_proposicoes(initial_date, end_date, type)
     
@@ -32,7 +33,8 @@ module ImportacaoDadosHelper
     as_hash = params_listar_proposicoes.merge({
       :datApresentacaoIni => initial_date.strftime('%d/%m/%Y'),
       :datApresentacaoFim => end_date.strftime('%d/%m/%Y'),
-      :sigla => type
+      :sigla => type,
+      :ano => initial_date.year
     })
     as_arr = []
     as_hash.each_pair do |k,v|
@@ -55,21 +57,22 @@ module ImportacaoDadosHelper
     data_request.host = host
     data_request.path = path
     data_request.query_str = as_str
-    data_request.status_code = response.code
+    data_request.status_code = response.code.to_i
     data_request.when = Time.now
     data_request.save
     
-    if response.code == 200
-      tratar_proposicoes response.body
+    if response.code.to_i == 200
+      [data_request, tratar_proposicoes(response.body)]
     else
       # TODO tratar erro
-      nil
+      [data_request, [] ]
     end
   end
   
   def tratar_proposicoes(xml_body)
     proposicoes = []
-    doc = Nokogiri::XML(response.body)
+    doc = Nokogiri::XML(xml_body)
+    
     doc.xpath('//proposicao').each do |p|
       proposicao = Proposicao.new
       proposicao.tipo = p.xpath('./tipoProposicao/sigla').first.content.strip
@@ -79,13 +82,13 @@ module ImportacaoDadosHelper
       proposicao.autor_partido = p.xpath('./autor1[1]/txtSiglaPartido').first.content.strip
       proposicao.autor_uf = p.xpath('./autor1[1]/txtSiglaUF').first.content.strip
       proposicao.qtd_autores = p.xpath('./qtdAutores').first.content.to_i
-      proposicao.data_apresentacao = p.xpath('./datApresentacao').first.content.strip
+      data_apresentacao = p.xpath('./datApresentacao').first.content.strip
       proposicao.ementa = p.xpath('./txtEmenta').first.content.strip
       proposicao.ementa_explicacao = p.xpath('./txtExplicacaoEmenta').first.content.strip
 
       # dd/mm/aaaa... to mm/dd/aaaa...      
-      proposicao.data_apresentacao = Date.parse proposicao.data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
-      
+      proposicao.data_apresentacao = Date.parse data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
+
       proposicoes << proposicao
     end
     proposicoes
