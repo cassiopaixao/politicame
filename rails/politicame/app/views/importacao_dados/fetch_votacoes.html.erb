@@ -1,0 +1,39 @@
+<% @requisicao ||= nil %>
+<% @votacoes ||= [] %>
+<% @duplicadas ||= [] %>
+<% @erros_gerais ||= [] %>
+
+<% if !@requisicao.nil? %>
+<h1>Requisição realizada</h1>
+<%= render :partial => 'show_data_request', :locals => {:data_request => @requisicao }%>
+<% end %>
+
+<h1>Votações</h1>
+<ul>
+  <li>
+    <strong>Adicionadas: </strong>
+    <%= @votacoes.size - @duplicadas.size - @erros_gerais.size %>
+  </li>
+  <li>
+    <strong>Duplicadas: </strong>
+    <%= @duplicadas.size %>
+  </li>
+  <li>
+    <strong>Erros: </strong>
+    <%= @erros_gerais.size %>
+  </li>
+</ul>
+
+<table class='table table-striped table-condensed'>
+  <tr>
+    <th>obj_votacao</th>
+    <th>resumo</th>
+    <th>qtd_votos</th>
+    <th>master</th>
+    <th>erro</th>
+  </tr>
+  <% @votacoes.each do |votacao| %>
+  <%= render :partial => 'show_votacao_tr', :locals => {:v => votacao, :show_errors => true} %>
+  <% end %>
+</table>
+

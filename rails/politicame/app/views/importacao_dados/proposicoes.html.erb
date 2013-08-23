@@ -32,9 +32,10 @@
     <th>autor_nome</th>
     <th>ementa</th>
     <th>ementa_explicacao</th>
+    <th>buscar_votacoes</th>
   </tr>
   <% @proposicoes.each do |proposicao| %>
-  <%= render :partial => 'show_proposicao_tr', :locals => {:p => proposicao } %>
+  <%= render :partial => 'show_proposicao_tr', :locals => {:p => proposicao, :show_fetch_votacoes => true} %>
   <% end %>
 </table>
 <% end %>

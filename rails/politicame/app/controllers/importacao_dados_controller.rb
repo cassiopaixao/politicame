@@ -51,4 +51,52 @@ class ImportacaoDadosController < ApplicationController
     end
   end
 
+  def fetch_votacoes
+    begin
+      @tipo = params[:tipo].strip
+      @numero = params[:numero].strip
+      @ano = params[:ano].strip
+
+      @requisicoes = []
+      @votacoes = []
+      @duplicadas = []
+      @erros_gerais = []
+
+      @proposicao = Proposicao.where(:tipo => @tipo, :numero => @numero, :ano => @ano).first
+
+      if @proposicao.nil?
+        raise 'Proposicão não existente'
+      end
+
+      @requisicao, votacoes = buscar_votacoes @proposicao
+
+      votacoes.each do |votacao|
+        if !votacao.save
+          if votacao.errors[:votacao] == 'Votação deve ser única'
+          @duplicadas << votacao
+          else
+          @erros_gerais << votacao
+          end
+        end
+        @votacoes << votacao
+      end
+
+      if @duplicadas.empty? and @erros_gerais.empty?
+        flash.now[:success] = 'Requisição processada com sucesso!'
+        @proposicao.fetch_status = Proposicao::FOUND
+      else
+        flash.now[:alert] = 'Requisição processada com sucesso. Confira abaixo os erros que ocorreram.'
+        @proposicao.fetch_status = Proposicao::UNKNOWN_ERROR
+      end
+    rescue Exception => ex
+      flash.now[:error] = 'Erro ao recuperar votações. Entre em contato com o administrador do sistema.'
+      puts "ERROR: #{ex.message}"
+      puts ex.backtrace.join('\n')
+
+      @proposicao.fetch_status = Proposicao::UNKNOWN_ERROR
+    ensure
+    @proposicao.save
+    end
+  end
+
 end

@@ -5,11 +5,11 @@ module ImportacaoDadosHelper
   require 'open-uri'
 
   def buscar_proposicoes(initial_date, end_date, type)
-    
+
     if !initial_date.is_a? Date or !end_date.is_a? Date or !type.is_a? String
       raise 'Invalid parameters'
     end
-    
+
     host = 'http://www.camara.gov.br'
     path = '/SitCamaraWS/Proposicoes.asmx/ListarProposicoes'
     url = host + path
@@ -46,7 +46,7 @@ module ImportacaoDadosHelper
     request.add_field 'Content-Type', 'application/x-www-form-urlencoded'
     request.add_field 'Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
     # TODO parametrizar User-Agent
-    request.add_field 'User-Agent', 'Um site qualquer'
+    request.add_field 'User-Agent', 'Politica.Me'
     request.body = as_str
 
     uri = URI.parse(url)
@@ -60,19 +60,19 @@ module ImportacaoDadosHelper
     data_request.status_code = response.code.to_i
     data_request.when = Time.now
     data_request.save
-    
+
     if response.code.to_i == 200
       [data_request, tratar_proposicoes(response.body)]
     else
-      # TODO tratar erro
+    # TODO tratar erro
       [data_request, [] ]
     end
   end
-  
+
   def tratar_proposicoes(xml_body)
     proposicoes = []
     doc = Nokogiri::XML(xml_body)
-    
+
     doc.xpath('//proposicao').each do |p|
       proposicao = Proposicao.new
       proposicao.tipo = p.xpath('./tipoProposicao/sigla').first.content.strip
@@ -86,11 +86,100 @@ module ImportacaoDadosHelper
       proposicao.ementa = p.xpath('./txtEmenta').first.content.strip
       proposicao.ementa_explicacao = p.xpath('./txtExplicacaoEmenta').first.content.strip
 
-      # dd/mm/aaaa... to mm/dd/aaaa...      
+      # dd/mm/aaaa... to mm/dd/aaaa...
       proposicao.data_apresentacao = Date.parse data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
 
       proposicoes << proposicao
     end
     proposicoes
+  end
+
+  def buscar_votacoes(proposicao)
+
+    if !proposicao.is_a? Proposicao
+      raise 'Invalid parameters'
+    end
+
+    host = 'http://www.camara.gov.br'
+    path = '/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao'
+    url = host + path
+
+    params_votacoes_proposicao = {
+      :tipo => proposicao.tipo,
+      :numero => proposicao.numero,
+      :ano => proposicao.ano,
+    }
+
+    as_hash = params_votacoes_proposicao
+    as_arr = []
+    as_hash.each_pair do |k,v|
+      as_arr << "#{k.to_s}=#{v.to_s}"
+    end
+    as_str = as_arr.join '&'
+
+    request = Net::HTTP::Post.new(url)
+    request.add_field 'Content-Type', 'application/x-www-form-urlencoded'
+    request.add_field 'Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    # TODO parametrizar User-Agent
+    request.add_field 'User-Agent', 'Politica.Me'
+    request.body = as_str
+
+    uri = URI.parse(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.request(request)
+
+    data_request = DataRequest.new
+    data_request.host = host
+    data_request.path = path
+    data_request.query_str = as_str
+    data_request.status_code = response.code.to_i
+    data_request.when = Time.now
+    data_request.save
+
+    if response.code.to_i == 200
+      [data_request, tratar_votacoes(response.body, proposicao)]
+    else
+    # TODO tratar erro
+      [data_request, [] ]
+    end
+  end
+
+  def tratar_votacoes(xml_body, proposicao)
+    votacoes = []
+    doc = Nokogiri::XML(xml_body)
+
+    doc.xpath('//Votacao').each do |v|
+      votacao = Votacao.new
+      votacao.proposicao = proposicao
+      votacao.obj_votacao = v.xpath('./@ObjVotacao').first.content.strip
+      votacao.resumo = v.xpath('./@Resumo').first.content.strip
+      data_hora = v.xpath('./@Data').first.content.strip + ' ' + v.xpath('./@Hora').first.content.strip
+
+      # dd/mm/aaaa... to mm/dd/aaaa...
+      votacao.data_hora = DateTime.parse data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
+
+      #votos
+      v.xpath('./votos/Deputado').each do |voto|
+        voto_deputado = VotoDeputado.new
+        voto_deputado.votacao = votacao
+        voto_deputado.nome = voto.xpath('./@Nome').first.content.strip
+        voto_deputado.partido = voto.xpath('./@Partido').first.content.strip
+        voto_deputado.uf = voto.xpath('./@UF').first.content.strip
+        voto_dep = voto.xpath('./@Voto').first.content.strip
+
+        voto_deputado.voto = case voto_dep
+        when VotoDeputado::VOTE_YES_STR then VotoDeputado::VOTE_YES
+        when VotoDeputado::VOTE_NO_STR then VotoDeputado::VOTE_NO
+        when VotoDeputado::VOTE_ABSTENTION_STR then VotoDeputado::VOTE_ABSTENTION
+        when VotoDeputado::VOTE_OBSTRUCTION_STR then VotoDeputado::VOTE_OBSTRUCTION
+        else VotoDeputado::VOTE_OTHER
+        end
+        
+        votacao.voto_deputados.create voto_deputado
+      end
+
+      votacoes << votacao
+    end
+    votacoes
   end
 end

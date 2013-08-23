@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821033639) do
+ActiveRecord::Schema.define(:version => 20130823051614) do
 
   create_table "data_requests", :force => true do |t|
     t.string   "host"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(:version => 20130821033639) do
     t.datetime "data_apresentacao"
     t.string   "ementa"
     t.string   "ementa_explicacao"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.integer  "fetch_status",      :default => 0
   end
 
   create_table "subscriptions", :force => true do |t|

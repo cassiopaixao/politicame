@@ -8,6 +8,7 @@ Politicame::Application.routes.draw do
   match 'importacao' => 'importacao_dados#index', :via => [:get]
   match 'importacao/proposicoes' => 'importacao_dados#proposicoes', :via => [:get]
   match 'importacao/proposicoes' => 'importacao_dados#fetch_proposicoes', :via => [:post]
+  match 'importacao/votacoes/:tipo-:numero-:ano' => 'importacao_dados#fetch_votacoes', :via => [:get]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

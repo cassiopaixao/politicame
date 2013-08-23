@@ -1,0 +1,9 @@
+<tr>
+  <td><%= v.obj_votacao %></td>
+  <td><%= v.resumo %></td>
+  <td><%= v.voto_deputados.size %></td>
+  <td><%= v.master %></td>
+  <% if defined? show_errors and show_errors %>
+  <td><%= p.errors.messages.values.join(', ') %></td>
+  <% end %>
+</tr>
