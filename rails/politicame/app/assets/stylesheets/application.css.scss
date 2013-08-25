@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+.proposta-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  p.ementa {
+    height: 60px;
+    overflow: hidden;
+  }
+}

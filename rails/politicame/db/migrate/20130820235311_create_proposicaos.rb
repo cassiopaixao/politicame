@@ -10,8 +10,8 @@ class CreateProposicaos < ActiveRecord::Migration
       t.string :autor_uf
       t.integer :qtd_autores
       t.datetime :data_apresentacao
-      t.string :ementa
-      t.string :ementa_explicacao
+      t.text :ementa
+      t.text :ementa_explicacao
 
       t.timestamps
     end

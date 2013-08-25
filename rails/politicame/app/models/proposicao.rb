@@ -8,11 +8,15 @@ class Proposicao < ActiveRecord::Base
   validates_presence_of :ano
   validate :validate_unique_proposicao
 
-  has_many :votacaos
+  has_many :votacaos, :autosave => true
   
   def validate_unique_proposicao
     if !Proposicao.where(:tipo => self.tipo, :numero => self.numero, :ano => self.ano).empty?
       errors.add :proposicao, 'Proposição deve ser única'
     end
+  end
+  
+  def to_s
+    "#{tipo.upcase} #{numero}/#{ano}"
   end
 end

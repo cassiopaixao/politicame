@@ -1,0 +1,27 @@
+<% @proposicoes ||= [] %>
+<script language="JavaScript" type="text/javascript">
+  $(document).ready(function() {
+    $(".proposta-box .ementa").dotdotdot();
+  }); 
+</script>
+<h1>Propostas</h1>
+
+<% if @proposicoes.empty? %>
+<p>
+  Não foi possível listar as proposições. Se possível, informe o administrador do sistema sobre esse fato (não deveria ter ocorrido!) pelo e-mail <%= mail_to 'cassio.paixao@gmail.com', 'cassio.paixao@gmail.com' %>.
+</p>
+<p>
+  Pedimos desculpas pelo ocorrido.
+</p>
+<p>
+  Obrigado.
+</p>
+<% else %>
+
+<div class="row">
+  <% @proposicoes.each do |proposicao| %>
+  <%= render :partial => 'show_proposta_slim', :locals => {:p => proposicao} %>
+  <% end %>
+</div>
+
+<% end%>

@@ -8,8 +8,8 @@ class Votacao < ActiveRecord::Base
   has_many :voto_deputados, :autosave => true
   
   def validate_unique_votacao
-    if !Votacao.where(:proposicao => self.proposicao, :resumo => self.resumo).empty?
-      errors.add :votacao, 'Votaçaõ deve ser única'
+    if !Votacao.where(:proposicao_id => self.proposicao.id, :resumo => self.resumo).empty?
+      errors.add :votacao, 'Votação deve ser única'
     end
   end
 end

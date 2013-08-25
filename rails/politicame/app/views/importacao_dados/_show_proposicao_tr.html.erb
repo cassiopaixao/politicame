@@ -5,7 +5,7 @@
   <td><%= p.ementa %></td>
   <td><%= p.ementa_explicacao %></td>
   <% if defined? show_fetch_votacoes and show_fetch_votacoes %>
-  <td><%= link_to 'buscar votações', :controller => 'importacao_dados', :action => 'fetch_votacoes', :tipo => p.tipo, :numero => p.numero, :ano => p.ano %></td>
+  <td> <%= check_box_tag 'proposicao_id[]', p.id, false %> <small><%= link_to 'baixar votações', :controller => 'importacao_dados', :action => 'fetch_votacoes_get', :tipo => p.tipo, :numero => p.numero, :ano => p.ano %></small></td>
   <% end %>
   <% if defined? show_errors and show_errors %>
   <td><%= p.errors.messages.values.join(', ') %></td>

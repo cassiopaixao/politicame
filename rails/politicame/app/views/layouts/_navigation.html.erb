@@ -1,3 +1,21 @@
 <%= link_to 'Inicial', root_path, :class => 'brand' %>
-<%= link_to 'O projeto', url_for(:controller => 'home', :action => 'about'), :class => 'brand' %>
+<%= link_to 'O projeto', url_for(:controller => '/home', :action => 'about'), :class => 'brand' %>
 <%= mail_to 'cassio.paixao@gmail.com', 'Contato', :class => 'brand' %>
+
+<ul class="nav pull-right">
+  <% if user_signed_in? %>
+  <li>
+    <%= link_to('sair', destroy_user_session_path, :method=>'delete') %>
+  </li>
+  <li>
+    <%= link_to('editar conta', edit_user_registration_path) %>
+  </li>
+  <% else %>
+  <li>
+    <%= link_to('entrar', new_user_session_path)  %>
+  </li>
+  <li>
+    <%= link_to('registrar', new_user_registration_path)  %>
+  </li>
+  <% end %>
+</ul>

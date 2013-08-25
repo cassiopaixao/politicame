@@ -12,6 +12,9 @@
   <%= text_field_tag :initial_date, @initial_date, :class => 'datepicker input-small', :placeholder => '01/01/2013', 'data-date-format' => 'dd/mm/yyyy', 'data-date-viewMode' => 'years' %>
   <%= text_field_tag :end_date, @end_date, :class => 'datepicker input-small', :placeholder => '31/12/2013', 'data-date-format' => 'dd/mm/yyyy', 'data-date-viewMode' => 'years' %>
   <br/>
+  <%= check_box_tag :fetch_votacoes %>
+  <%= label_tag :fetch_votacoes, 'Recuperar votações relacionadas', :class => 'checkbox' %>
+  <br/>
   <%= submit_tag 'Buscar proposições desse período', :class => 'btn' %>
   <% end %>
 </div>
@@ -34,8 +37,13 @@
     <th>ementa_explicacao</th>
     <th>buscar_votacoes</th>
   </tr>
+  <%= form_tag :controller => 'importacao_dados', :action => 'fetch_votacoes' do %>
   <% @proposicoes.each do |proposicao| %>
   <%= render :partial => 'show_proposicao_tr', :locals => {:p => proposicao, :show_fetch_votacoes => true} %>
   <% end %>
 </table>
+<%= link_to 'Marcar todos', '#', :class => 'select-all' %>
+<%= submit_tag 'Buscar votações', :class => 'btn btn-medium text-left' %>
+<% end %>
+
 <% end %>

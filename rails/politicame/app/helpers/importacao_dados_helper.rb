@@ -137,10 +137,10 @@ module ImportacaoDadosHelper
     data_request.save
 
     if response.code.to_i == 200
-      [data_request, tratar_votacoes(response.body, proposicao)]
+      [data_request, tratar_votacoes(response.body, proposicao), response]
     else
     # TODO tratar erro
-      [data_request, [] ]
+      [data_request, [], response]
     end
   end
 
@@ -156,18 +156,26 @@ module ImportacaoDadosHelper
       data_hora = v.xpath('./@Data').first.content.strip + ' ' + v.xpath('./@Hora').first.content.strip
 
       # dd/mm/aaaa... to mm/dd/aaaa...
-      votacao.data_hora = DateTime.parse data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
+      votacao.data_hora = DateTime.parse data_hora.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
 
-      #votos
+      votacoes << votacao
+    end
+    votacoes
+  end
+  
+  def tratar_votacao(xml_body, votacao)
+    
+    # TODO pegar a votacao correta em v
+    
+      votos_deputados = []
       v.xpath('./votos/Deputado').each do |voto|
-        voto_deputado = VotoDeputado.new
-        voto_deputado.votacao = votacao
-        voto_deputado.nome = voto.xpath('./@Nome').first.content.strip
-        voto_deputado.partido = voto.xpath('./@Partido').first.content.strip
-        voto_deputado.uf = voto.xpath('./@UF').first.content.strip
+        voto_deputado = {}
+        voto_deputado[:nome] = voto.xpath('./@Nome').first.content.strip
+        voto_deputado[:partido] = voto.xpath('./@Partido').first.content.strip
+        voto_deputado[:uf] = voto.xpath('./@UF').first.content.strip
         voto_dep = voto.xpath('./@Voto').first.content.strip
 
-        voto_deputado.voto = case voto_dep
+        voto_deputado[:voto] = case voto_dep
         when VotoDeputado::VOTE_YES_STR then VotoDeputado::VOTE_YES
         when VotoDeputado::VOTE_NO_STR then VotoDeputado::VOTE_NO
         when VotoDeputado::VOTE_ABSTENTION_STR then VotoDeputado::VOTE_ABSTENTION
@@ -175,11 +183,9 @@ module ImportacaoDadosHelper
         else VotoDeputado::VOTE_OTHER
         end
         
-        votacao.voto_deputados.create voto_deputado
+        votos_deputados << voto_deputado
       end
-
-      votacoes << votacao
-    end
-    votacoes
+      
+      votacao.voto_deputados.create votos_deputados
   end
 end

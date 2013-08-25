@@ -1,0 +1,25 @@
+<h1><%= @proposicao.to_s %></h1>
+
+<p>
+  <small>Autor: <%= "#{@proposicao.autor_nome}, #{@proposicao.autor_partido}, #{@proposicao.autor_uf}" %> </small>
+</p>
+
+<p>
+  <strong>Ementa</strong>
+</p>
+<p>
+  <%= @proposicao.ementa %>
+</p>
+
+<p>
+  <strong>Explicação</strong>
+</p>
+<p>
+  <%= @proposicao.ementa_explicacao %>
+</p>
+
+<div class="row text-center">
+    <a href="#" class="btn btn-large btn-success"><strong><i class="icon-ok icon-large icon-white"></i> Favor</strong></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" class="btn btn-large btn-danger"><strong><i class="icon-remove icon-large icon-white"></i> Contra</strong></a>
+</div>
