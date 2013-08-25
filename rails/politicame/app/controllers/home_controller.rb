@@ -6,6 +6,9 @@ class HomeController < ApplicationController
   def about
   end
 
+  def next_steps
+  end
+
   def subscribe
     s = Subscription.new
     s.name = params[:name]

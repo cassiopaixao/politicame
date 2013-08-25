@@ -16,15 +16,10 @@ Politicame::Application.routes.draw do
     # root :to => 'users/profile#index'
   # end
 
-  get "proposicao/index"
-
-  get "proposicao/show"
-
-  get "proposicao/register_vote"
-
   root :to => 'home#index'
 
   match 'sobre' => 'home#about', :via => [:get]
+  match 'proximos_passos' => 'home#next_steps', :via => [:get]
   match 'assine' => 'home#subscribe', :via => [:post]
   get 'assine', :to => redirect('/')
 
@@ -35,6 +30,7 @@ Politicame::Application.routes.draw do
   match 'importacao/votacoes/:tipo-:numero-:ano' => 'importacao_dados#fetch_votacoes_get', :via => [:get]
 
   match 'propostas/:tipo-:numero-:ano' => 'proposicao#show', :via => [:get], :constraints => {:tipo => /[A-Za-z]{2,3}/, :numero => /\d+/, :ano => /\d{4}/}
+  match 'propostas/:tipo-:numero-:ano-:vote' => 'proposicao#register_vote', :via => [:get], :constraints => {:tipo => /[A-Za-z]{2,3}/, :numero => /\d+/, :ano => /\d{4}/}
   match 'propostas' => 'proposicao#index', :via => [:get]
 
 # The priority is based upon order of creation:

@@ -1,7 +1,8 @@
-<%= link_to 'Inicial', root_path, :class => 'brand' %>
-<%= link_to 'O projeto', url_for(:controller => '/home', :action => 'about'), :class => 'brand' %>
-<%= mail_to 'cassio.paixao@gmail.com', 'Contato', :class => 'brand' %>
+<%= link_to 'Politic@Me', root_path, :class => 'brand' %>
 
+<ul class="nav">
+<li><%= link_to 'Propostas', url_for(:controller => '/proposicao', :action => 'index') %></li>
+</ul>
 <ul class="nav pull-right">
   <% if user_signed_in? %>
   <li>

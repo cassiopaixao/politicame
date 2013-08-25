@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130825175225) do
+ActiveRecord::Schema.define(:version => 20130825192215) do
 
   create_table "data_requests", :force => true do |t|
     t.string   "host"
@@ -81,6 +81,14 @@ ActiveRecord::Schema.define(:version => 20130825175225) do
     t.string   "uf"
     t.integer  "voto"
     t.integer  "votacao_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "voto_users", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "votacao_id"
+    t.integer  "voto"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

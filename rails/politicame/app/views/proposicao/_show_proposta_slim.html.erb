@@ -6,8 +6,8 @@
     <%= p.ementa %>
   </p>
   <div class="row text-center">
-    <a href="#" class="btn btn-primary btn-success"><strong><i class="icon-ok icon-large icon-white"></i> Favor</strong></a>
-    <a href="#" class="btn btn-primary btn-danger"><strong><i class="icon-remove icon-large icon-white"></i> Contra</strong></a>
-    <a href="#" class="btn btn-primary btn-info"><strong><i class="icon-zoom-in icon-large icon-white"></i> Info</strong></a>
+    <a href="<%= url_for :controller => 'proposicao', :action => 'register_vote', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :vote => 'Sim' %>" class="btn btn-primary btn-success"><strong><i class="icon-ok icon-white"></i> Favor</strong></a>
+    <a href="<%= url_for :controller => 'proposicao', :action => 'register_vote', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :vote => 'Não' %>" class="btn btn-primary btn-danger"><strong><i class="icon-remove icon-white"></i> Contra</strong></a>
+    <a href="<%= url_for :controller => 'proposicao', :action => 'show', :tipo => p.tipo, :numero => p.numero, :ano => p.ano %>" class="btn btn-primary btn-info"><strong><i class="icon-zoom-in icon-large icon-white"></i> Info</strong></a>
   </div>
 </div>

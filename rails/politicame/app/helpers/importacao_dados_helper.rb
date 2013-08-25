@@ -165,7 +165,7 @@ module ImportacaoDadosHelper
   
   def tratar_votacao(xml_body, votacao)
     
-    # TODO pegar a votacao correta em v
+    # FIXME pegar a votacao correta em v
     
       votos_deputados = []
       v.xpath('./votos/Deputado').each do |voto|
@@ -176,11 +176,11 @@ module ImportacaoDadosHelper
         voto_dep = voto.xpath('./@Voto').first.content.strip
 
         voto_deputado[:voto] = case voto_dep
-        when VotoDeputado::VOTE_YES_STR then VotoDeputado::VOTE_YES
-        when VotoDeputado::VOTE_NO_STR then VotoDeputado::VOTE_NO
-        when VotoDeputado::VOTE_ABSTENTION_STR then VotoDeputado::VOTE_ABSTENTION
-        when VotoDeputado::VOTE_OBSTRUCTION_STR then VotoDeputado::VOTE_OBSTRUCTION
-        else VotoDeputado::VOTE_OTHER
+        when Voto::VOTE_YES_STR then Voto::VOTE_YES
+        when Voto::VOTE_NO_STR then Voto::VOTE_NO
+        when Voto::VOTE_ABSTENTION_STR then Voto::VOTE_ABSTENTION
+        when Voto::VOTE_OBSTRUCTION_STR then Voto::VOTE_OBSTRUCTION
+        else Voto::VOTE_OTHER
         end
         
         votos_deputados << voto_deputado
