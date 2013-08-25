@@ -1,51 +1,42 @@
-<% content_for :page_class, 'landing-page' %>
-<% @subscription ||= Subscription.new %>
-<div class="jumbotron">
-  <h1>Suas ideias na gestão pública!</h1>
-</div>
+<% @proposicoes ||= [] %>
+<script language="JavaScript" type="text/javascript">
+  $(document).ready(function() {
+    $(".proposta-box .ementa").dotdotdot();
+  }); 
+</script>
 
-<div class="jumbotron problem">
+<div class="hero-unit">
+  <h1>Parabéns, cidadão!</h1>
   <p class="lead">
-    Chegam as eleições, você pensa em alguns candidatos para votar, mas fica difícil saber quem pode melhor representar suas opiniões na gestão pública?
+    Este site tem a missão de facilitar a sua vida na hora de encontrar candidatos que possam realmente lhe representar no governo.
+    Acreditamos que é isso que busca, e por isso já lhe parabenizamos!
   </p>
-</div>
-
-<div class="jumbotron question">
   <p class="lead">
-    Imagina se houvesse um meio de identificar os políticos que pensam de maneira semelhante à sua ao votar em projetos de lei?
+    Que tal conhecer um pouco sobre nossa proposta para o site?
   </p>
-</div>
-
-<div class="jumbotron propose">
-  <p class="lead">
-    Com base em métodos computacionais e em suas opiniões sobre alguns projetos, lhe apresentaremos políticos que podem, de fato, melhor lhe representar no governo.
-  </p>
-</div>
-
-<div class="thumbnail center well well-small text-center">
-  <h2>Receba novidades!</h2>
   <p>
-    Preencha seus dados abaixo e receba as novidades sobre o Politic@Me.
+    <a href="<%= url_for :action => 'idea' %>" class="btn btn-primary btn-large">Saiba mais &raquo;</a>
   </p>
-  <% @subscription.errors.messages.each_pair do |key, message| %>
-  <% if [:name, :email].include? key %>
-  <div class="alert alert-error">
-    <a class="close" data-dismiss="alert">&#215;</a>
-    <%= message %>
-  </div>
-  <% end %>
-  <% end %>
-  <%= form_tag url_for(:controller => 'home', :action => 'subscribe'), :method => :post do %>
-  <div class="input-prepend<% if @subscription.errors.include? :name %> control-group error<% end %>">
-    <span class="add-on"><label for="name"><i class="icon-user"></i></label></span>
-    <%= text_field_tag :name, @subscription.name, :placeholder => 'seu nome' %>
-  </div>
-  <br/>
-  <div class="input-prepend<% if @subscription.errors.include? :email %> control-group error<% end %>">
-    <span class="add-on"><label for="email"><i class="icon-envelope"></i></label></span>
-    <%= text_field_tag :email, @subscription.email, :placeholder => 'seu@email.com', :required => 'true' %>
-  </div>
-  <br/>
-  <%= submit_tag 'Assine!', :class => 'btn btn-large btn-primary' %>
+</div>
+
+<h1>Propostas</h1>
+
+<% if @proposicoes.empty? %>
+<p>
+  Não foi possível listar as proposições. Se possível, informe o administrador do sistema sobre esse fato (não deveria ter ocorrido!) pelo e-mail <%= mail_to 'cassio.paixao@gmail.com' %>.
+</p>
+<p>
+  Pedimos desculpas pelo ocorrido.
+</p>
+<p>
+  Obrigado.
+</p>
+<% else %>
+
+<div class="row">
+  <% @proposicoes.each do |proposicao| %>
+  <%= render :partial => '/shared/show_proposta_slim', :locals => {:p => proposicao} %>
   <% end %>
 </div>
+
+<% end%>

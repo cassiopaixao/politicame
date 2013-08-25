@@ -1,35 +1,27 @@
+<% if %w(idea about next_steps).include? controller.action_name %>
 <% content_for :content do %>
 <div class="container-narrow">
   <div class="<%= yield :page_class %>">
 
     <div class="masthead">
       <ul class="nav nav-pills pull-right">
-        <li class="<%= 'active' if controller.action_name.eql? 'index' %>">
-          <%= link_to 'Inicial', root_path, :class => 'brand' %>
+        <li class="<%= 'active' if controller.action_name.eql? 'idea' %>">
+          <a href="<%= url_for :action=> 'idea' %>" class="brand">A ideia</a>
         </li>
         <li class="<%= 'active' if controller.action_name.eql? 'about' %>">
-          <%= link_to 'O projeto', url_for(:action => 'about'), :class => 'brand' %>
+          <a href="<%= url_for :action=> 'about' %>" class="brand">O projeto</a>
         </li>
-        <li>
-          <%= mail_to 'cassio.paixao@gmail.com', 'Contato', :class => 'brand' %>
+        <li class="<%= 'active' if controller.action_name.eql? 'next_steps' %>">
+          <a href="<%= url_for :action=> 'next_steps' %>" class="brand">Próximos passos</a>
         </li>
       </ul>
-      <h3 class="muted">Politic@Me</h3>
     </div>
-
-    <hr>
 
     <%= yield %>
-
-    <hr>
-    <div class="footer">
-      <p>
-        &copy; Politic@Me 2013
-      </p>
-    </div>
 
   </div>
 
 </div>
+<% end %>
 <% end %>
 <%= render :template => "layouts/application" %>

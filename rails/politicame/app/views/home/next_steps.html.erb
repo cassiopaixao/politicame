@@ -1,0 +1,43 @@
+<% content_for :page_class, 'next-steps-page' %>
+
+<h1>Próximos passos</h1>
+<p class="lead">Saiba em que passo estamos no projeto, e quais as mudanças que estão por vir.</p>
+
+<h2>O site hoje</h2>
+<dl>
+  <dt>
+    Proposições
+  </dt>
+  <dd>
+    Já estamos buscando os dados de proposições (propostas de lei, propostas de lei complementar, propostas de emendas constitucionais, ...) do
+    <a href="http://www2.camara.leg.br/transparencia/dados-abertos" target="_blank">serviço de dados abertos da Câmara dos Deputados</a>. Com o
+    tempo, mais propostas estarão disponíveis no site. Estamos disponibilizando, no momento, somente propostas que já foram votadas.
+  </dd>
+  <dt>
+    Votos dos usuários
+  </dt>
+  <dd>
+    Usuários já podem se registrar e votar nas propostas disponíveis. Não bloqueamos a sua liberdade de mudar de opinião: caso vote de modo
+    contrário ao seu último voto, consideraremos sua nova opinião no algoritmo.
+  </dd>
+</dl>
+
+<h2>Lista de tarefas/necessidades</h2>
+<dl>
+  <dt>
+    Buscar dados de políticos
+  </dt>
+  <dd>
+    As propostas já tem o nome de um dos autores da mesma. Pretendemos criar páginas para cada político, disponibilizando mais informações e permitindo o acompanhamento de seus votos.
+  </dd>
+  <dt>
+    Implementar algoritmo de 'afinidade'
+  </dt>
+  <dd>
+    Implementar algoritmo para classificar, para cada usuário, que políticos votam de maneira mais semelhante a ele.
+  </dd>
+</dl>
+
+<h2>Sugestões?</h2>
+<p>Escreva-nos! <%= mail_to 'cassio.paixao@gmail.com' %></p>
+<p>Há também nossa página no facebook: <%= link_to 'PoliticaMe', 'http://facebook.com/PoliticaMe', :target => '_blank' %></p>

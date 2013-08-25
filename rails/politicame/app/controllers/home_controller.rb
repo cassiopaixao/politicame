@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
-  
   def index
+    proposicoes_ids = Votacao.where(:master => 1).pluck(:proposicao_id)
+    @proposicoes = Proposicao.find(proposicoes_ids, :limit => 3)
+  end
+
+  def idea
   end
 
   def about
@@ -25,6 +29,6 @@ class HomeController < ApplicationController
       end
       @subscription = s
     end
-    render 'index'
+    render 'idea'
   end
 end

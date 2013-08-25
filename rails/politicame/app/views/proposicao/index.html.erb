@@ -20,7 +20,7 @@
 
 <div class="row">
   <% @proposicoes.each do |proposicao| %>
-  <%= render :partial => 'show_proposta_slim', :locals => {:p => proposicao} %>
+  <%= render :partial => '/shared/show_proposta_slim', :locals => {:p => proposicao} %>
   <% end %>
 </div>
 
