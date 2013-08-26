@@ -23,7 +23,7 @@ class ImportacaoDadosController < ApplicationController
       @duplicadas = []
       @erros_gerais = []
 
-      %(PL, PLC, PLN, PLP, PLS, PEC).each do |type|
+      %(PL, PLC, PLN, PLP, PLS, PEC, MPV).each do |type|
 
         requisicao, proposicoes = buscar_proposicoes initial_date, end_date, type
 
