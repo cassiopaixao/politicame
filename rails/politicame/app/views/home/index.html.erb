@@ -23,7 +23,7 @@
 
 <% if @proposicoes.empty? %>
 <p>
-  Não foi possível listar as proposições. Se possível, informe o administrador do sistema sobre esse fato (não deveria ter ocorrido!) pelo e-mail <%= mail_to 'cassio.paixao@gmail.com' %>.
+  Não foi possível listar as propostas. Se possível, informe o administrador do sistema sobre esse fato (não deveria ter ocorrido!) pelo e-mail <%= mail_to 'cassio.paixao@gmail.com' %>.
 </p>
 <p>
   Pedimos desculpas pelo ocorrido.
@@ -37,6 +37,11 @@
   <% @proposicoes.each do |proposicao| %>
   <%= render :partial => '/shared/show_proposta_slim', :locals => {:p => proposicao} %>
   <% end %>
+</div>
+<div class="row">
+  <div class="span12 text-right">
+    <a href="<%= url_for :controller => 'proposicao', :action => 'index' %>" class="btn btn-small">mais propostas &raquo;</a>
+  </div>
 </div>
 
 <% end%>
