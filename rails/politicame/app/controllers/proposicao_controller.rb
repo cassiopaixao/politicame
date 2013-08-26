@@ -1,5 +1,6 @@
 class ProposicaoController < ApplicationController
   before_filter :get_proposicao, :only => [:show, :register_vote]
+  
   def index
     proposicoes_ids = Votacao.where(:master => 1).pluck(:proposicao_id)
     @proposicoes = Proposicao.find(proposicoes_ids)
@@ -15,7 +16,7 @@ class ProposicaoController < ApplicationController
     #altera ou cria
     #salva
     if !user_signed_in?
-      flash[:error] = 'Você precisa fazer login para poder votar.'
+      flash[:error] = 'Você precisa fazer login, ou se registrar, para poder votar.'
     else
       voto = VotoUser.where(:user_id => current_user.id, :votacao_id => @votacao.id).first
 

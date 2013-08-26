@@ -18,10 +18,22 @@
 </p>
 <% else %>
 
+<div class="clearfix">
+  <div class="pull-right">
+    <%= paginate @proposicoes, :window => 3, :outer_window => 1 %>
+  </div>
+</div>
+
 <div class="row">
   <% @proposicoes.each do |proposicao| %>
   <%= render :partial => '/shared/show_proposta_slim', :locals => {:p => proposicao} %>
   <% end %>
+</div>
+
+<div class="clearfix">
+  <div class="pull-right">
+    <%= paginate @proposicoes, :window => 3, :outer_window => 1 %>
+  </div>
 </div>
 
 <% end%>

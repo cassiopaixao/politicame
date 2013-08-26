@@ -1,6 +1,8 @@
 class Proposicao < ActiveRecord::Base
   FETCH_STATUSES = [NEVER_SEARCHED = 0, NOT_FOUND = 1, FOUND = 2, UNKNOWN_ERROR = 3]
   
+  paginates_per 9
+  
   attr_accessible :ano, :autor_nome, :autor_partido, :autor_uf, :data_apresentacao, :ementa, :ementa_explicacao, :id, :numero, :qtd_autores, :tipo, :fetch_status
 
   validates_presence_of :tipo
