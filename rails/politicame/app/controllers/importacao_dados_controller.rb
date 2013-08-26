@@ -1,18 +1,18 @@
 class ImportacaoDadosController < ApplicationController
   include ImportacaoDadosHelper
   def index
-    @data_requests = DataRequest.all
+    @data_requests = DataRequest.order('id DESC').page params[:page]
   end
 
   def proposicoes
-    @proposicoes = Proposicao.all
+    @proposicoes = Proposicao.order('id DESC').page params[:page]
   end
 
   def fetch_proposicoes
     begin
       initial_date = Date.parse params[:initial_date].strip.sub(/^(\d+)\/(\d+)\/(\d+)$/, '\2/\1/\3')
       end_date = Date.parse params[:end_date].strip.sub(/^(\d+)\/(\d+)\/(\d+)$/, '\2/\1/\3')
-      fetch_votacoes = params[:fetch_votacoes] == '1'
+      fetch_votacoes_var = params[:fetch_votacoes] == '1'
 
       if initial_date.year != end_date.year
         raise 'Verifique se as datas são do mesmo ano'
@@ -31,7 +31,7 @@ class ImportacaoDadosController < ApplicationController
           proposicao.fetch_status = Proposicao::NEVER_SEARCHED
 
           if proposicao.save
-            busca_votacoes proposicao if fetch_votacoes
+            busca_votacoes proposicao
 
           else
             if proposicao.errors.messages[:proposicao] == 'Proposição deve ser única'
@@ -162,6 +162,9 @@ class ImportacaoDadosController < ApplicationController
 
     if response.code.to_i == 200 and !votacoes.empty?
       proposicao.fetch_status = Proposicao::FOUND
+      votacoes.each do |v|
+        v.save
+      end
 
     elsif response.code.to_i == 200 and votacoes.empty?
       proposicao.fetch_status = Proposicao::NOT_FOUND

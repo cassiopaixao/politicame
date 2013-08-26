@@ -62,10 +62,10 @@ module ImportacaoDadosHelper
     data_request.save
 
     if response.code.to_i == 200
-      [data_request, tratar_proposicoes(response.body)]
+      [data_request, tratar_proposicoes(response.body), response]
     else
     # TODO tratar erro
-      [data_request, [] ]
+      [data_request, [], response]
     end
   end
 

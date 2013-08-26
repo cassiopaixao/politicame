@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/google_analytics' if ENV['RAILS_ENV'].eql?('production') %>
+    <%= render 'layouts/google_analytics' if ENV['RAILS_ENV'].eql?('production') and !controller.controller_name.eql?('importacao_dados') %>
   </head>
   <body>
     <header class="navbar navbar-fixed-top">

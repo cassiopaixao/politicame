@@ -25,9 +25,7 @@
   Nenhuma proposição cadastrada.
 </p>
 <% else %>
-<p>
-  <%= @proposicoes.size %> proposições cadastradas.
-</p>
+<%= paginate @proposicoes %>
 <table class="table table-condensed table-striped">
   <tr>
     <th>tipo numero/ano</th>
