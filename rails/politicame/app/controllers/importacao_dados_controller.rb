@@ -72,6 +72,9 @@ class ImportacaoDadosController < ApplicationController
 
     @proposicoes.each do |proposta|
       new_master = params["proposta_#{proposta.id}"].to_i
+      if new_master == 0
+        next
+      end
       proposta.votacaos.each do |votacao|
         votacao.master = votacao.id == new_master
       end
@@ -79,6 +82,10 @@ class ImportacaoDadosController < ApplicationController
 
     @proposicoes.each do |proposta|
       votacao = proposta.votacao
+
+      if votacao.nil?
+        next
+      end
 
       if votacao.fetch_status != Proposicao::FOUND
 

@@ -36,6 +36,10 @@
       <td><%= votacao.data_hora.strftime "%d/%m/%Y %k:%M" %></td>
     </tr>
   <% end %>
+      <tr>
+      <td><%= radio_button_tag "proposta_#{proposicao.id}", "0"%></td>
+      <td colspan="3">cancela alterações</td>
+    </tr>
 </table>
 
 <% end %>
