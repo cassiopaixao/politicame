@@ -9,6 +9,9 @@ class HomeController < ApplicationController
 
   def about
   end
+  
+  def nota
+  end
 
   def next_steps
   end

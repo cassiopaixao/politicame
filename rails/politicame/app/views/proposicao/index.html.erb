@@ -4,6 +4,10 @@
     $(".proposta-box .ementa").dotdotdot();
   }); 
 </script>
+<div class='alert alert-info'>
+  <a href="<%= url_for :controller => 'home', :action => 'nota' %>"><strong>Nota de esclarecimento:</strong> Esclarecimento sobre as poucas propostas disponíveis para voto.</a>
+</div>
+
 <h1>Propostas</h1>
 
 <% if @proposicoes.empty? %>
