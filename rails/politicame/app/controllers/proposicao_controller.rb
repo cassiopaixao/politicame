@@ -3,7 +3,8 @@ class ProposicaoController < ApplicationController
   
   def index
     proposicoes_ids = Votacao.where(:master => 1).pluck(:proposicao_id)
-    @proposicoes = Proposicao.find(proposicoes_ids).page params[:page]
+    # where is necessary here due to pagination
+    @proposicoes = Proposicao.where('id IN (?)', proposicoes_ids).page params[:page]
   end
 
   def show
