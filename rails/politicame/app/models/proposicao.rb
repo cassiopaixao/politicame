@@ -24,4 +24,8 @@ class Proposicao < ActiveRecord::Base
   def to_s
     "#{tipo.upcase} #{numero}/#{ano}"
   end
+
+  def votacao
+    self.votacaos.select{|v| v.master}.first
+  end
 end

@@ -8,6 +8,11 @@ class ImportacaoDadosController < ApplicationController
     @proposicoes = Proposicao.order('id DESC').page params[:page]
   end
 
+  def votacoes
+    proposicoes_ids = Votacao.group(:proposicao_id).having('sum(master) = 0').pluck(:proposicao_id)
+    @proposicoes = Proposicao.includes(:votacaos).find(proposicoes_ids)
+  end
+
   def fetch_proposicoes
     begin
       initial_date = Date.parse params[:initial_date].strip.sub(/^(\d+)\/(\d+)\/(\d+)$/, '\2/\1/\3')
@@ -55,6 +60,41 @@ class ImportacaoDadosController < ApplicationController
       puts "ERROR: #{ex.message}"
       puts ex.backtrace.join('\n')
     end
+  end
+
+  def set_masters
+    propostas_ids = []
+    params.each_pair do |k,v|
+      propostas_ids << /^proposta_(\d+)$/.match(k.to_s)[1] if !/^proposta_(\d+)$/.match(k.to_s).nil?
+    end
+
+    @proposicoes = Proposicao.includes(:votacaos).find(propostas_ids)
+
+    @proposicoes.each do |proposta|
+      new_master = params["proposta_#{proposta.id}"].to_i
+      proposta.votacaos.each do |votacao|
+        votacao.master = votacao.id == new_master
+      end
+    end
+
+    @proposicoes.each do |proposta|
+      votacao = proposta.votacao
+
+      if votacao.fetch_status != Proposicao::FOUND
+
+        requisicao, votacao_processada, response = buscar_votacao votacao
+
+        if response.code.to_i == 200 and !votacao.voto_deputados.empty?
+          votacao.fetch_status = Proposicao::FOUND
+        elsif response.code.to_i == 200
+          votacao.fetch_status = Proposicao::NOT_FOUND
+        else
+          votacao.fetch_status = Proposicao::UNKNOWN_ERROR
+        end
+      votacao.save
+      end
+    end
+
   end
 
   def fetch_votacoes

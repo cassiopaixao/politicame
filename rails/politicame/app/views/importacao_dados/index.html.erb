@@ -2,9 +2,10 @@
 
 <h1>Importação de dados</h1>
 
-<p>
-  <%= link_to 'Proposicoes', :action => 'proposicoes' %>
-</p>
+<ul>
+  <li><%= link_to 'Proposicoes', :action => 'proposicoes' %></li>
+  <li><%= link_to 'Definir votações master', :action => 'votacoes' %></li>
+</ul>
 
 <h2>Requests</h2>
 <%= paginate @data_requests %>

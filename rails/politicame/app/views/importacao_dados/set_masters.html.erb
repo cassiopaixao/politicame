@@ -1,0 +1,20 @@
+<% @proposicoes ||= [] %>
+
+<h1>Proposições adicionadas</h1>
+
+<table class="table table-condensed table-striped">
+  <tr>
+    <th>Proposta</th>
+    <th>Resumo</th>
+    <th>Obj. Votacao</th>
+    <th>Votos</th>
+  </tr>
+  <% @proposicoes.each do |proposta| %>
+  <tr>
+    <td><%= proposta.to_s %></td>
+    <td><%= proposta.votacao.resumo %></td>
+    <td><%= proposta.votacao.obj_votacao %></td>
+    <td><%= proposta.votacao.voto_deputados.size %></td>
+  </tr>
+  <% end %>
+</table>

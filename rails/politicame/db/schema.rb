@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130825192215) do
+ActiveRecord::Schema.define(:version => 20130827121337) do
 
   create_table "data_requests", :force => true do |t|
     t.string   "host"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130825192215) do
     t.integer  "proposicao_id"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.integer  "fetch_status",  :default => 0
   end
 
   create_table "voto_deputados", :force => true do |t|

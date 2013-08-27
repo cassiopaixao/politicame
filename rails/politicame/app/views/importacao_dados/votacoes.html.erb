@@ -1,0 +1,44 @@
+<% @proposicoes ||= [] %>
+
+<h1>Proposições sem votação master</h1>
+<% if @proposicoes.empty? %>
+<p>
+  Nenhuma proposição pendente.
+</p>
+<% else %>
+
+<%= form_tag :controller => 'importacao_dados', :action => 'set_masters' %>
+
+<% @proposicoes.each do |proposicao| %>
+<h2><%= proposicao.to_s %></h2>
+<p>
+  <strong>Data apresentação:</strong> <%= proposicao.data_apresentacao.strftime("%d/%m/%Y") %>
+</p>
+<p>
+  <strong>Ementa:</strong> <%= proposicao.ementa %>
+</p>
+<p>
+  <strong>Explicação:</strong> <%= proposicao.ementa_explicacao %>
+</p>
+
+<table class="table table-condensed table-striped">
+  <tr>
+    <th>Master?</th>
+    <th>Resumo votação</th>
+    <th>Obj. votação</th>
+    <th>datetime</th>
+  </tr>
+  <% proposicao.votacaos.each do |votacao| %>
+    <tr>
+      <td><%= radio_button_tag "proposta_#{proposicao.id}", "#{votacao.id}"%></td>
+      <td><%= votacao.resumo %></td>
+      <td><%= votacao.obj_votacao %></td>
+      <td><%= votacao.data_hora.strftime "%d/%m/%Y %k:%M" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% end %>
+
+<%= submit_tag 'Confirmar votações master', :class => 'btn btn-large btn-primary' %>
+<% end %>
