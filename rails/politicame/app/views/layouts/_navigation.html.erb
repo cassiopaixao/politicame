@@ -1,22 +1,27 @@
 <%= link_to 'Politic@Me', root_path, :class => 'brand' %>
 
 <ul class="nav">
-<li><%= link_to 'Propostas', url_for(:controller => '/proposicao', :action => 'index') %></li>
+  <li>
+    <%= link_to 'Propostas', url_for(:controller => '/proposicao', :action => 'index') %>
+  </li>
 </ul>
+
 <ul class="nav pull-right">
   <% if user_signed_in? %>
   <li>
-    <%= link_to('sair', destroy_user_session_path, :method=>'delete') %>
+    <%= link_to('editar conta', edit_user_registration_path) %>
   </li>
   <li>
-    <%= link_to('editar conta', edit_user_registration_path) %>
+    <%= link_to('sair', destroy_user_session_path, :method=>'delete') %>
   </li>
   <% else %>
   <li>
     <%= link_to('entrar', new_user_session_path)  %>
   </li>
-  <li><div>
-    <%= link_to('registrar', new_user_registration_path, :class => 'btn btn-primary')  %></div>
+  <li>
+    <div>
+      <%= link_to('registrar', new_user_registration_path, :class => 'btn btn-primary')  %>
+    </div>
   </li>
   <% end %>
 </ul>
