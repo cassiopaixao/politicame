@@ -7,12 +7,10 @@ class Votacao < ActiveRecord::Base
   belongs_to :proposicao
   has_many :voto_deputados, :autosave => true
   has_many :voto_users
-  
+ 
   def validate_unique_votacao
-    votacao_bd = Votacao.where(:proposicao_id => self.proposicao.id, :resumo => self.resumo).first
-    if self.id.nil? and !votacao_bd.nil?
-      errors.add :votacao, 'Votação deve ser única'
-    elsif !self.id.nil? and !votacao_bd.nil? and self.id != votacao_bd.id
+    votacao_bd = Votacao.where(:proposicao_id => proposicao.id, :resumo => resumo).first
+    if (id.nil? and !votacao_bd.nil?) or (!id.nil? and !votacao_bd.nil? and id != votacao_bd.id)
       errors.add :votacao, 'Votação deve ser única'
     end
   end
