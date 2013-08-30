@@ -19,7 +19,7 @@ Politicame::Application.routes.draw do
   root :to => 'home#index'
 
   match 'sobre' => 'home#about', :via => [:get]
-  match 'idea' => 'home#idea', :via => [:get]
+  match 'ideia' => 'home#idea', :via => [:get]
   match 'proximos_passos' => 'home#next_steps', :via => [:get]
   match 'nota' => 'home#nota', :via => [:get]
   match 'assine' => 'home#subscribe', :via => [:post]
