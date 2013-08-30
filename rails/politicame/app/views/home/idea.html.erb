@@ -27,36 +27,3 @@
 <div class="text-center">
 <a href="<%= new_user_registration_path %>" class="btn btn-large btn-primary">Comece agora!</a>
 </div>
-
-<!--
-<div class="thumbnail center well well-small text-center">
-  <h2>Receba novidades!</h2>
-  <p>
-    Preencha seus dados abaixo e receba as novidades sobre o Politic@Me.
-  </p>
-  <p>
-    Ou se registre no sistema, e já comece a usá-lo! Clique aqui!
-  </p>
-  <% @subscription.errors.messages.each_pair do |key, message| %>
-  <% if [:name, :email].include? key %>
-  <div class="alert alert-error">
-    <a class="close" data-dismiss="alert">&#215;</a>
-    <%= message %>
-  </div>
-  <% end %>
-  <% end %>
-  <%= form_tag url_for(:controller => 'home', :action => 'subscribe'), :method => :post do %>
-  <div class="input-prepend<% if @subscription.errors.include? :name %> control-group error<% end %>">
-    <span class="add-on"><label for="name"><i class="icon-user"></i></label></span>
-    <%= text_field_tag :name, @subscription.name, :placeholder => 'seu nome' %>
-  </div>
-  <br/>
-  <div class="input-prepend<% if @subscription.errors.include? :email %> control-group error<% end %>">
-    <span class="add-on"><label for="email"><i class="icon-envelope"></i></label></span>
-    <%= text_field_tag :email, @subscription.email, :placeholder => 'seu@email.com', :required => 'true' %>
-  </div>
-  <br/>
-  <%= submit_tag 'Assine!', :class => 'btn btn-large btn-primary' %>
-  <% end %>
-</div>
--->
