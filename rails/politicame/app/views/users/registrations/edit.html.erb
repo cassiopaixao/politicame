@@ -1,29 +1,45 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editar usuário</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div>
+  <%= f.label :email, 'E-mail' %>
+  <%= f.email_field :email, :autofocus => true %>
+</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
+<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+<div>
+  Aguardando confirmação do e-mail: <%= resource.unconfirmed_email %>
+</div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<div>
+  <%= f.label :password, 'Senha' %></i>
+  <%= f.password_field :password, :autocomplete => "off" %>
+  <span class="help-inline">(deixe em branco caso não deseje alterar)</span>
+</div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<div>
+  <%= f.label :password_confirmation, 'Repita a senha' %>
+  <%= f.password_field :password_confirmation %>
+</div>
 
-<%= link_to "Back", :back %>
+<div>
+  <%= f.label :current_password, 'Senha atual' %>
+  <%= f.password_field :current_password %>
+  <span class="help-inline">(precisamos da senha atual para confirmar suas alterações)</span>
+</div>
+
+<div>
+  <%= f.submit "Atualizar", :class => 'btn btn-primary' %>
+</div>
+<% end %>
+
+<h3>Cancelar minha conta</h3>
+
+<p>
+  Descontente? <%= button_to "Cancele minha conta", registration_path(resource_name), :data => { :confirm => "Confirma essa ação?" }, :method => :delete, :class => 'btn' %>
+</p>
+
+<%= link_to "Voltar", :back %>

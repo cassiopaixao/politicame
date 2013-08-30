@@ -10,24 +10,21 @@
 
 <div>
   <%= f.label :email, 'E-mail' %>
-  <br />
   <%= f.email_field :email, :autofocus => true %>
 </div>
 
 <div>
   <%= f.label :password, 'Senha' %>
-  <br />
   <%= f.password_field :password %>
 </div>
 
 <div>
   <%= f.label :password_confirmation, 'Repita sua senha' %>
-  <br />
   <%= f.password_field :password_confirmation %>
 </div>
 
 <div>
-  <%= f.submit "Cadastrar" %>
+  <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
 </div>
 <% end %>
 
