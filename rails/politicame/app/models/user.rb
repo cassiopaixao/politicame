@@ -12,4 +12,9 @@ class User < ActiveRecord::Base
 
   has_many :voto_users
 
+  validates_presence_of :email, :message => 'Um e-mail deve ser informado'
+  validates_uniqueness_of :email, :message => 'E-mail já cadastrado no sistema'
+  validates_presence_of :password, :on => :create, :message => 'Uma senha deve ser informada'
+  validates_confirmation_of :password, :message => 'A senha repetida não coincide com a informada'
+
 end

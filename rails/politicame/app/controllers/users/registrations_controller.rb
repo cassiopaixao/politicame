@@ -12,11 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     begin
       super
     rescue Exception => ex
-      if ex.is_a? ActiveRecord::RecordNotUnique
-        flash[:error] = 'E-mail já cadastrado no sistema.'
-      else
-        flash[:error] = 'Desculpe, ocorreu um erro desconhecido ao tentar lhe registrar. Tente novamente mais tarde.'
-      end
+      flash[:error] = 'Desculpe, ocorreu um erro desconhecido ao tentar lhe registrar. Tente novamente mais tarde.'
+      puts "ERRO: #{ex.inspect}"
       redirect_to :action => 'new', :status => 303
     end
   end
