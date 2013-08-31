@@ -1,0 +1,18 @@
+<h1>Ranking</h1>
+<p class="lead">
+  Confira os políticos que votam de maneira mais semelhante à sua.
+</p>
+
+<h2>Seus votos</h2>
+<% @votos_usuario.each do |voto| %>
+<%= "#{voto.votacao.proposicao.to_s}: #{voto.voto}" %>
+<% end %>
+
+<h2>Ranking personalizado</h2>
+<ol>
+  <% @ranking.each do |deputado| %>
+  <li>
+    <%= deputado[0] %> (<%= deputado[1]%>)
+  </li>
+  <% end %>
+</ol>
