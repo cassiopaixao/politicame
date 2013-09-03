@@ -5,6 +5,8 @@ class RankingController < ApplicationController
     ranking_hash = calcula_ranking current_user.id
     @ranking = ranking_hash.to_a.sort {|x,y| y[:rank] <=> x[:rank]}
     @max_rank = @ranking.first.nil? ? 1 : @ranking.first[:rank]
+    @min_rank = (@ranking.last.nil? or @ranking.last[:rank] > 0) ? 0 : @ranking.last[:rank]
+    @range = (@max_rank.to_i - @min_rank.to_i)
   end
 
   private

@@ -42,7 +42,7 @@
     <td><%= "#{rank[:nome]}, #{rank[:partido]}, #{rank[:uf]}" %></td>
     <td>
     <div class="progress progress-striped">
-      <div class="bar" style="width: <%= (rank[:rank].to_f / @max_rank * 100) %>%;"></div>
+      <div class="bar" style="width: <%= ((rank[:rank] - @min_rank) / @range.to_f * 100) %>%;"></div>
     </div></td>
   </tr>
   <% end %>
