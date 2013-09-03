@@ -1,10 +1,10 @@
 class RankingController < ApplicationController
   before_filter :verify_user_login
+  
   def show
-    @votos_usuario = VotoUser.includes(:votacao => [:voto_deputados, :proposicao]).where(:user_id => current_user.id)
-
-    ranking_hash = calcula_ranking(@votos_usuario)
-    @ranking = ranking_hash.to_a.sort! {|x,y| y[1] <=> x[1]}
+    ranking_hash = calcula_ranking current_user.id
+    @ranking = ranking_hash.to_a.sort {|x,y| y[:rank] <=> x[:rank]}
+    @max_rank = @ranking.first.nil? ? 1 : @ranking.first[:rank]
   end
 
   private
@@ -16,21 +16,19 @@ class RankingController < ApplicationController
     end
   end
 
-  def calcula_ranking(votos_usuario)
-    ranking = Hash.new 0
+  def calcula_ranking(user_id)
+    conn = ActiveRecord::Base.connection
+    query = 'SELECT vd.nome, vd.partido, vd.uf, SUM(vu.voto * vd.voto) AS rank
+     FROM voto_users vu INNER JOIN voto_deputados vd ON vu.votacao_id = vd.votacao_id
+     WHERE vu.user_id = %i
+     GROUP BY vd.nome, vd.partido, vd.uf
+     ORDER BY rank DESC' % user_id
+    result = conn.select_all query
 
-    votos_usuario.each do |voto_usuario|
-      voto_usuario.votacao.voto_deputados.each do |voto_deputado|
-        variacao = 0
-        if voto_usuario.voto == voto_deputado.voto
-          variacao = 1
-        elsif voto_usuario.voto + voto_deputado.voto == 3 # votos contrários
-          variacao = -1
-        end
-        ranking[voto_deputado.nome] = ranking[voto_deputado.nome] + variacao
-      end
+    result = result.to_a
+    result.each do |rank|
+      rank.symbolize_keys!
     end
-    
-    ranking
+    result
   end
 end
