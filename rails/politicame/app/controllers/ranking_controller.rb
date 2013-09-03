@@ -22,7 +22,7 @@ class RankingController < ApplicationController
     conn = ActiveRecord::Base.connection
     query = 'SELECT vd.nome, vd.partido, vd.uf, SUM(vu.voto * vd.voto) AS rank
      FROM voto_users vu INNER JOIN voto_deputados vd ON vu.votacao_id = vd.votacao_id
-     WHERE vu.user_id = %i
+     WHERE vu.user_id = %d
      GROUP BY vd.nome, vd.partido, vd.uf
      ORDER BY rank DESC' % user_id
     result = conn.select_all query
