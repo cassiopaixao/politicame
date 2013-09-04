@@ -8,6 +8,7 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/google_analytics' if ENV['RAILS_ENV'].eql?('production') and !controller.controller_name.eql?('importacao_dados') %>
+    <%= render 'layouts/userreport' if !controller.controller_name.eql?('importacao_dados') %>
   </head>
   <body>
     <header class="navbar navbar-fixed-top">
