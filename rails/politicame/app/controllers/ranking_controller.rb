@@ -1,12 +1,34 @@
 class RankingController < ApplicationController
   before_filter :verify_user_login
-  
   def show
     ranking_hash = calcula_ranking current_user.id
     @ranking = ranking_hash.to_a.sort {|x,y| y[:rank] <=> x[:rank]}
     @max_rank = @ranking.first.nil? ? 1 : @ranking.first[:rank]
     @min_rank = (@ranking.last.nil? or @ranking.last[:rank] > 0) ? 0 : @ranking.last[:rank]
     @range = (@max_rank.to_i - @min_rank.to_i)
+    
+    fill_estados_and_partidos @ranking
+    
+    @selected_estado = ''
+    @selected_partido = ''
+  end
+
+  def show_filtered
+    self.show
+    
+    @selected_estado = params[:uf]
+    @selected_partido = params[:partido]
+    
+    if not params[:uf].empty?
+      @ranking = @ranking.select {|r| r[:uf] == params[:uf]}
+    end
+    if not params[:partido].empty?
+      @ranking = @ranking.select {|r| r[:partido] == params[:partido]}
+    end
+
+    fill_estados_and_partidos @ranking
+
+    render :show
   end
 
   private
@@ -32,5 +54,16 @@ class RankingController < ApplicationController
       rank.symbolize_keys!
     end
     result
+  end
+  
+  def fill_estados_and_partidos(ranking)
+    @estados = []
+    @partidos = []
+    @ranking.each do |r|
+      @estados << r[:uf]
+      @partidos << r[:partido]
+    end
+    @estados = @estados.uniq.sort
+    @partidos = @partidos.uniq.sort
   end
 end

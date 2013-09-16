@@ -38,6 +38,7 @@ Politicame::Application.routes.draw do
   match 'propostas' => 'proposicao#index', :via => [:get]
   
   match 'ranking' => 'ranking#show', :via => [:get]
+  match 'ranking' => 'ranking#show_filtered', :via => [:post]
 
 # The priority is based upon order of creation:
 # first created -> highest priority.

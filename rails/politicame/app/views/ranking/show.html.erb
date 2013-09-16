@@ -1,4 +1,6 @@
 <% @ranking ||= [] %>
+<% @estados ||= [] %>
+<% @partidos ||= [] %>
 <script type="text/javascript">
     $(document).ready($(function() {
   $(".pagination-holder").pagination({
@@ -15,6 +17,10 @@
       $(".pagination-holder").pagination('selectPage', 1);
     },
     });
+
+    $(".filter select").change(function() {
+      $(this).parent().parent().submit();
+    });
     })
     );
 </script>
@@ -29,6 +35,23 @@
   É necessário votar em pelo menos uma proposta para visualizar seu ranking personalizado. <a href="<%= url_for :controller => 'proposicao', :action => 'index' %>">Clique aqui para começar!</a>
 </p>
 <% else %>
+
+<div class="filter pull-right">
+  <p>
+    Filtrar resultados:
+  </p>
+  <%= form_tag :controller => 'ranking', :action => 'show' do %>
+  <div class="input-prepend">
+    <span class="add-on">uf</span>
+    <%= select_tag :uf, options_for_select(@estados, @selected_estado), :prompt => 'todos', :class => 'input-small' %>
+  </div>
+  <div class="input-prepend">
+    <span class="add-on">partido</span>
+    <%= select_tag :partido, options_for_select(@partidos, @selected_partido), :prompt => 'todos', :class => 'input-small' %>
+  </div>
+  <% end %>
+</div>
+
 <table class="pagination-content table-condensed">
   <tr class="header">
     <th>#</th>
