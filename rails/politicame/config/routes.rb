@@ -32,6 +32,8 @@ Politicame::Application.routes.draw do
   match 'importacao/votacoes/:tipo-:numero-:ano' => 'importacao_dados#fetch_votacoes_get', :via => [:get]
   match 'importacao/set_masters' => 'importacao_dados#votacoes', :via => [:get]
   match 'importacao/set_masters' => 'importacao_dados#set_masters', :via => [:post]
+  match 'importacao/importar_deputados' => 'importacao_dados#importar_deputados', :via => [:get]
+  match 'importacao/cadastrar_deputados' => 'importacao_dados#cadastrar_deputados', :via => [:get]
 
   match 'propostas/:tipo-:numero-:ano' => 'proposicao#show', :via => [:get], :constraints => {:tipo => /[A-Za-z]{2,3}/, :numero => /\d+/, :ano => /\d{4}/}
   match 'propostas/:tipo-:numero-:ano-:vote' => 'proposicao#register_vote', :via => [:get], :constraints => {:tipo => /[A-Za-z]{2,3}/, :numero => /\d+/, :ano => /\d{4}/}

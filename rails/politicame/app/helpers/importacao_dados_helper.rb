@@ -12,7 +12,6 @@ module ImportacaoDadosHelper
 
     host = 'http://www.camara.gov.br'
     path = '/SitCamaraWS/Proposicoes.asmx/ListarProposicoes'
-    url = host + path
 
     params_listar_proposicoes = {
       :sigla => '',
@@ -36,40 +35,12 @@ module ImportacaoDadosHelper
       :sigla => type,
       :ano => initial_date.year
     })
-    as_arr = []
-    as_hash.each_pair do |k,v|
-      as_arr << "#{k.to_s}=#{v.to_s}"
-    end
-    as_str = as_arr.join '&'
 
-    request = Net::HTTP::Post.new(url)
-    request.add_field 'Content-Type', 'application/x-www-form-urlencoded'
-    request.add_field 'Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-    # TODO parametrizar User-Agent
-    request.add_field 'User-Agent', 'Politica.Me'
-    request.body = as_str
+    __chama_webservice(host, path, as_hash, "tratar_proposicoes", [])
 
-    uri = URI.parse(url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    response = http.request(request)
-
-    data_request = DataRequest.new
-    data_request.host = host
-    data_request.path = path
-    data_request.query_str = as_str
-    data_request.status_code = response.code.to_i
-    data_request.when = Time.now
-    data_request.save
-
-    if response.code.to_i == 200
-      [data_request, tratar_proposicoes(response.body), response]
-    else
-    # TODO tratar erro
-      [data_request, [], response]
-    end
   end
 
-  def tratar_proposicoes(xml_body)
+  def tratar_proposicoes(xml_body, args)
     proposicoes = []
     doc = Nokogiri::XML(xml_body)
 
@@ -86,6 +57,7 @@ module ImportacaoDadosHelper
       proposicao.ementa = p.xpath('./txtEmenta').first.content.strip
       proposicao.ementa_explicacao = p.xpath('./txtExplicacaoEmenta').first.content.strip
 
+      #puts data_apresentacao
       # dd/mm/aaaa... to mm/dd/aaaa...
       proposicao.data_apresentacao = Date.parse data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
 
@@ -102,7 +74,6 @@ module ImportacaoDadosHelper
 
     host = 'http://www.camara.gov.br'
     path = '/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao'
-    url = host + path
 
     params_votacoes_proposicao = {
       :tipo => proposicao.tipo,
@@ -110,7 +81,22 @@ module ImportacaoDadosHelper
       :ano => proposicao.ano,
     }
 
-    as_hash = params_votacoes_proposicao
+    __chama_webservice(host, path, params_votacoes_proposicao, 
+      "tratar_votacoes", [proposicao])
+
+  end
+
+  def __chama_webservice(host, path, params, callback, callback_params)
+
+    url = host + path
+
+    #params_votacoes_proposicao = {
+    #  :tipo => proposicao.tipo,
+    #  :numero => proposicao.numero,
+    #  :ano => proposicao.ano,
+    #}
+
+    as_hash = params
     as_arr = []
     as_hash.each_pair do |k,v|
       as_arr << "#{k.to_s}=#{v.to_s}"
@@ -137,11 +123,12 @@ module ImportacaoDadosHelper
     data_request.save
 
     if response.code.to_i == 200
-      [data_request, tratar_votacoes(response.body, proposicao), response]
+      [data_request, self.send(callback, response.body, callback_params), response]
     else
     # TODO tratar erro
       [data_request, [], response]
     end
+
   end
 
   def buscar_votacao(votacao)
@@ -157,7 +144,6 @@ module ImportacaoDadosHelper
 
     host = 'http://www.camara.gov.br'
     path = '/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao'
-    url = host + path
 
     params_votacoes_proposicao = {
       :tipo => proposicao.tipo,
@@ -165,38 +151,9 @@ module ImportacaoDadosHelper
       :ano => proposicao.ano,
     }
 
-    as_hash = params_votacoes_proposicao
-    as_arr = []
-    as_hash.each_pair do |k,v|
-      as_arr << "#{k.to_s}=#{v.to_s}"
-    end
-    as_str = as_arr.join '&'
+    __chama_webservice(host, path, params_votacoes_proposicao, 
+      "tratar_votacao", [votacao])
 
-    request = Net::HTTP::Post.new(url)
-    request.add_field 'Content-Type', 'application/x-www-form-urlencoded'
-    request.add_field 'Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-    # TODO parametrizar User-Agent
-    request.add_field 'User-Agent', 'Politica.Me'
-    request.body = as_str
-
-    uri = URI.parse(url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    response = http.request(request)
-
-    data_request = DataRequest.new
-    data_request.host = host
-    data_request.path = path
-    data_request.query_str = as_str
-    data_request.status_code = response.code.to_i
-    data_request.when = Time.now
-    data_request.save
-
-    if response.code.to_i == 200
-      [data_request, tratar_votacao(response.body, votacao), response]
-    else
-    # TODO tratar erro
-      [data_request, [], response]
-    end
   end
 
   def tratar_votacoes(xml_body, proposicao)
@@ -218,8 +175,10 @@ module ImportacaoDadosHelper
     votacoes
   end
 
-  def tratar_votacao(xml_body, votacao)
+  def tratar_votacao(xml_body, args)
     doc = Nokogiri::XML(xml_body)
+
+    votacao = args[0]
 
     v = doc.xpath("//Votacao[@Resumo='#{votacao.resumo}' and @ObjVotacao='#{votacao.obj_votacao}']")
 
@@ -245,4 +204,44 @@ module ImportacaoDadosHelper
     votacao.voto_deputados.create votos_deputados
     votacao
   end
+
+  def importar_deputados_helper()
+
+    host = 'http://www.camara.gov.br'
+    path = '/SitCamaraWS/Deputados.asmx/ObterDeputados'
+
+    params_deputados = {
+      
+    }
+
+    __chama_webservice(host, path, params_deputados, 
+      "tratar_deputados", [])
+
+  end
+
+  def tratar_deputados(xml_body, args)
+
+    doc = Nokogiri::XML(xml_body)
+
+    deputados = []
+
+    doc.xpath('//deputado').each do |deputado|
+
+      deputadoObj = Deputado.new
+      deputadoObj.nome     = deputado.xpath('./nomeParlamentar').first.content.strip
+      deputadoObj.uf       = deputado.xpath('./uf').first.content.strip
+      deputadoObj.partido  = deputado.xpath('./partido').first.content.strip
+      deputadoObj.email    = deputado.xpath('./email').first.content.strip
+      deputadoObj.telefone = deputado.xpath('./fone').first.content.strip
+      deputadoObj.condicao = deputado.xpath('./condicao').first.content.strip
+
+      deputados << deputadoObj
+
+    end
+
+    #votacao.voto_deputados.create votos_depxutados
+    deputados
+
+  end
+
 end
