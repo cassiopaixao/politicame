@@ -17,4 +17,6 @@
 /public/.htaccess
 
 /config/database.yml*
+
 *~
+
