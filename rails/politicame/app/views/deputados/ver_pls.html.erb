@@ -1,5 +1,8 @@
 
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
  <script type="text/javascript">
+
+  var news;
 
   var chartDataSource = [
     { category: "A favor", value: <%= @count_afavor %> },
@@ -8,7 +11,34 @@
     { category: "Obstrução", value: <%= @count_obstrucao %> },
   ];
 
+  function newsLoaded() {
+
+    html = "<table class='table table-striped table-condensed'>";
+    if (news.results && news.results.length > 0) {
+      for (var i = 0; i < news.results.length; i++) {
+        html += "<tr>";
+        html += "<td><a href=\"" + news.results[i].unescapedUrl + "\">" + news.results[i].title + "</a></td>";
+        html += "<td>" + news.results[i].publisher + "</td>";
+        html += "<td>" + news.results[i].publishedDate.toString("dd/MM/yyyy") + "</td>";
+        html += "</tr>";
+      }
+    }
+
+    html += "</table>"
+    $("#content").html(html);
+  }
+
+  function googleLoaded() {
+    news = new google.search.NewsSearch();
+    news.setSearchCompleteCallback(this, newsLoaded, null);
+    news.execute("deputado <%= @deputado.nome %>");
+    //google.search.Search.getBranding('branding');    
+  }
+
   $(function () {
+
+    google.load("search", "1", {"callback": googleLoaded});
+
     $("#graficoDeputado").dxPieChart(
     {
       dataSource: chartDataSource,
@@ -93,3 +123,8 @@
     <body>
       <div id="graficoDeputado" style="max-width:700px;height: 300px;"></div>
     </body>
+
+<h2> Notícias </h2>
+
+    <div id="content">Loading...</div>
+    <div id="branding"  style="float: left;">Powered by Google News</div><br />
