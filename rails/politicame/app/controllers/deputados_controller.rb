@@ -2,14 +2,14 @@ class DeputadosController < ApplicationController
 
 	def show
 
-		if params[:uf].nil?
+		if params[:uf].nil? || params[:uf].empty?
 			@deputados = Deputado.order("nome").page(params[:page]).per(20)
 		else
 			@deputados = Deputado.where(:uf => params[:uf]).order("nome").page(params[:page]).per(20)
 		end
 
 		@estados   = Deputado.group("uf").order("uf").collect{ |d| d.uf }
-		@selected_estado = ''
+		@selected_estado = params[:uf]
 
 	end
 
