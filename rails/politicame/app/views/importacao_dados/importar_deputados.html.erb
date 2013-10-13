@@ -1,0 +1,25 @@
+
+
+<br/>
+<div align="center"><%= link_to 'Atualizar deputados', url_for(:controller => '/importacao_dados', :action => 'cadastrar_deputados'), :class => 'btn btn-primary' %> </div> </br></br>
+
+<table class='table table-striped table-condensed'>
+  <tr>
+    <th>nome</th>
+    <th>uf</th>
+    <th>partido</th>
+    <th>condicao</th>
+    <th>email</th>
+    <th>telefone</th>
+  </tr>
+  <% @deputados_view.each do |d| %>
+	<tr>
+	  <td><%= d.nome %></td>
+	  <td><%= d.uf %></td>
+  	  <td><%= d.partido %></td>
+  	  <td><%= d.condicao %></td>
+  	  <td><%= d.email %></td>
+  	  <td><%= d.telefone %></td>
+   </tr>
+  <% end %>
+</table>

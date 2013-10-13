@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    $(document).ready($(function() {
+  
+    $(".filter select").change(function() {
+      $(this).parent().parent().submit();
+    });
+
+    })
+    );
+</script>
+
+<h1>Deputados</h1>
+
+</br>
+
+<div class="filter pull-right">
+  <p>
+    Filtrar resultados:
+  </p>
+  
+  <%= form_tag :controller => 'deputados', :action => 'show' do %>
+  
+  <div class="input-prepend">
+    <span class="add-on">uf</span>
+    <%= select_tag :uf, options_for_select(@estados, @selected_estado), :prompt => 'todos', :class => 'input-small' %>
+  </div>
+  
+  <% end %>
+
+</div>
+
+<table class='table table-striped table-condensed'>
+  <tr>
+    <th>nome</th>
+    <th>uf</th>
+    <th>partido</th>
+    <th>condicao</th>
+    <th>email</th>
+    <th>telefone</th>
+  </tr>
+  <% @deputados.each do |d| %>
+	<tr>
+	  <td> <%= link_to d.nome, url_for(:controller => '/deputados', :action => 'ver_pls', :id => d.id) %> </td>
+	  <td><%= d.uf %></td>
+  	  <td><%= d.partido %></td>
+  	  <td><%= d.condicao %></td>
+  	  <td><%= d.email %></td>
+  	  <td><%= d.telefone %></td>
+   </tr>
+  <% end %>
+</table>
+
+<div class="clearfix">
+  <div class="pull-right">
+    <%= paginate @deputados %>
+  </div>
+</div>
