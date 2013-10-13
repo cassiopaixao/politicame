@@ -28,7 +28,7 @@ class ImportacaoDadosController < ApplicationController
       @duplicadas = []
       @erros_gerais = []
 
-      %(PL, PLC, PLN, PLP, PLS, PEC, MPV).each do |type|
+      %w(PL PLC PLN PLP PLS PEC MPV).each do |type|
 
         requisicao, proposicoes = buscar_proposicoes initial_date, end_date, type
 
@@ -202,7 +202,40 @@ class ImportacaoDadosController < ApplicationController
     end
   end
 
+  def importar_deputados()
+
+    @deputados_view = importar_deputados_ws
+
+  end
+
+  def cadastrar_deputados()
+
+    deputados = importar_deputados_ws
+
+    deputados.each { |deputado|
+        deputado.save
+    }
+
+    @deputados_view = deputados
+
+    render :importar_deputados
+
+  end
+
+
   private
+
+  def importar_deputados_ws()
+
+    requisicao, deputados, response = importar_deputados_helper
+
+    if response.code.to_i == 200
+      deputados
+    else
+      []
+    end
+
+  end
 
   def busca_votacoes(proposicao)
     requisicao_votacao, votacoes, response = buscar_votacoes proposicao
