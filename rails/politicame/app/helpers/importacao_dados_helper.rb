@@ -57,9 +57,7 @@ module ImportacaoDadosHelper
       proposicao.ementa = p.xpath('./txtEmenta').first.content.strip
       proposicao.ementa_explicacao = p.xpath('./txtExplicacaoEmenta').first.content.strip
 
-      #puts data_apresentacao
-      # dd/mm/aaaa... to mm/dd/aaaa...
-      proposicao.data_apresentacao = Date.parse data_apresentacao.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
+      proposicao.data_apresentacao = Date.strptime data_apresentacao, '%d/%m/%Y'
 
       proposicoes << proposicao
     end
@@ -81,8 +79,8 @@ module ImportacaoDadosHelper
       :ano => proposicao.ano,
     }
 
-    __chama_webservice(host, path, params_votacoes_proposicao, 
-      "tratar_votacoes", [proposicao])
+    __chama_webservice(host, path, params_votacoes_proposicao,
+      "tratar_votacoes", proposicao)
 
   end
 
@@ -151,7 +149,7 @@ module ImportacaoDadosHelper
       :ano => proposicao.ano,
     }
 
-    __chama_webservice(host, path, params_votacoes_proposicao, 
+    __chama_webservice(host, path, params_votacoes_proposicao,
       "tratar_votacao", [votacao])
 
   end
@@ -167,8 +165,8 @@ module ImportacaoDadosHelper
       votacao.resumo = v.xpath('./@Resumo').first.content.strip
       data_hora = v.xpath('./@Data').first.content.strip + ' ' + v.xpath('./@Hora').first.content.strip
 
-      # dd/mm/aaaa... to mm/dd/aaaa...
-      votacao.data_hora = DateTime.parse data_hora.sub(/^(\d+)\/(\d+)\/(.*)$/, '\2/\1/\3')
+      # http://ruby-doc.org/stdlib-2.0.0/libdoc/date/rdoc/DateTime.html#method-i-strftime
+      votacao.data_hora = DateTime.strptime data_hora, "%d/%m/%Y %H:%M"
 
       votacoes << votacao
     end
@@ -211,10 +209,10 @@ module ImportacaoDadosHelper
     path = '/SitCamaraWS/Deputados.asmx/ObterDeputados'
 
     params_deputados = {
-      
+
     }
 
-    __chama_webservice(host, path, params_deputados, 
+    __chama_webservice(host, path, params_deputados,
       "tratar_deputados", [])
 
   end
