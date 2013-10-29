@@ -11,6 +11,7 @@ class Proposicao < ActiveRecord::Base
   validate :validate_unique_proposicao
 
   has_many :votacaos, :autosave => true
+  has_many :proposicao_relevancia
 
   def validate_unique_proposicao
     proposicao_bd = Proposicao.where(:tipo => self.tipo, :numero => self.numero, :ano => self.ano).first
