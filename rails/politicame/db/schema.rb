@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131011235003) do
+ActiveRecord::Schema.define(:version => 20131029001207) do
 
   create_table "data_requests", :force => true do |t|
     t.string   "host"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20131011235003) do
     t.string   "condicao"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "proposicao_relevancia", :force => true do |t|
+    t.integer  "voto"
+    t.integer  "user_id"
+    t.integer  "proposicao_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "proposicaos", :force => true do |t|

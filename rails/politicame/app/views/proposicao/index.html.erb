@@ -24,19 +24,80 @@
 
 <div class="clearfix">
   <div class="pull-right">
-    <%= paginate @proposicoes, :window => 3, :outer_window => 1 %>
+    <%= paginate @proposicoes_query, :window => 3, :outer_window => 1 %>
   </div>
 </div>
 
 <div class="row">
-  <% @proposicoes.each do |proposicao| %>
-  <%= render :partial => '/shared/show_proposta_slim', :locals => {:p => proposicao} %>
+  <% @proposicoes.each do |p| %>
+
+<div class="span4 proposta-box">
+  
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="50px" align="center">
+
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr><td align="center"> 
+              
+                <%
+                  if @proposicoes_relevancia_hash_voted[p.id].nil? and @user_signedin
+                %>
+                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '1' %>"><img src="assets/up.png"/></a>
+                <%
+                  elsif @proposicoes_relevancia_hash_voted[p.id] == 1
+                %>
+                 <img src="assets/up_voted.png"/>
+                <%
+                  else
+                %>
+                <img src="assets/up.png"/>
+                <%
+                  end
+                %>
+              </a> </td></tr>
+            <tr><td align="center"> <h3><%= @proposicoes_relevancia_hash[p.id] %> </h3> </td></tr>
+            <tr><td align="center">
+              
+              
+                 <%
+                  if @proposicoes_relevancia_hash_voted[p.id].nil? and @user_signedin
+                %>
+                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '0' %>"><img src="assets/down.png"/></a>
+                <%
+                  elsif @proposicoes_relevancia_hash_voted[p.id] == 0
+                %>
+                 <img src="assets/down_voted.png"/>
+                <%
+                  else
+                %>
+                <img src="assets/down.png"/>
+                <%
+                  end
+                %>
+
+              </td></tr>
+          </table>
+
+        </td>
+        <td><h3><%= p.to_s %></h3></td>
+      </tr>
+    </table>
+  <p class="ementa">
+    <%= p.ementa %>
+  </p>
+  <div class="row text-center">
+    <a href="<%= url_for :controller => 'proposicao', :action => 'register_vote', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :vote => 'Sim' %>" class="btn btn-primary btn-success"><strong><i class="icon-ok icon-white"></i> Favor</strong></a>
+    <a href="<%= url_for :controller => 'proposicao', :action => 'register_vote', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :vote => 'Não' %>" class="btn btn-primary btn-danger"><strong><i class="icon-remove icon-white"></i> Contra</strong></a>
+    <a href="<%= url_for :controller => 'proposicao', :action => 'show', :tipo => p.tipo, :numero => p.numero, :ano => p.ano %>" class="btn btn-primary btn-info"><strong><i class="icon-zoom-in icon-large icon-white"></i> Info</strong></a>
+  </div>
+</div>
   <% end %>
 </div>
 
 <div class="clearfix">
   <div class="pull-right">
-    <%= paginate @proposicoes, :window => 3, :outer_window => 1 %>
+    <%= paginate @proposicoes_query, :window => 3, :outer_window => 1 %>
   </div>
 </div>
 

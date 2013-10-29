@@ -4,7 +4,38 @@ class ProposicaoController < ApplicationController
   def index
     proposicoes_ids = Votacao.where(:master => 1).pluck(:proposicao_id)
     # where is necessary here due to pagination
-    @proposicoes = Proposicao.where('id IN (?)', proposicoes_ids).page params[:page]
+
+    if params[:page].nil? then
+      pagen = 1
+    else
+      pagen = params[:page].to_i
+    end
+
+    #.page params[:page]
+    @proposicoes_query = Proposicao.where('id IN (?)', proposicoes_ids)
+    @proposicoes = @proposicoes_query
+    @proposicoes_query = @proposicoes_query.page pagen
+
+    @proposicoes_relevancia_hash = Hash.new
+    @proposicoes_relevancia_hash_voted = Hash.new
+
+    @user_signedin = user_signed_in?
+
+    @proposicoes.each do |p|
+      positives  = ProposicaoRelevancia.where(:proposicao_id => p.id, :voto => 1).count
+      negatives  = ProposicaoRelevancia.where(:proposicao_id => p.id, :voto => 0).count
+      @proposicoes_relevancia_hash[p.id] = positives - negatives
+      if user_signed_in?
+        relevancia = ProposicaoRelevancia.where(:proposicao_id => p.id, :user_id => current_user.id).first
+        if !relevancia.nil?
+          @proposicoes_relevancia_hash_voted[p.id] = relevancia.voto.to_i
+        end
+      end
+    end
+
+    @proposicoes = @proposicoes.sort{|a,b| @proposicoes_relevancia_hash[b.id] <=> @proposicoes_relevancia_hash[a.id]}
+    istart = (pagen - 1)* 9
+    @proposicoes = @proposicoes[istart, 9]
   end
 
   def show
@@ -44,6 +75,33 @@ class ProposicaoController < ApplicationController
     redirect_to :action => 'show', :tipo => @proposicao.tipo, :numero => @proposicao.numero, :ano => @proposicao.ano
   end
 
+  def register_relevance
+
+    if !user_signed_in?
+      flash[:error] = 'Você precisa fazer login, ou se registrar, para poder votar.'
+    else
+
+      tipo = params[:tipo].strip[0..2].upcase
+      numero = params[:numero].to_i
+      ano = params[:ano].to_i
+      votorel = params[:relevancia].to_i
+
+      proposicao = Proposicao.where(:tipo => tipo, :numero => numero, :ano => ano).first
+      voto = ProposicaoRelevancia.where(:user_id => current_user.id, :proposicao_id => proposicao.id).first
+
+      if voto.nil?
+        voto = ProposicaoRelevancia.new
+        voto.user_id = current_user.id
+        voto.proposicao_id = proposicao.id
+        voto.voto = votorel
+        voto.save
+      end
+      
+    end
+
+    redirect_to :action => 'index'
+  end
+
   private
 
   def get_proposicao
@@ -65,4 +123,5 @@ class ProposicaoController < ApplicationController
       redirect_to :action => 'index'
     end
   end
+
 end

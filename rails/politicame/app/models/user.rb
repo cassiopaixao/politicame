@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :voto_users
+  has_many :proposica_relevancia
 
   validates_presence_of :email, :message => 'Um e-mail deve ser informado'
   validates_uniqueness_of :email, :message => 'E-mail já cadastrado no sistema'

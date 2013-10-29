@@ -38,6 +38,7 @@ Politicame::Application.routes.draw do
   match 'propostas/:tipo-:numero-:ano' => 'proposicao#show', :via => [:get], :constraints => {:tipo => /[A-Za-z]{2,3}/, :numero => /\d+/, :ano => /\d{4}/}
   match 'propostas/:tipo-:numero-:ano-:vote' => 'proposicao#register_vote', :via => [:get], :constraints => {:tipo => /[A-Za-z]{2,3}/, :numero => /\d+/, :ano => /\d{4}/}
   match 'propostas' => 'proposicao#index', :via => [:get]
+  match 'propostas/rel-:tipo-:numero-:ano-:relevancia' => 'proposicao#register_relevance', :via => [:get]
   
   match 'ranking' => 'ranking#show', :via => [:get]
   match 'ranking' => 'ranking#show_filtered', :via => [:post]
