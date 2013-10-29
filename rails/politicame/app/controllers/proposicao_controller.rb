@@ -111,6 +111,20 @@ class ProposicaoController < ApplicationController
 
     @proposicao = Proposicao.where(:tipo => tipo, :numero => numero, :ano => ano).first
 
+    positives  = ProposicaoRelevancia.where(:proposicao_id => @proposicao.id, :voto => 1).count
+    negatives  = ProposicaoRelevancia.where(:proposicao_id => @proposicao.id, :voto => 0).count
+    
+    @proposicoes_relevancia = positives - negatives
+
+    @user_signedin = user_signed_in?
+    
+    if user_signed_in?
+      relevancia = ProposicaoRelevancia.where(:proposicao_id => @proposicao.id, :user_id => current_user.id).first
+      if !relevancia.nil?
+        @proposicoes_relevancia_voted = relevancia.voto.to_i
+      end
+    end
+
     if @proposicao.nil?
       flash[:error] = "Proposta #{tipo} #{numero}/#{ano} não existe."
       redirect_to :action => 'index'
