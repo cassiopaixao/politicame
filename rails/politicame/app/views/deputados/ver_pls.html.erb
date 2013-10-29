@@ -100,10 +100,10 @@
   <% @votos_dep.each do |v| %>
 	<tr>
   	  <td><a href="#modal<%= v.id %>" data-toggle="modal"><%= v.votacao.proposicao.to_s %></a></td>
-  	  <td><strong><p class="text-success"><%= "X" if v.voto == 2 %></p></strong></td>
-  	  <td><strong><p class="text-danger"><%= "X" if v.voto == -2 %></p></strong></td>
-  	  <td><strong><p class="text-warning"><%= "X" if v.voto == -1 %></p></strong></td>
-  	  <td><strong><p class="text-muted"><%= "X" if v.voto == 0 %></p></strong></td>
+  	  <td align="center"><strong><% if v.voto == 2 then %> <img src="/assets/ok.png"/> <% end %></strong></td>
+  	  <td align="center"><strong><% if v.voto == -2 then %><img src="/assets/fail.png"/> <% end %></strong></td>
+  	  <td><strong><p class="text-warning"><%= "-" if v.voto == -1 %></p></strong></td>
+  	  <td><strong><p class="text-muted"><%= "-" if v.voto == 0 %></p></strong></td>
    </tr>
   <% end %>
 

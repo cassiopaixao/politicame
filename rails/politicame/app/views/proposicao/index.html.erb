@@ -43,15 +43,15 @@
                 <%
                   if @proposicoes_relevancia_hash_voted[p.id].nil? and @user_signedin
                 %>
-                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '1' %>"><img src="assets/up.png"/></a>
+                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '1' %>"><img src="/assets/up.png"/></a>
                 <%
                   elsif @proposicoes_relevancia_hash_voted[p.id] == 1
                 %>
-                 <img src="assets/up_voted.png"/>
+                 <img src="/assets/up_voted.png"/>
                 <%
                   else
                 %>
-                <img src="assets/up.png"/>
+                <img src="/assets/up.png"/>
                 <%
                   end
                 %>
@@ -63,15 +63,15 @@
                  <%
                   if @proposicoes_relevancia_hash_voted[p.id].nil? and @user_signedin
                 %>
-                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '0' %>"><img src="assets/down.png"/></a>
+                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '0' %>"><img src="/assets/down.png"/></a>
                 <%
                   elsif @proposicoes_relevancia_hash_voted[p.id] == 0
                 %>
-                 <img src="assets/down_voted.png"/>
+                 <img src="/assets/down_voted.png"/>
                 <%
                   else
                 %>
-                <img src="assets/down.png"/>
+                <img src="/assets/down.png"/>
                 <%
                   end
                 %>
