@@ -15,8 +15,8 @@ class ImportacaoDadosController < ApplicationController
 
   def fetch_proposicoes
     begin
-      initial_date = Date.parse params[:initial_date].strip.sub(/^(\d+)\/(\d+)\/(\d+)$/, '\2/\1/\3')
-      end_date = Date.parse params[:end_date].strip.sub(/^(\d+)\/(\d+)\/(\d+)$/, '\2/\1/\3')
+      initial_date = Date.strptime params[:initial_date], '%d/%m/%Y'
+      end_date = Date.strptime params[:end_date], '%d/%m/%Y'
       fetch_votacoes_var = params[:fetch_votacoes] == '1'
 
       if initial_date.year != end_date.year
@@ -29,7 +29,6 @@ class ImportacaoDadosController < ApplicationController
       @erros_gerais = []
 
       %w(PL PLC PLN PLP PLS PEC MPV).each do |type|
-
         requisicao, proposicoes = buscar_proposicoes initial_date, end_date, type
 
         proposicoes.each do |proposicao|
