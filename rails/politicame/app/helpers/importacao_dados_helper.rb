@@ -226,20 +226,19 @@ module ImportacaoDadosHelper
     doc.xpath('//deputado').each do |deputado|
 
       deputadoObj = Deputado.new
-      deputadoObj.nome     = deputado.xpath('./nomeParlamentar').first.content.strip
-      deputadoObj.uf       = deputado.xpath('./uf').first.content.strip
-      deputadoObj.partido  = deputado.xpath('./partido').first.content.strip
-      deputadoObj.email    = deputado.xpath('./email').first.content.strip
-      deputadoObj.telefone = deputado.xpath('./fone').first.content.strip
-      deputadoObj.condicao = deputado.xpath('./condicao').first.content.strip
+      deputadoObj.nome      = deputado.xpath('./nomeParlamentar').first.content.strip
+      deputadoObj.uf        = deputado.xpath('./uf').first.content.strip
+      deputadoObj.partido   = deputado.xpath('./partido').first.content.strip
+      deputadoObj.email     = deputado.xpath('./email').first.content.strip
+      deputadoObj.telefone  = deputado.xpath('./fone').first.content.strip
+      deputadoObj.condicao  = deputado.xpath('./condicao').first.content.strip
+      deputadoObj.id_camara = deputado.xpath('./ideCadastro').first.content.strip.to_i
 
       deputados << deputadoObj
 
     end
 
-    #votacao.voto_deputados.create votos_depxutados
     deputados
-
   end
 
 end

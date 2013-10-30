@@ -31,7 +31,7 @@
   function googleLoaded() {
     news = new google.search.NewsSearch();
     news.setSearchCompleteCallback(this, newsLoaded, null);
-    news.execute("deputado <%= @deputado.nome %>");
+    news.execute("deputado \"<%= @deputado.nome %>\"");
     //google.search.Search.getBranding('branding');
   }
 
@@ -65,11 +65,17 @@
   })
 </script>
 
-<h2> Votações com <%= @deputado.nome %></h1>
-<h3> Partido: <%= @deputado.partido %></h3>
-<h3> UF: <%= @deputado.uf %></h3>
+<div class="deputado-info">
+  <div class="deputado-picture span3"><img src="<%= "http://www.camara.gov.br/internet/deputado/bandep/#{@deputado.id_camara}.jpg" %>" title="<%= @deputado.nome %>"/></div>
+  <div class="deputado-data span8">
+    <h2> <%= @deputado.nome %></h1>
+    <h3> Partido: <%= @deputado.partido %></h3>
+    <h3> UF: <%= @deputado.uf %></h3>
+  </div>
+</div>
+<div>
 
-</br>
+</div>
 
 <% @votos_dep.each do |v| %>
 	<div id="modal<%= v.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

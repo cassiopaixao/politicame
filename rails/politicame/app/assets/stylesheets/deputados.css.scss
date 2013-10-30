@@ -5,3 +5,14 @@
 table.votacao-deputado td, table.votacao-deputado th {
     text-align: center;
 }
+
+div.deputado-info {
+
+    .deputado-picture {
+        text-align: center;
+    }
+
+    .deputado-data, .deputado-picture {
+        padding-bottom: 20px;
+    }
+}

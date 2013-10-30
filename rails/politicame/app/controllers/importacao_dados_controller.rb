@@ -207,12 +207,23 @@ class ImportacaoDadosController < ApplicationController
 
   end
 
+  # TODO corrigir a lógica de atualização. Desevolvido durante hackathon para
+  # buscar id dos deputados.
   def cadastrar_deputados()
 
     deputados = importar_deputados_ws
 
     deputados.each { |deputado|
+      deputado_obj = Deputado.where(:nome => deputado.nome,
+                                    :partido => deputado.partido,
+                                    :uf => deputado.uf
+                                    ).first
+      if deputado_obj.nil?
         deputado.save
+      else
+        deputado_obj.id_camara = deputado.id_camara
+        deputado_obj.save
+      end
     }
 
     @deputados_view = deputados
