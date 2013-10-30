@@ -2,12 +2,12 @@
 	<tr>
 		<td>
 			<table width="100%" cellpadding="0" cellspacing="0">
-            <tr><td align="center"> 
-              
+            <tr><td align="center">
+
                 <%
                   if @proposicoes_relevancia_voted.nil? and @user_signedin
                 %>
-                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '1' %>"><img src="/assets/up.png"/></a>
+                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => @proposicao.tipo, :numero => @proposicao.numero, :ano => @proposicao.ano, :relevancia => '1' %>"><img src="/assets/up.png"/></a>
                 <%
                   elsif @proposicoes_relevancia_voted == 1
                 %>
@@ -22,12 +22,12 @@
               </a> </td></tr>
             <tr><td align="center"> <h3><%= @proposicoes_relevancia %> </h3> </td></tr>
             <tr><td align="center">
-              
-              
+
+
                  <%
                   if @proposicoes_relevancia_voted.nil? and @user_signedin
                 %>
-                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '0' %>"><img src="/assets/down.png"/></a>
+                  <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => @proposicao.tipo, :numero => @proposicao.numero, :ano => @proposicao.ano, :relevancia => '0' %>"><img src="/assets/down.png"/></a>
                 <%
                   elsif @proposicoes_relevancia_voted == 0
                 %>
@@ -80,7 +80,7 @@
     var disqus_shortname = 'politicame'; // Required - Replace example with your forum shortname
     var disqus_identifier = '<%= @proposicao.to_s %>';
     var disqus_title = '<%= @proposicao.to_s %>';
-    var disqus_config = function () { 
+    var disqus_config = function () {
       this.language = "pt_BR";
     };
 
