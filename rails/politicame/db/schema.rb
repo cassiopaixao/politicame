@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030130400) do
+ActiveRecord::Schema.define(:version => 20131030135434) do
 
   create_table "data_requests", :force => true do |t|
     t.string   "host"
@@ -66,6 +66,13 @@ ActiveRecord::Schema.define(:version => 20131030130400) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.datetime "unsubscribed_at"
+  end
+
+  create_table "twitters", :force => true do |t|
+    t.integer  "deputado_id"
+    t.string   "address"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

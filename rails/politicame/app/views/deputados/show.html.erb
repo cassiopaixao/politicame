@@ -31,20 +31,28 @@
 
 <table class='table table-striped table-condensed'>
   <tr>
-    <th>nome</th>
-    <th>uf</th>
-    <th>partido</th>
-    <th>condicao</th>
-    <th>email</th>
-    <th>telefone</th>
+    <th>Nome</th>
+    <th>UF</th>
+    <th>Partido</th>
+    <th>Condição</th>
+    <th>E-mail</th>
+    <th>Redes Sociais</th>
+    <th>Telefone</th>
   </tr>
   <% @deputados.each do |d| %>
 	<tr>
-	  <td> <%= link_to d.nome, url_for(:controller => '/deputados', :action => 'ver_pls', :id => d.id) %> </td>
+	  <td> 
+      <%= link_to d.nome, url_for(:controller => '/deputados', :action => 'ver_pls', :id => d.id) %> 
+    </td>
 	  <td><%= d.uf %></td>
   	  <td><%= d.partido %></td>
   	  <td><%= d.condicao %></td>
   	  <td><%= d.email %></td>
+      <td align="center">
+        <% if !@twitter[d.id].nil? then %>
+          <a href="<%= @twitter[d.id].address %>"><img src="/assets/twitter-mini-logo.png" alt="Tem twitter"/></a>
+        <% end %>
+      </td>
   	  <td><%= d.telefone %></td>
    </tr>
   <% end %>

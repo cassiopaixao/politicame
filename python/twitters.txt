@@ -1,0 +1,526 @@
+ANTÔNIA LÚCIA	PSC	AC	http://twitter.com/#!/antonialuciapsc
+FLAVIANO MELO	PMDB	AC	http://twitter.com/flaviano_melo
+GLADSON CAMELI	PP	AC	http://twitter.com/DeputadoGladson
+HENRIQUE AFONSO	PV	AC	http://twitter.com/#!/henrique_afonso
+MARCIO BITTAR	PSDB	AC	http://twitter.com/#!/depmarciobittar
+PERPÉTUA ALMEIDA	PCdoB	AC	http://twitter.com/DepPerpetua
+SIBÁ MACHADO	PT	AC	http://twitter.com/#!/sibamachado13
+TAUMATURGO LIMA	PT	AC	http://twitter.com/#!/Taumaturgo_Lima 
+ARTHUR LIRA	PP	AL	http://twitter.com/#!/DEPArthurLira
+CELIA ROCHA	PTB	AL	http://twitter.com/CELIAROCHA_AL
+GIVALDO CARIMBÃO	PSB	AL	http://twitter.com/#!/givaldocarimbao
+JOÃO LYRA	PTB	AL	http://twitter.com/#!/Joao_Lyra
+JOAQUIM BELTRÃO	PMDB	AL	Não possui
+MAURÍCIO QUINTELLA LESSA	PR	AL	http://twitter.com/Depquintella
+RENAN FILHO	PMDB	AL	http://twitter.com/#!/RenanFilho_
+ROSINHA DA ADEFAL	PTdoB	AL	http://twitter.com/#!/rosinhadaadefal
+RUI PALMEIRA	PSDB	AL	http://twitter.com/#!/ruipalmeira
+ÁTILA LINS	PMDB	AM	Não possui
+CARLOS SOUZA	PP	AM	http://twitter.com/#!/CarlosSouza1111
+FRANCISCO PRACIANO	PT	AM	http://twitter.com/praciano1313
+HENRIQUE OLIVEIRA	PR	AM	Não possui
+PAUDERNEY AVELINO	DEM	AM	http://twitter.com/#!/pauderney
+REBECCA GARCIA	PP	AM	http://twitter.com/deputadarebecca
+SABINO CASTELO BRANCO	PTB	AM	http://twitter.com/#!/depsabinocb
+SILAS CÂMARA	PSC	AM	http://twitter.com/DepSilasCamara
+DALVA FIGUEIREDO	PT	AP	http://twitter.com/DalvaFigueiredo
+DAVI ALCOLUMBRE	DEM	AP	Não possui
+EVANDRO MILHOMEN	PCdoB	AP	http://twitter.com/DepMilhomen
+FÁTIMA PELAES	PMDB	AP	http://twitter.com/#!/depfatimapelaes
+JANETE CAPIBERIBE	PSB	AP	http://twitter.com/Janete4040
+LUIZ CARLOS	PSDB	AP	http://twitter.com/#!/depluizcarlos
+SEBASTIÃO BALA ROCHA	PDT	AP	http://twitter.com/balarocha
+VINICIUS GURGEL	PRTB	AP	http://twitter.com/#!/vinicius2828
+ACELINO POPÓ	PRB	BA	http://twitter.com/#!/popofreitas
+ALICE PORTUGAL	PCdoB	BA	http://twitter.com/Alice_Portugal
+AMAURI TEIXEIRA	PT	BA	http://twitter.com/#!/deputadoamauri
+ANTONIO BRITO	PTB	BA	http://twitter.com/#!/antoniobritoba
+ANTONIO CARLOS MAGALHÃES NETO	DEM	BA	http://twitter.com/acm_neto
+ANTONIO IMBASSAHY	PSDB	BA	http://twitter.com/#!/Dep_Imbassahy
+ARTHUR OLIVEIRA MAIA	PMDB	BA	http://twitter.com/#!/departhurmaia
+CLAUDIO CAJADO	DEM	BA	http://twitter.com/#!/claudio_cajado
+DANIEL ALMEIDA	PCdoB	BA	http://twitter.com/danielpcdob65
+EDSON PIMENTA	PCdoB	BA	http://twitter.com/#!/EdsonPimenta
+EMILIANO JOSÉ	PT	BA	http://twitter.com/#!/emiliano_jose
+ERIVELTON SANTANA	PSC	BA	http://twitter.com/#!/dep_erivelton
+FÁBIO SOUTO	DEM	BA	http://twitter.com/Fabio_Souto
+FÉLIX MENDONÇA JÚNIOR	PDT	BA	http://twitter.com/#!/felixMendoncaJr
+FERNANDO TORRES	DEM	BA	Não possui
+GERALDO SIMÕES	PT	BA	http://twitter.com/#!/geraldo1330
+JÂNIO NATAL	PRP	BA	http://twitter.com/#!/janionatal
+JOÃO CARLOS BACELAR	PR	BA	http://twitter.com/joaocbacelar
+JOSÉ CARLOS ARAÚJO	PDT	BA	http://twitter.com/#!/depjosecarlos
+JOSÉ NUNES	DEM	BA	http://twitter.com/#!/JoseNunesDep
+JOSÉ ROCHA	PR	BA	Não possui
+JOSEPH BANDEIRA	PT	BA	Não possui
+JOSIAS GOMES	PT	BA	http://twitter.com/#!/josiasgomesba
+JUTAHY JUNIOR	PSDB	BA	Não possui
+LUCIO VIEIRA LIMA	PMDB	BA	http://twitter.com/#!/luciovl_
+LUIZ ALBERTO	PT	BA	http://twitter.com/depluizalberto
+LUIZ ARGÔLO	PP	BA	http://twitter.com/#!/LuizArgolo1133
+MÁRCIO MARINHO	PRB	BA	http://twitter.com/dpmarciomarinho
+MARCOS MEDRADO	PDT	BA	Não possui
+MAURÍCIO TRINDADE	PR	BA	http://twitter.com/#!/depmt
+NELSON PELLEGRINO	PT	BA	http://twitter.com/#!/nelsonpelegrino
+OZIEL OLIVEIRA	PDT	BA	http://twitter.com/#!/deputadooziel 
+PAULO MAGALHÃES	DEM	BA	Não possui
+ROBERTO BRITTO	PP	BA	Não possui
+RUI COSTA	PT	BA	https://twitter.com/#!/costa_rui
+SÉRGIO BARRADAS CARNEIRO	PT	BA	http://twitter.com/sergiobc1300
+SÉRGIO BRITO	PSC	BA	Não possui
+VALMIR ASSUNÇÃO	PT	BA	http://twitter.com/#!/falavalmir
+WALDENOR PEREIRA	PT	BA	http://twitter.com/#!/waldenorpereira
+ANDRÉ FIGUEIREDO	PDT	CE	http://twitter.com/#!/andrepdt12
+ANÍBAL GOMES	PMDB	CE	http://twitter.com/#!/DepAnibalGomes
+ANTONIO BALHMANN	PSB	CE	http://twitter.com/#!/Dep_Balhmann
+ARIOSTO HOLANDA	PSB	CE	http://twitter.com/deputadoariosto
+ARNON BEZERRA	PTB	CE	http://twitter.com/Arnon_Bezerra
+ARTUR BRUNO	PT	CE	http://twitter.com/#!/arturbruno
+CHICO LOPES	PCdoB	CE	http://twitter.com/Chico_Lopes
+DANILO FORTE	PMDB	CE	http://twitter.com/#!/DepDaniloForte
+DOMINGOS NETO	PSB	CE	http://twitter.com/#!/Domingos_Neto
+EDSON SILVA	PSB	CE	http://twitter.com/#!/depedsonsilva
+EUDES XAVIER	PT	CE	http://twitter.com/EudesXavierPT
+GENECIAS NORONHA	PMDB	CE	http://twitter.com/#!/depgenecias
+GORETE PEREIRA	PR	CE	Não possui
+JOÃO ANANIAS	PCdoB	CE	http://twitter.com/#!/depjoaoananias
+JOSÉ AIRTON	PT	CE	http://twitter.com/JoseAirtonPT
+JOSÉ GUIMARÃES	PT	CE	http://twitter.com/guimaraes_13PT
+JOSÉ LINHARES	PP	CE	http://twitter.com/#!/padreze
+MANOEL SALVIANO	PSDB	CE	http://twitter.com/#!/depsalviano
+MAURO BENEVIDES	PMDB	CE	http://twitter.com/#!/maurobenevide
+RAIMUNDÃO	PMDB	CE	http://twitter.com/#!/raimundomacedo
+RAIMUNDO GOMES DE MATOS	PSDB	CE	http://twitter.com/#!/raimundo_matos
+VICENTE ARRUDA	PR	CE	Não possui
+AUGUSTO CARVALHO	PPS	DF	http://twitter.com/augustodeputado
+ERIKA KOKAY	PT	DF	http://twitter.com/#!/erikakokay
+IZALCI	PR	DF	http://twitter.com/#!/izalcilucas
+JAQUELINE RORIZ	PMN	DF	http://twitter.com/roriz_jaqueline
+LUIZ PITIMAN	PMDB	DF	https://twitter.com/#!/luizpitiman
+POLICARPO	PT	DF	http://twitter.com/#!/policarpo_ptdf
+REGUFFE	PDT	DF	http://twitter.com/#!/Reguffe
+RONALDO FONSECA	PR	DF	http://twitter.com/#!/DepRonaldo
+RICARDO QUIRINO	PRB	DF	http://twitter.com/#!/depquirino
+AUDIFAX	PSB	ES	http://twitter.com/#!/dep_Audifax
+CAMILO COLA	PMDB	ES	http://twitter.com/#!/camilocola1544
+CESAR COLNAGO	PSDB	ES	http://twitter.com/#!/cesarcolnago
+DR. JORGE SILVA	PDT	ES	http://twitter.com/#!/DrJorge1211
+LAURIETE	PSC	ES	http://twitter.com/#!/2010lauriete
+LELO COIMBRA	PMDB	ES	http://twitter.com/deplelocoimbra
+MANATO	PDT	ES	http://twitter.com/DeputadoManato
+PAULO FOLETTO	PSB	ES	http://twitter.com/#!/paulofoletto
+ROSE DE FREITAS	PMDB	ES	http://twitter.com/DepRosedFreitas
+SUELI VIDIGAL	PDT	ES	http://twitter.com/suelividigal_es
+ARMANDO VERGÍLIO	PSD	GO	http://twitter.com/#!/armandovergilio
+CARLOS ALBERTO LERÉIA	PSDB	GO	http://twitter.com/CarlosLereia
+FLÁVIA MORAIS	PDT	GO	http://twitter.com/#!/depflaviamorais
+HEULER CRUVINEL	DEM	GO	http://twitter.com/#!/heulercruvinel
+ÍRIS DE ARAÚJO	PMDB	GO	http://twitter.com/#!/gab_donairis
+JOÃO CAMPOS	PSDB	GO	http://twitter.com/depjoaocampos
+JOVAIR ARANTES	PTB	GO	http://twitter.com/jovair_arantes
+LEANDRO VILELA	PMDB	GO	http://twitter.com/#!/leandrovilela15
+MAGDA MOFATTO	PTB	GO	http://twitter.com/Magdamofatto
+PEDRO CHAVES	PMDB	GO	Não possui
+ROBERTO BALESTRA	PP	GO	http://twitter.com/#!/robertobalestra
+RONALDO CAIADO	DEM	GO	http://twitter.com/deputadocaiado
+RUBENS OTONI	PT	GO	http://twitter.com/#!/RubensOtoniWeb
+SANDES JÚNIOR	PP	GO	http://twitter.com/sandes_junior
+SANDRO MABEL	PR	GO	http://twitter.com/sandromabel
+THIAGO PEIXOTO	PSD	GO	http://twitter.com/#!/thiagopeixoto
+VILMAR ROCHA	PSD	GO	http://twitter.com/#!/vilmar_rocha
+JORGE PINHEIRO	PRB	GO	http://twitter.com/#!/jorgepinheiro10
+MARINA SANTANNA	PT	GO	http://twitter.com/#!/marinasantanna / http://twitter.com/#!/deputadamarina
+VALDIVINO DE OLIVEIRA	PSDB	GO	http://twitter.com/#!/valdivino_de_o
+ALBERTO FILHO	PMDB	MA	http://twitter.com/#!/DepAlbertofilho
+CLEBER VERDE	PRB	MA	http://twitter.com/CLEBER_VERDE
+COSTA FERREIRA	PSC	MA	http://twitter.com/#!/costaf2010
+DAVI ALVES SILVA JÚNIOR	PR	MA	http://twitter.com/depdavialves
+DOMINGOS DUTRA	PT	MA	http://twitter.com/DomingosDutra13
+EDIVALDO HOLANDA JUNIOR	PTC	MA	http://twitter.com/#!/_edinhoaraujo
+FRANCISCO ESCÓRCIO	PMDB	MA	http://twitter.com/#!/ChiquinEscorcio
+HÉLIO SANTOS	PSDB	MA	http://twitter.com/#!/heliosantos4545
+LOURIVAL MENDES	PTdoB	MA	Não possui
+NICE LOBÃO	DEM	MA	Não possui
+PEDRO NOVAIS	PMDB	MA	Não possui
+PINTO ITAMARATY	PSDB	MA	http://twitter.com/pintoitamaraty
+PROFESSOR SETIMO	PMDB	MA	http://twitter.com/#!/profsetimo
+RIBAMAR ALVES	PSB	MA	http://twitter.com/RibamarAlvesPSB
+SARNEY FILHO	PV	MA	http://twitter.com/sarneyfilho
+WALDIR MARANHÃO	PP	MA	http://twitter.com/WaldirMaranhao
+WEVERTON ROCHA	PDT	MA	Não possui
+ZÉ VIEIRA	PR	MA	Não possui
+CARLOS BRANDÃO	PSDB	MA	http://twitter.com/Carlos_Brandao
+GASTÃO VIEIRA	PMDB	MA	http://twitter.com/gastaovieira15
+ADEMIR CAMILO	PDT	MG	http://twitter.com/depademircamilo
+AELTON FREITAS	PR	MG	http://twitter.com/Aelton_Freitas
+ALEXANDRE SILVEIRA	PSD	MG	http://twitter.com/#!/depAsilveira
+ANTÔNIO ANDRADE	PMDB	MG	http://twitter.com/AntonioAndraDep
+ANTÔNIO ROBERTO	PV	MG	http://twitter.com/antonioroberto_
+ARACELY DE PAULA	PR	MG	Não possui
+BERNARDO SANTANA DE VASCONCELLOS	PR	MG	http://twitter.com/#!/SantanaBernardo
+BONIFÁCIO DE ANDRADA	PSDB	MG	http://twitter.com/BAndrada
+CARLAILE PEDROSA	PSDB	MG	http://twitter.com/#!/CARLAILEPSDB
+DIEGO ANDRADE	PR	MG	http://twitter.com/#!/DiegoAndradeMG
+DIMAS FABIANO	PP	MG	http://twitter.com/#!/depdimasfabiano
+DOMINGOS SÁVIO	PSDB	MG	http://twitter.com/#!/DomingosSavioMG
+DR. GRILO	PSL	MG	Não possui
+EDUARDO AZEREDO	PSDB	MG	http://twitter.com/#!/deputadoazeredo
+EDUARDO BARBOSA	PSDB	MG	http://twitter.com/eduardobarbosa_
+EROS BIONDINI	PTB	MG	http://twitter.com/#!/erosbiondini
+FÁBIO RAMALHO	PV	MG	http://twitter.com/#!/_FabinhoRamalho
+GABRIEL GUIMARÃES	PT	MG	http://twitter.com/#!/GGuimaraesPT
+GEORGE HILTON	PRB	MG	http://twitter.com/depgeorgehilton
+GERALDO THADEU	PPS	MG	http://twitter.com/#!/GeraldoThadeu23
+GILMAR MACHADO	PT	MG	http://twitter.com/DeputadoGilmar
+JAIME MARTINS	PR	MG	http://twitter.com/Dep_Jaiminho
+JÔ MORAES	PCdoB	MG	http://twitter.com/jomoraes
+JOÃO BITTAR	DEM	MG	http://twitter.com/depjoaobittar
+JOÃO MAGALHÃES	PMDB	MG	Não possui
+JOSÉ HUMBERTO	PHS	MG	http://twitter.com/#!/DepJoseHumberto
+JÚLIO DELGADO	PSB	MG	http://twitter.com/depjuliodelgado
+LAEL VARELLA	DEM	MG	Não possui
+LEONARDO MONTEIRO	PT	MG	https://twitter.com/#!/depleomonteiro
+LEONARDO QUINTÃO	PMDB	MG	http://twitter.com/leonardoquintao
+LINCOLN PORTELA	PR	MG	http://twitter.com/lincoln_portela
+LUIS TIBÉ	PTdoB	MG	http://twitter.com/#!/luistibe
+LUIZ FERNANDO FARIA	PP	MG	http://twitter.com/depluizfernando
+MÁRCIO REINALDO MOREIRA	PP	MG	http://twitter.com/mrm2010
+MARCOS MONTES	DEM	MG	http://twitter.com/DepMarcosMontes
+MARCUS PESTANA	PSDB	MG	https://twitter.com/#!/marcus_pestana
+MÁRIO DE OLIVEIRA	PSC	MG	Não possui
+MAURO LOPES	PMDB	MG	http://twitter.com/#!/depmaurolopes
+MIGUEL CORRÊA	PT	MG	http://twitter.com/DepMiguelCorrea
+NEWTON CARDOSO	PMDB	MG	http://twitter.com/#!/newtoncardoso_
+ODAIR CUNHA	PT	MG	http://twitter.com/DepOdairCunha
+PADRE JOÃO	PT	MG	http://twitter.com/#!/dep_padrejoao
+PAULO ABI-ACKEL	PSDB	MG	http://twitter.com/pauloabiackel
+PAULO PIAU	PMDB	MG	http://twitter.com/#!/dep_paulopiau
+REGINALDO LOPES	PT	MG	http://twitter.com/Reginaldolopes
+RENZO BRAZ	PP	MG	https://twitter.com/#!/deputadorenzo
+RODRIGO DE CASTRO	PSDB	MG	http://twitter.com/RodrigoCastro45
+SARAIVA FELIPE	PMDB	MG	Não possui
+TONINHO PINHEIRO	PP	MG	Não possui
+VITOR PENIDO	DEM	MG	http://twitter.com/vitorpenidomg
+WALTER TOSTA	PMN	MG	http://twitter.com/#!/waltertostamg
+WELITON PRADO	PT	MG	http://twitter.com/#!/pradoweliton
+ZÉ SILVA	PDT	MG	https://twitter.com/#!/zesilva_ 
+JAIRO ATAÍDE	DEM	MG	http://twitter.com/#!/DepJairoAtaide
+BIFFI	PT	MS	http://twitter.com/DeputadoBiffi
+FABIO TRAD	PMDB	MS	http://twitter.com/#!/f_trad
+GERALDO RESENDE	PMDB	MS	http://twitter.com/#!/dep_geraldo
+GIROTO	PR	MS	http://twitter.com/#!/girotofederal
+MANDETTA	DEM	MS	http://twitter.com/#!/depmandetta
+MARÇAL FILHO	PMDB	MS	http://twitter.com/Marcal_Oficial
+REINALDO AZAMBUJA	PSDB	MS	http://twitter.com/DepAzambuja
+VANDER LOUBET	PT	MS	http://twitter.com/vanderloubet
+CARLOS BEZERRA	PMDB	MT	Não possui
+ELIENE LIMA	PSD	MT	Não possui
+HOMERO PEREIRA	PR	MT	http://twitter.com/dphomeropereira
+JÚLIO CAMPOS	DEM	MT	http://twitter.com/#!/DepJulioCampos
+NILSON LEITÃO	PSDB	MT	http://twitter.com/Nilson_Leitao
+ROBERTO DORNER	PP	MT	http://twitter.com/#!/DeputadoRDorner
+VALTENIR PEREIRA	PSB	MT	http://twitter.com/DepValtenir
+WELLINGTON FAGUNDES	PR	MT	http://twitter.com/dep_wfagundes
+NERI GELLER	PP	MT	http://twitter.com/#!/NeriGeller
+ANDRÉ DIAS	PSDB	PA	http://twitter.com/#!/andredias4500
+ARNALDO JORDY	PPS	PA	http://twitter.com/#!/arnaldojordy
+ASDRUBAL BENTES	PMDB	PA	Não possui
+BETO FARO	PT	PA	Não possui
+CLÁUDIO PUTY	PT	PA	http://twitter.com/#!/claudioputy
+ELCIONE BARBALHO	PMDB	PA	http://twitter.com/elcionepmdb
+GIOVANNI QUEIROZ	PDT	PA	http://twitter.com/#!/deputgiovanni
+JOSÉ PRIANTE	PMDB	PA	Não possui
+JOSUÉ BENGTSON	PTB	PA	http://twitter.com/#!/josuebengtson
+LIRA MAIA	DEM	PA	Não possui
+LÚCIO VALE	PR	PA	http://twitter.com/#!/luciovalepa 
+MIRIQUINHO BATISTA	PT	PA	https://twitter.com/#!/miriquinho
+WANDENKOLK GONÇALVES	PSDB	PA	http://twitter.com/#!/wandenkolk4545
+WLADIMIR COSTA	PMDB	PA	Não possui
+ZÉ GERALDO	PT	PA	http://twitter.com/zegeraldopt
+ZENALDO COUTINHO	PSDB	PA	http://twitter.com/#!/zenaldocoutinho
+ZEQUINHA MARINHO	PSC	PA	http://twitter.com/zequinhamarinho
+DUDIMAR PAXIUBA	PSDB	PA	http://twitter.com/#!/DudimarPaxiuba
+AGUINALDO RIBEIRO	PP	PB	http://twitter.com/#!/aguinaldo1111
+BENJAMIN MARANHÃO	PMDB	PB	http://twitter.com/#!/benjamimaranhao
+DAMIÃO FELICIANO	PDT	PB	http://twitter.com/#!/drdamiao
+EFRAIM FILHO	DEM	PB	http://twitter.com/efraimfilho
+HUGO MOTTA	PMDB	PB	http://twitter.com/#!/hugomottapb
+LUIZ COUTO	PT	PB	http://twitter.com/luizcoutopt
+MANOEL JUNIOR	PMDB	PB	http://twitter.com/depmanoeljunior
+NILDA GONDIM	PMDB	PB	http://twitter.com/#!/depnildagondim
+ROMERO RODRIGUES	PSDB	PB	http://twitter.com/#!/DeputadoRomero
+RUY CARNEIRO	PSDB	PB	http://twitter.com/#!/depruycarneiro
+WELLINGTON ROBERTO	PR	PB	http://twitter.com/wr22
+WILSON FILHO	PMDB	PB	http://twitter.com/#!/wilsonfilho_
+ANDERSON FERREIRA	PR	PE	http://twitter.com/#!/federalanderson
+AUGUSTO COUTINHO	DEM	PE	http://twitter.com/#!/augustocmelo
+BRUNO ARAÚJO	PSDB	PE	http://twitter.com/BrunoAraujo4511
+CARLOS EDUARDO CADOCA	PSC	PE	http://twitter.com/Cadoca
+EDUARDO DA FONTE	PP	PE	http://twitter.com/eduardodafonte
+FERNANDO COELHO FILHO	PSB	PE	http://twitter.com/#!/FBCFilho
+FERNANDO FERRO	PT	PE	http://twitter.com/FerroPT
+GONZAGA PATRIOTA	PSB	PE	http://twitter.com/#!/DepGonzagaP
+INOCÊNCIO OLIVEIRA	PR	PE	http://twitter.com/Dep_Inocencio
+JOÃO PAULO LIMA	PT	PE	http://twitter.com/#!/joaopaulo_pt
+JORGE CORTE REAL	PTB	PE	Não possui
+JOSÉ AUGUSTO MAIA	PTB	PE	http://twitter.com/#!/joseaugustomaia
+JOSÉ CHAVES	PTB	PE	http://twitter.com/dep_josechaves
+LUCIANA SANTOS	PCdoB	PE	https://twitter.com/#!/deputadaluciana
+MENDONÇA FILHO	DEM	PE	https://twitter.com/#!/mendonca_filho
+PASTOR EURICO	PSB	PE	http://twitter.com/#!/pastoreurico
+PAULO RUBEM SANTIAGO	PDT	PE	http://twitter.com/paulorubem
+PEDRO EUGÊNIO	PT	PE	http://twitter.com/#!/pedroEugeniopt
+RAUL HENRY	PMDB	PE	http://twitter.com/RaulHenry
+ROBERTO TEIXEIRA	PP	PE	http://twitter.com/#!/dep_roberto1122
+SERGIO GUERRA	PSDB	PE	http://twitter.com/#!/Sergio_Guerra
+SEVERINO NINHO	PSB	PE	Não possui
+SILVIO COSTA	PTB	PE	Não possui
+VILALBA	PRB	PE	http://twitter.com/#!/vilalba_prb
+WOLNEY QUEIROZ	PDT	PE	http://twitter.com/WolneyQueirozM
+ANA ARRAES	PSB	PE	http://twitter.com/#!/anaarraes4040
+ASSIS CARVALHO	PT	PI	http://twitter.com/#!/assis_carvalho
+HUGO NAPOLEÃO	DEM	PI	http://twitter.com/#!/dephugonapoleao
+IRACEMA PORTELLA	PP	PI	http://twitter.com/#!/iracemaportela
+JESUS RODRIGUES	PT	PI	http://twitter.com/#!/Jesus_Rodrigues
+JÚLIO CESAR	DEM	PI	http://twitter.com/#!/DepJulioCesarPI
+MARCELO CASTRO	PMDB	PI	http://twitter.com/#!/MarceloCastroPI
+MARLLOS SAMPAIO	PMDB	PI	http://twitter.com/#!/marllossampaio
+NAZARENO FONTELES	PT	PI	http://twitter.com/dep_nazareno
+OSMAR JÚNIOR	PCdoB	PI	http://twitter.com/DepOsmarJunior
+PAES LANDIM	PTB	PI	Não possui
+ABELARDO LUPION	DEM	PR	http://twitter.com/abelardolupion
+ALEX CANZIANI	PTB	PR	http://twitter.com/CanzianiAlex
+ALFREDO KAEFER	PSDB	PR	http://twitter.com/AlfredoKaefer
+ANDRE VARGAS	PT	PR	http://twitter.com/andrevargas13
+ANDRÉ ZACHAROW	PMDB	PR	http://twitter.com/#!/zacharow
+ANGELO VANHONI	PT	PR	http://twitter.com/angelovanhoni
+ASSIS DO COUTO	PT	PR	http://twitter.com/assisdocouto
+CIDA BORGHETTI	PP	PR	http://twitter.com/#!/cidaborghetti_
+DILCEU SPERAFICO	PP	PR	http://twitter.com/#!/DepSperafico
+DR. ROSINHA	PT	PR	http://twitter.com/drrosinha
+EDMAR ARRUDA	PSC	PR	http://twitter.com/#!/EdmarArruda
+EDUARDO SCIARRA	DEM	PR	http://twitter.com/Eduardo_Sciarra
+FERNANDO FRANCISCHINI	PSDB	PR	http://twitter.com/#!/francischini_
+GIACOBO	PR	PR	http://twitter.com/DeputadoGiacobo
+HERMES PARCIANELLO	PMDB	PR	Não possui
+JOÃO ARRUDA	PMDB	PR	http://twitter.com/#!/joao_arruda
+LEOPOLDO MEYER	PSB	PR	http://twitter.com/#!/leopoldo_meyer
+LUIZ CARLOS SETIM	DEM	PR	http://twitter.com/Dep_Setim
+LUIZ NISHIMORI	PSDB	PR	http://twitter.com/#!/luiznishimori
+MOACIR MICHELETTO	PMDB	PR	Não possui
+NELSON MEURER	PP	PR	Não possui
+NELSON PADOVANI	PSC	PR	http://twitter.com/#!/nelson_padovani
+OSMAR SERRAGLIO	PMDB	PR	http://twitter.com/osmar_serraglio
+RATINHO JUNIOR	PSC	PR	http://twitter.com/ratinho_jr
+REINHOLD STEPHANES	PMDB	PR	http://twitter.com/R_Stephanes
+ROSANE FERREIRA	PV	PR	https://twitter.com/#!/rosanedopv
+RUBENS BUENO	PPS	PR	http://twitter.com/#!/rubensbuenopps
+SANDRO ALEX	PPS	PR	http://twitter.com/#!/SandroAlex2323
+TAKAYAMA	PSC	PR	http://twitter.com/pastortakayama
+ZECA DIRCEU	PT	PR	http://twitter.com/#!/zeca_dirceu 
+ADRIAN	PMDB	RJ	http://twitter.com/#!/DepAdrian
+ALESSANDRO MOLON	PT	RJ	http://twitter.com/#!/AlessandroMolon
+ALEXANDRE SANTOS	PMDB	RJ	http://twitter.com/depAlexandreSRJ
+ALFREDO SIRKIS	PV	RJ	http://twitter.com/#!/Alfredosirkis
+ANDREIA ZITO	PSDB	RJ	http://twitter.com/#!/andreia_zito
+ANTHONY GAROTINHO	PR	RJ	http://twitter.com/#!/blogdogarotinho
+AROLDE DE OLIVEIRA	DEM	RJ	http://twitter.com/AroldeOliveira
+AUREO	PRTB	RJ	http://twitter.com/#!/DeputadoAureo
+BENEDITA DA SILVA	PT	RJ	http://twitter.com/#!/blogdabenedita
+CHICO ALENCAR	PSOL	RJ	http://twitter.com/depchicoalencar
+CHICO D’ANGELO	PT	RJ	http://twitter.com/#!/chicodangelo13
+DELEY	PSC	RJ	http://twitter.com/#!/depdeley
+DR. ADILSON SOARES	PR	RJ	http://twitter.com/#!/draluizio_news
+DR. ALUIZIO	PV	RJ	http://twitter.com/#!/draluiziojunior
+DR. CARLOS ALBERTO	PMN	RJ	Não possui
+DR. PAULO CÉSAR	PR	RJ	http://twitter.com/#!/drpaulocesarpr
+EDSON EZEQUIEL	PMDB	RJ	http://twitter.com/#!/depezequiel
+EDSON SANTOS	PT	RJ	http://twitter.com/#!/depedsonsantos
+EDUARDO CUNHA	PMDB	RJ	http://twitter.com/DepEduardoCunha
+ELIANE ROLIM	PT	RJ	http://twitter.com/#!/elianerolimpt
+FELIPE BORNIER	PHS	RJ	http://twitter.com/#!/felipebornierrj
+FERNANDO JORDÃO	PMDB	RJ	http://twitter.com/#!/fernandojordao
+FILIPE PEREIRA	PSC	RJ	http://twitter.com/#!/filipepereira20
+FRANCISCO FLORIANO	PR	RJ	Não possui
+GLAUBER BRAGA	PSB	RJ	http://twitter.com/#!/Glauber_Braga
+HUGO LEAL	PSC	RJ	http://twitter.com/dephugoleal
+JAIR BOLSONARO	PP	RJ	http://twitter.com/DepBolsonaro
+JANDIRA FEGHALI	PCdoB	RJ	https://twitter.com/#!/jandira_feghali
+JEAN WYLLYS	PSOL	RJ	http://twitter.com/#!/jeanwyllys_real
+LILIAM SÁ	PR	RJ	Não possui
+MARCELO MATOS	PDT	RJ	https://twitter.com/#!/marcelomatos_rj
+MIRO TEIXEIRA	PDT	RJ	https://twitter.com/#!/depmiroteixeira
+NEILTON MULIM	PR	RJ	http://twitter.com/#!/depneiltonmulim 
+NELSON BORNIER	PMDB	RJ	Não possui
+OTAVIO LEITE	PSDB	RJ	http://twitter.com/otavioleite
+PAULO FEIJÓ	PR	RJ	http://twitter.com/#!/paulofeijo2288
+RODRIGO MAIA	DEM	RJ	http://twitter.com/DepRodrigomaia
+ROMÁRIO	PSB	RJ	http://twitter.com/#!/RomarioOnze
+SERGIO ZVEITER	PSD	RJ	http://twitter.com/#!/zveitersergio
+SIMÃO SESSIM	PP	RJ	http://twitter.com/#!/simao_sessim
+SOLANGE ALMEIDA	PMDB	RJ	http://twitter.com/solangealmeida_
+STEPAN NERCESSIAN	PPS	RJ	https://twitter.com/#!/stepanrio
+VITOR PAULO	PRB	RJ	https://twitter.com/#!/vitorpaulo10
+WALNEY ROCHA	PTB	RJ	http://twitter.com/#!/walneyrocha
+WASHINGTON REIS	PMDB	RJ	http://twitter.com/#!/depwreis
+ZOINHO	PR	RJ	http://twitter.com/#!/Dep_Zoinho 
+BRIZOLA NETO	PDT	RJ	http://twitter.com/brizola_neto
+CRISTIANO	PTdoB	RJ	http://twitter.com/#!/cristianodeput
+FÁBIO FARIA	PMN	RN	http://twitter.com/fabiofaria33
+FÁTIMA BEZERRA	PT	RN	http://twitter.com/Fatima_Bezerra
+FELIPE MAIA	DEM	RN	http://twitter.com/depfelipemaia
+HENRIQUE EDUARDO ALVES	PMDB	RN	http://twitter.com/HenriqueEAlves
+JOÃO MAIA	PR	RN	http://twitter.com/depjoaomaia
+PAULO WAGNER	PV	RN	http://twitter.com/#!/deppaulowagner
+ROGÉRIO MARINHO	PSDB	RN	http://twitter.com/rogeriosmarinho
+SANDRA ROSADO	PSB	RN	http://twitter.com/sandrarosado
+CARLOS MAGNO	PP	RO	Não possui
+LINDOMAR GARÇON	PV	RO	http://twitter.com/#!/depgarcon
+MARINHA RAUPP	PMDB	RO	https://twitter.com/#!/DepMarinhaRaupp
+MAURO NAZIF	PSB	RO	http://twitter.com/#!/drmauronazif
+MOREIRA MENDES	PPS	RO	http://twitter.com/moreiramendes23
+NATAN DONADON	PMDB	RO	http://twitter.com/natandonadon
+NILTON CAPIXABA	PTB	RO	Não possui
+PADRE TON	PT	RO	https://twitter.com/#!/padreton
+BERINHO BANTIM	PSDB	RR	Não possui
+EDIO LOPES	PMDB	RR	http://twitter.com/ediolopes
+FRANCISCO ARAÚJO	PSD	RR	Não possui
+JHONATAN DE JESUS	PRB	RR	http://twitter.com/#!/jhonatan_djesus
+LUCIANO CASTRO	PR	RR	Não possui
+PAULO CESAR QUARTIERO	DEM	RR	http://twitter.com/#!/pauloquartiero
+RAUL LIMA	PP	RR	http://twitter.com/#!/raullimarr
+TERESA SURITA	PMDB	RR	http://twitter.com/#!/teresasurita 
+AFONSO HAMM	PP	RS	http://twitter.com/depafonsohamm
+ALCEU MOREIRA	PMDB	RS	http://twitter.com/#!/Alceu_Moreira
+ALEXANDRE ROSO	PSB	RS	http://twitter.com/#!/alexandreroso
+ASSIS MELO	PCdoB	RS	http://twitter.com/#!/deputadoassis
+BOHN GASS	PT	RS	http://twitter.com/#!/BOHNGASS
+DANRLEI DE DEUS HINTERHOLZ	PTB	RS	http://twitter.com/#!/DanrleiFederal
+DARCÍSIO PERONDI	PMDB	RS	http://twitter.com/darcisioperondi
+ELISEU PADILHA	PMDB	RS	http://twitter.com/#!/eliseupadilha
+ENIO BACCI	PDT	RS	http://twitter.com/#!/EnioBacci
+FERNANDO MARRONI	PT	RS	http://twitter.com/fernandomarroni
+GIOVANI CHERINI	PDT	RS	http://twitter.com/#!/giovanicherini
+HENRIQUE FONTANA	PT	RS	http://twitter.com/henriquefontana
+JERÔNIMO GOERGEN	PP	RS	http://twitter.com/#!/jeronimogoergen
+JOSÉ OTÁVIO GERMANO	PP	RS	http://twitter.com/#!/jotaviogermano
+JOSE STÉDILE	PSB	RS	http://twitter.com/#!/josestedile
+LUIS CARLOS HEINZE	PP	RS	http://twitter.com/deputadoheinze
+LUIZ NOÉ	PSB	RS	http://twitter.com/#!/luiznoe
+MANUELA D’ÁVILA	PCdoB	RS	http://twitter.com/deputadamanuela
+MARCO MAIA	PT	RS	http://twitter.com/DepMarcoMaia
+MARCON	PT	RS	http://twitter.com/#!/depmarcon
+NELSON MARCHEZAN JUNIOR	PSDB	RS	http://twitter.com/#!/marchezan_
+ONYX LORENZONI	DEM	RS	http://twitter.com/onyxlorenzoni
+OSMAR TERRA	PMDB	RS	http://twitter.com/#!/osmarterra 
+PAULO PIMENTA	PT	RS	http://twitter.com/deputadofederal
+PEPE VARGAS	PT	RS	http://twitter.com/deputadopepe
+RENATO MOLLING	PP	RS	http://twitter.com/renatomolling
+RONALDO NOGUEIRA	PTB	RS	https://twitter.com/#!/dep_ronaldo
+RONALDO ZULKE	PT	RS	http://twitter.com/#!/ronaldozulke
+SÉRGIO MORAES	PTB	RS	Conta não encontrada – Confirmar
+VIEIRA DA CUNHA	PDT	RS	http://twitter.com/#!/1212vieira
+VILSON COVATTI	PP	RS	http://twitter.com/VilsonCovatti
+MENDES RIBEIRO FILHO	PMDB	RS	http://twitter.com/mendes_ribeiro
+CARMEN ZANOTTO	PPS	SC	http://twitter.com/#!/carmenzanotto
+CELSO MALDANER	PMDB	SC	http://twitter.com/celsomaldaner
+DÉCIO LIMA	PT	SC	http://twitter.com/deciolimapt
+EDINHO BEZ	PMDB	SC	http://twitter.com/#!/dep_edinhobez
+ESPERIDIÃO AMIN	PP	SC	http://twitter.com/#!/EsperidiaoAmin_
+JOÃO PIZZOLATTI	PP	SC	http://twitter.com/pizzolatti
+JORGE BOEIRA	PT	SC	http://twitter.com/deputadoboeira
+JORGINHO MELLO	PSDB	SC	http://twitter.com/#!/jorginhomello
+LUCI CHOINACKI	PT	SC	http://twitter.com/#!/lucichoinacki13
+MAURO MARIANI	PMDB	SC	http://twitter.com/Mauro_Mariani
+ONOFRE SANTO AGOSTINI	DEM	SC	http://twitter.com/#!/onofre_agostini 
+PAULO BORNHAUSEN	PSD	SC	Não possui
+PEDRO UCZAI	PT	SC	http://twitter.com/#!/uczai
+ROGÉRIO PENINHA MENDONÇA	PMDB	SC	http://twitter.com/#!/deputadopeninha
+RONALDO BENEDET	PMDB	SC	http://twitter.com/#!/ronaldo_benedet
+VALDIR COLATTO	PMDB	SC	http://twitter.com/colattodeputado
+GEAN LOUREIRO	PMDB	SC	http://twitter.com/#!/geanloureiro
+ALMEIDA LIMA	PPS	SE	http://twitter.com/#!/almeidalimaPPS
+ANDRE MOURA	PSC	SE	http://twitter.com/#!/AndreMourapsc/
+HELENO SILVA	PRB	SE	http://twitter.com/#!/PrHeleno
+LAERCIO OLIVEIRA	PR	SE	http://twitter.com/#!/laerciofederal
+MÁRCIO MACÊDO	PT	SE	http://twitter.com/#!/marciomacedopt
+MENDONÇA PRADO	DEM	SE	http://twitter.com/mendoncaprado
+ROGÉRIO CARVALHO	PT	SE	http://twitter.com/#!/dep_rogeriocar
+VALADARES FILHO	PSB	SE	http://twitter.com/#!/valadares_filho
+ALBERTO MOURÃO	PSDB	SP	http://twitter.com/#!/albertomourao
+ALEXANDRE LEITE	DEM	SP	http://twitter.com/#!/lexandreleite
+ALINE CORRÊA	PP	SP	http://twitter.com/Dep_AlineCorrea
+ANTONIO BULHÕES	PRB	SP	http://twitter.com/depbulhoes
+ANTONIO CARLOS MENDES THAME	PSDB	SP	http://twitter.com/mendesthame
+ARLINDO CHINAGLIA	PT	SP	http://twitter.com/#!/achinaglia
+ARNALDO FARIA DE SÁ	PTB	SP	http://twitter.com/#!/Dep_Arnaldo1452
+ARNALDO JARDIM	PPS	SP	http://twitter.com/ArnaldoJardim
+BETO MANSUR	PP	SP	http://twitter.com/BetoMansur11
+BRUNA FURLAN	PSDB	SP	http://twitter.com/#!/BrunaFurlan_
+CÂNDIDO VACCAREZZA	PT	SP	http://twitter.com/vaccarezza
+CARLINHOS ALMEIDA	PT	SP	http://twitter.com/#!/depcarlinhos
+CARLOS ROBERTO	PSDB	SP	http://twitter.com/#!/carlosroberto45
+CARLOS SAMPAIO	PSDB	SP	http://twitter.com/#!/carlossampaio_
+CARLOS ZARATTINI	PT	SP	http://twitter.com/CarlosZarattini
+DELEGADO PROTÓGENES	PCdoB	SP	http://twitter.com/#!/protogenes
+DEVANIR RIBEIRO	PT	SP	http://twitter.com/devanirribeiro
+DIMAS RAMALHO	PPS	SP	http://twitter.com/dimasramalho
+DR. UBIALI	PSB	SP	http://twitter.com/drubiali
+DRA. ELAINE ABISSAMRA	PSB	SP	Não possui
+DUARTE NOGUEIRA	PSDB	SP	http://twitter.com/duarte_nogueira
+EDINHO ARAÚJO	PMDB	SP	http://twitter.com/#!/_edinhoaraujo
+ELEUSES PAIVA	DEM	SP	http://twitter.com/#!/eleusespaiva
+ELI CORREA FILHO	DEM	SP	http://twitter.com/#!/EliCorreaFilho
+GABRIEL CHALITA	PMDB	SP	http://twitter.com/#!/gabriel_chalita
+GUILHERME CAMPOS	DEM	SP	http://twitter.com/depguilherme
+GUILHERME MUSSI	PV	SP	http://twitter.com/#!/guilhermemussi
+IVAN VALENTE	PSOL	SP	http://twitter.com/dep_ivanvalente
+JANETE ROCHA PIETÁ	PT	SP	http://twitter.com/janetepieta/
+JEFFERSON CAMPOS	PSB	SP	http://twitter.com/DepJefferson
+JILMAR TATTO	PT	SP	http://twitter.com/jilmartatto
+JOÃO DADO	PDT	SP	http://twitter.com/joaodado
+JOÃO PAULO CUNHA	PT	SP	http://twitter.com/depjoaopaulo
+JONAS DONIZETTE	PSB	SP	http://twitter.com/#!/Jonas_donizette
+JORGE TADEU MUDALEN	DEM	SP	http://twitter.com/#!/depjorgetadeu
+JOSÉ DE FILIPPI	PT	SP	http://twitter.com/#!/josedefilippi
+JOSÉ MENTOR	PT	SP	http://twitter.com/wmentor
+JUNJI ABE	DEM	SP	http://twitter.com/#!/junjiabe
+KEIKO OTA	PSB	SP	http://twitter.com/#!/keikoota_
+LUIZ FERNANDO MACHADO	PSDB	SP	http://twitter.com/#!/lfmfederal
+LUIZA ERUNDINA	PSB	SP	http://twitter.com/ErundinaPSB
+MARA GABRILLI	PSDB	SP	http://twitter.com/#!/maragabrilli 
+MARCELO AGUIAR	PSC	SP	http://twitter.com/#!/marceloaguiarsp
+MILTON MONTI	PR	SP	http://twitter.com/miltonmonti
+MISSIONÁRIO JOSÉ OLIMPIO	PP	SP	Não possui
+NELSON MARQUEZELLI	PTB	SP	http://twitter.com/MarquezelliNews
+NEWTON LIMA	PT	SP	http://twitter.com/#!/profnewtonlima
+OTONIEL LIMA	PRB	SP	Não possui
+PASTOR MARCO FELICIANO	PSC	SP	http://twitter.com/#!/marcofeliciano
+PAULO FREIRE	PR	SP	http://twitter.com/#!/DF_PauloFreire
+PAULO MALUF	PP	SP	http://twitter.com/paulosalimmaluf
+PAULO PEREIRA DA SILVA	PDT	SP	http://twitter.com/dep_paulinho
+PAULO TEIXEIRA	PT	SP	http://twitter.com/pauloteixeira13
+PENNA	PV	SP	https://twitter.com/#!/deputado_penna
+RICARDO BERZOINI	PT	SP	http://twitter.com/ricardoberzoini
+RICARDO IZAR	PV	SP	http://twitter.com/#!/RicardoIzar
+RICARDO TRIPOLI	PSDB	SP	http://twitter.com/ricardotripoli
+ROBERTO DE LUCENA	PV	SP	http://twitter.com/#!/dep_lucena
+ROBERTO FREIRE	PPS	SP	http://twitter.com/#!/freire_roberto
+ROBERTO SANTIAGO	PV	SP	http://twitter.com/#!/depsantiago
+SALVADOR ZIMBALDI	PDT	SP	Não possui
+TIRIRICA	PR	SP	Não possui
+VALDEMAR COSTA NETO	PR	SP	Não possui
+VANDERLEI MACRIS	PSDB	SP	http://twitter.com/vanderleimacris
+VAZ DE LIMA	PSDB	SP	http://twitter.com/#!/depvazdelima
+VICENTE CANDIDO	PT	SP	https://twitter.com/#!/vicente_candido
+VICENTINHO	PT	SP	http://twitter.com/VICENTINHOPT
+WALTER IHOSHI	DEM	SP	http://twitter.com/walterihoshi
+WILLIAM DIB	PSDB	SP	http://twitter.com/#!/drdib
+ALDO REBELO	PCdoB	SP	http://twitter.com/aldorebelo
+ÂNGELO AGNOLIN	PDT	TO	http://twitter.com/#!/DeputadoAgnolin
+CÉSAR HALUM	PPS	TO	http://twitter.com/#!/cesarhalum
+EDUARDO GOMES	PSDB	TO	http://twitter.com/eduardogomesto
+IRAJÁ ABREU	DEM	TO	http://twitter.com/#!/irajaabreu
+JÚNIOR COIMBRA	PMDB	TO	Não possui
+LAUREZ MOREIRA	PSB	TO	http://twitter.com/#!/laurezmoreira
+LÁZARO BOTELHO	PP	TO	http://twitter.com/#!/LazaroBotelho
