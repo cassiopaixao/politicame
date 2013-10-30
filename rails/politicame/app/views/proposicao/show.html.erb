@@ -72,3 +72,24 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="<%= url_for :controller => 'proposicao', :action => 'register_vote', :tipo => @proposicao.tipo, :numero => @proposicao.numero, :ano => @proposicao.ano, :vote => 'Não' %>" class="btn btn-large btn-danger"><strong><i class="icon-remove icon-large icon-white"></i> Contra</strong></a>
 </div>
+
+<br/><br/>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
+    var disqus_shortname = 'politicame'; // Required - Replace example with your forum shortname
+    var disqus_identifier = '<%= @proposicao.to_s %>';
+    var disqus_title = '<%= @proposicao.to_s %>';
+    var disqus_config = function () { 
+      this.language = "pt_BR";
+    };
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<div id="disqus_thread"></div>
