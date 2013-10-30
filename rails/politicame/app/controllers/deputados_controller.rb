@@ -2,10 +2,16 @@ class DeputadosController < ApplicationController
 
 	def show
 
+		@twitter = Hash.new
+
 		if params[:uf].nil? || params[:uf].empty?
 			@deputados = Deputado.order("nome").page(params[:page]).per(20)
 		else
 			@deputados = Deputado.where(:uf => params[:uf]).order("nome").page(params[:page]).per(20)
+		end
+
+		@deputados.each do |d|
+			@twitter[d.id] = Twitter.where(:deputado_id => d.id).first
 		end
 
 		@estados   = Deputado.group("uf").order("uf").collect{ |d| d.uf }
@@ -24,6 +30,12 @@ class DeputadosController < ApplicationController
 		@count_abstencao  = @votos_dep.where(:voto => -1).count
 		@count_obstrucao = @votos_dep.where(:voto => 0).count
 		@total = @votos_dep.sum("voto")
+
+		@twitter = Twitter.where(:deputado_id => @deputado.id).first
+
+		if !@twitter.nil? then
+			@twitter_username = @twitter.address.split("/")[-1]
+		end
 
 	end
 

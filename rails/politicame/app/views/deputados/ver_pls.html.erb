@@ -124,13 +124,31 @@
 </table>
 
 <br/><br/>
+
+<div class="span5">
 <h2> Visualização </h2>
 
     <body>
       <div id="graficoDeputado" style="max-width:700px;height: 300px;"></div>
     </body>
+</div>
 
+<div class="span6">
+
+<% if !@twitter.nil? then %>
+
+  <h2> Redes sociais </h2>
+
+    <a class="twitter-timeline"  href="<%= @twitter.address %>"  data-aria-polite="assertive"  data-screen-name="<%= @twitter_username %>" data-widget-id="395548351325679616">Tweets de <%= @twitter_username %></a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<% end %>
+
+  </div>
+
+<div class="span12">
 <h2> Notícias </h2>
 
     <div id="content">Loading...</div>
     <div id="branding"  style="float: left;">Powered by Google News</div><br />
+</div>
