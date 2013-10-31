@@ -46,16 +46,18 @@
                   if @proposicoes_relevancia_hash_voted[p.id].nil? and @user_signedin
                 %>
                   <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '1' %>" title="Considero o projeto relevante">
-                    <img src="/assets/up.png"/>
+                    <img src="/assets/up.png">
                   </a>
                 <%
                   elsif @proposicoes_relevancia_hash_voted[p.id] == 1
                 %>
-                 <img src="/assets/up_voted.png"/>
+                 <img src="/assets/up_voted.png">
                 <%
                   else
                 %>
-                <img src="/assets/up.png"/>
+                <a href="javascript: void(0)" onclick="alert('É necessário estar logado para dar relevância a uma proposição')" title="Considero o projeto relevante">
+                  <img src="/assets/up.png">
+                </a>
                 <%
                   end
                 %>
@@ -68,16 +70,18 @@
                   if @proposicoes_relevancia_hash_voted[p.id].nil? and @user_signedin
                 %>
                   <a href="<%= url_for :controller => 'proposicao', :action => 'register_relevance', :tipo => p.tipo, :numero => p.numero, :ano => p.ano, :relevancia => '0' %>" title="Considero o projeto irrelevante">
-                    <img src="/assets/down.png"/>
+                    <img src="/assets/down.png">
                   </a>
                 <%
                   elsif @proposicoes_relevancia_hash_voted[p.id] == 0
                 %>
-                 <img src="/assets/down_voted.png"/>
+                 <img src="/assets/down_voted.png">
                 <%
                   else
                 %>
-                <img src="/assets/down.png"/>
+                <a href="javascript: void(0)" onclick="alert('É necessário estar logado para diminuir relevância de uma proposição')" title="Considero o projeto irrelevante">
+                  <img src="/assets/down.png" alt="Considero o projeto irrelevante">
+                </a>
                 <%
                   end
                 %>
