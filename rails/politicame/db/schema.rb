@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(:version => 20131031165619) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "id_camara"
+    t.string   "matricula"
+  end
+
+  create_table "presenca_sessaos", :force => true do |t|
+    t.integer  "deputado_id"
+    t.integer  "presenca"
+    t.integer  "ausencia"
+    t.date     "inicio"
+    t.date     "fim"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "proposicao_relevancia", :force => true do |t|
