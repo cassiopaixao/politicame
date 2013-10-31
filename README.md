@@ -1,9 +1,18 @@
-politicame
+PoliticaMe
 ==========
 
-Projeto da página politica.me
+Projeto da página http://politica.me
 
 # Descrição do projeto
+
+O objetivo do PoliticaMe é ajudar um cidadão a encontrar candidatos que pensam
+de maneira semelhante à dele. Para isso, o usuário vota a favor ou contra em
+proposições votadas em plenário e acessa um ranking, que apresenta nas primeiras
+posições os deputados que votaram de maneira mais semelhante à dele nas mesmas
+proposições.
+
+Com isso, o usuário pode acessar a página do deputado e obter mais dados sobre
+ele.
 
 
 # Instalação
@@ -27,8 +36,11 @@ de dados em diferentes ambientes).
 ## Seed de dados: parte 1
 
 cd ~/politicame/rails/politicame
+
 bundle install
+
 rake db:migrate
+
 rake db:seed_fu
 
 
@@ -37,6 +49,7 @@ rake db:seed_fu
 Inicie o servidor:
 
 cd ~/politicame/rails/politicame/
+
 rails server
 
 Nota: O modo de inicialização do servidor pode variar dependendo do modo como
@@ -55,28 +68,43 @@ cd ~/politicame/python
 Execute os scripts presenca.py e twitter_parser.py de acordo com as instruções
 nas seções seguintes.
 
+
 ### Script para baixar dados sobre as frequências dos deputados federais às sessões
 
 Script: presenca.py
+
 Linguagem: Python
-Uso: python presenca.py <endereço do banco de dados (bd)> <usuário do bd> <senha do bd> <nome do bd> <data de início> <data de fim>
 
-Esse script foi desenvolvido em Python e está na pasta python/, com o nome presenca.py. O script utiliza o WebService http://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar para baixar os dados da frequência de cada deputado.
+Uso: python presenca.py {endereço do banco de dados (bd)} {usuário do bd} {senha do bd} {nome do bd} {data de início} {data de fim}
 
-O script recebe, por meio de argumentos, como entrada informações sobre o banco de dados onde está a tabela com os registros dos deputados e data de início e fim da sessões das quais se deseja pegar informações sobre a frequência de cada deputado. Fazendo então a contagem das sessões que cada deputado se fez presente ou faltou, o script atualiza a tabela presenca_sessaos.
+Esse script foi desenvolvido em Python e está na pasta python/, com o nome
+presenca.py. O script utiliza o WebService
+http://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar
+para baixar os dados da frequência de cada deputado.
+
+O script recebe, por meio de argumentos, como entrada informações sobre o banco
+de dados onde está a tabela com os registros dos deputados e data de início e
+fim da sessões das quais se deseja pegar informações sobre a frequência de cada
+deputado. Fazendo então a contagem das sessões que cada deputado se fez presente
+ou faltou, o script atualiza a tabela presenca_sessaos.
 
 
 ### Script para pegar os endereços das contas de twitter de cada deputado
 
 Script: twitter_parser.py
+
 Linguagem: Python
+
 Uso: python twitter_parser.py < twitters.txt
 
-O twitter_parser.py recebe por meio da entrada padrão uma lista formatada com os nomes de deputados e seus twitters. O arquivo twitters.txt foi criado a partir da página http://blogdosakamoto.blogosfera.uol.com.br/2012/05/03/veja-a-lista-dos-enderecos-dos-deputados-no-twitter/.
+O twitter_parser.py recebe por meio da entrada padrão uma lista formatada com
+os nomes de deputados e seus twitters. O arquivo twitters.txt foi criado a partir
+da página
+http://blogdosakamoto.blogosfera.uol.com.br/2012/05/03/veja-a-lista-dos-enderecos-dos-deputados-no-twitter/.
 
 O formato do arquivo twitters.txt segue o seguinte padrão para cada linha:
 
-<NOME DO PARLAMENTAR>   <PARTIDO>   <ESTADO>    <ENDEREÇO DA CONTA DO TWITTER>
+{NOME DO PARLAMENTAR}   {PARTIDO}   {ESTADO}    {ENDEREÇO DA CONTA DO TWITTER}
 
 Onde cada coluna é separada por uma tabulação. O script imprime o SQL com as inserções na tabela.
 Esse SQL deve ser executado no banco de dados da aplicação.
