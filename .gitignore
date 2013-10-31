@@ -16,5 +16,5 @@ rerun.txt
 pickle-email-*.html
 
 .project
-rails/politicame/vendor/bundle
-/rails/politicame/db/schema.rb
+/vendor/bundle
+/db/schema.rb

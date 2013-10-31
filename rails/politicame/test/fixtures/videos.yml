@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  embed_url: MyString
+  embed_type: MyString
+  source_title: MyString
+  source_name: MyString
+  source_url: MyString
+
+two:
+  title: MyString
+  embed_url: MyString
+  embed_type: MyString
+  source_title: MyString
+  source_name: MyString
+  source_url: MyString

@@ -1,0 +1,28 @@
+<script src="http://api.longtailvideo.com/library/o80BPEI0EeOKSxIxOQfUww.js"></script>
+
+<h1><%= @video.title %></h1>
+
+<ul class="unstyled">
+  <li><em>Título original</em>: <%= @video.source_title %></li>
+  <% if @video.source_url.present? %>
+    <li><em>Fonte</em>: <%= link_to @video.source_name, @video.source_url, target: '_blank' %></li>
+  <% else %>
+    <li><em>Fonte</em>: <%= @video.source_name %></li>
+  <% end %>
+</ul>
+
+<% if @video.embed_type == 'jwplayer' %>
+  <% jwplayer_videoid = /^https:\/\/jwpsrv.com\/feed\/([^.]*).rss$/.match(@video.embed_url)[1] %>
+  <div class="span6">
+    <div id="player<%= jwplayer_videoid %>"></div>
+  </div>
+  <script type='text/javascript'>
+      jwplayer('player<%= jwplayer_videoid %>').setup({
+          playlist: 'https://jwpsrv.com/feed/<%= jwplayer_videoid %>.rss',
+          width: '100%',
+          autostart: 'true',
+          aspectratio: '16:9',
+          fallback: 'false'
+      });
+  </script>
+<% end %>

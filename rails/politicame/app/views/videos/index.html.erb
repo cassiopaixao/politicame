@@ -1,0 +1,9 @@
+<h1>Como funciona?</h1>
+<p class="lead">Curioso quanto a temas relacionados ao processo legislativo?
+Como uma lei é criada? Está no lugar certo!</p>
+
+<ul>
+<% @videos.each do |video| %>
+  <li><a href="<%= video_path(video) %>"><%= video.title %></a> <small>(fonte: <%= video.source_name %>)</small></li>
+<% end %>
+</ul>
