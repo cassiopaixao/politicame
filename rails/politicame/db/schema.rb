@@ -104,6 +104,17 @@ ActiveRecord::Schema.define(:version => 20131031181346) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.string   "embed_url"
+    t.string   "embed_type"
+    t.string   "source_title"
+    t.string   "source_name"
+    t.string   "source_url"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "votacaos", :force => true do |t|
     t.string   "resumo"
     t.datetime "data_hora"
