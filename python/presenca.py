@@ -20,6 +20,8 @@ cur = conn.cursor()
 
 if __name__ == "__main__":
 
+	print "Executing"
+
 	if len(sys.argv) == 7:
 
 		dataIni = sys.argv[5]
@@ -28,11 +30,14 @@ if __name__ == "__main__":
 		cur.execute("SELECT * FROM deputados")
 		deputados = cur.fetchall()
 
+		print "Deputados => %d" % (len(deputados))
+
 		for dep in deputados:
 
 			matricula = dep[10]
 
 			if matricula == None:
+				print "Matricula = None : %s", dep[1]
 				continue
 
 			ws  = "http://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar?dataIni=" + dataIni + "&dataFim=" + dataFim + "&numMatriculaParlamentar=" + matricula
@@ -52,7 +57,7 @@ if __name__ == "__main__":
 				root = tree.getroot()
 
 				for pal in root.iter("parlamentar"):
-					print pal.find("nomeParlamentar").text
+					print pal.find("nomeParlamentar").text.encode("utf-8")
 
 					freqCont = 0
 					ausCont = 0
