@@ -71,6 +71,18 @@
     <h2> <%= @deputado.nome %></h1>
     <h3> Partido: <%= @deputado.partido %></h3>
     <h3> UF: <%= @deputado.uf %></h3>
+    <% if !@presenca.nil? then %>
+    <table width="100%" border="0" cellpadding="2" cellspacing="0">
+      <tr>
+        <td><h3> Frequência: </h3></td>
+        <td width="100%">
+      <div class="progress progress-striped" style="width: 300px">
+      <div class="bar" style="width: <%= 100.0 * @presenca.presenca.to_f/(@presenca.presenca.to_f + @presenca.ausencia.to_f) %>%;"></div>
+    </div>
+   </td>
+  </tr>
+</table>
+<% end %> 
   </div>
 </div>
 <div>
