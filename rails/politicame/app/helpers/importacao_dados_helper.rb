@@ -233,6 +233,7 @@ module ImportacaoDadosHelper
       deputadoObj.telefone  = deputado.xpath('./fone').first.content.strip
       deputadoObj.condicao  = deputado.xpath('./condicao').first.content.strip
       deputadoObj.id_camara = deputado.xpath('./ideCadastro').first.content.strip.to_i
+      deputadoObj.matricula = deputado.xpath('./matricula').first.content.strip.to_i
 
       deputados << deputadoObj
 

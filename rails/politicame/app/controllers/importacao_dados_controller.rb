@@ -222,6 +222,7 @@ class ImportacaoDadosController < ApplicationController
         deputado.save
       else
         deputado_obj.id_camara = deputado.id_camara
+        deputado_obj.matricula = deputado.matricula
         deputado_obj.save
       end
     }

@@ -31,6 +31,8 @@ class DeputadosController < ApplicationController
 		@count_obstrucao = @votos_dep.where(:voto => 0).count
 		@total = @votos_dep.sum("voto")
 
+		@presenca = PresencaSessao.where(:deputado_id => @deputado.id).first
+
 
 		@hash_votos_user = Hash.new
 
