@@ -107,12 +107,12 @@
 	<tr>
   	  <td><a href="#modal<%= v.id %>" data-toggle="modal"><%= v.votacao.proposicao.to_s %></a></td>
   	  <td>
-        <% if @hash_votos_user[v.id] == 2 then %> <img src="/assets/user.png"/> <% end %>
+        <% if @hash_votos_user[v.id] == 2 then %> <img src="/assets/user.png" width="15" height="15"/> <% end %>
         <% if v.voto == 2 then %> <img src="/assets/ok.png"/><% end %>
       </td>
   	  <td>
-        <% if @hash_votos_user[v.id] == -2 then %> <img src="/assets/user.png"/> <% end %>
-        <% if v.voto == -2 then %><img src="/assets/fail.png"/> <% end %>
+        <% if @hash_votos_user[v.id] == -2 then %> <img src="/assets/user.png" width="15" height="15"/> <% end %>
+        <% if v.voto == -2 then %><img src="/assets/fail.png" width="15" height="15"/> <% end %>
       </td>
   	  <td><p class="text-warning"><%= "-" if v.voto == -1 %></p></td>
   	  <td><p class="text-muted"><%= "-" if v.voto == 0 %></p></td>
@@ -128,7 +128,7 @@
    </tr>
 
 </table>
-<div align="right">Legenda: <img src="/assets/user.png"/> - voto do usuário</div>
+<div align="right">Legenda: <img src="/assets/user.png" width="15" height="15"/> - voto do usuário</div>
 
 <br/><br/>
 
