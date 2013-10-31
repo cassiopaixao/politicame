@@ -31,6 +31,18 @@ class DeputadosController < ApplicationController
 		@count_obstrucao = @votos_dep.where(:voto => 0).count
 		@total = @votos_dep.sum("voto")
 
+
+		@hash_votos_user = Hash.new
+
+		if user_signed_in? then
+			@votos_dep.each do |vd|
+			 voto_user = VotoUser.where(:user_id => current_user.id, :votacao_id => vd.votacao_id).first
+			 if !voto_user.nil? then
+			 	@hash_votos_user[vd.id] = voto_user.voto
+			 end
+			end
+		end
+
 		@twitter = Twitter.where(:deputado_id => @deputado.id).first
 
 		if !@twitter.nil? then
