@@ -2,7 +2,7 @@
 <script>
   $(document).ready(function() {
     $('.datepicker').datepicker();
-  }); 
+  });
 </script>
 
 <h1>Proposições</h1>
@@ -12,7 +12,7 @@
   <%= text_field_tag :initial_date, @initial_date, :class => 'datepicker input-small', :placeholder => '01/01/2013', 'data-date-format' => 'dd/mm/yyyy', 'data-date-viewMode' => 'years' %>
   <%= text_field_tag :end_date, @end_date, :class => 'datepicker input-small', :placeholder => '31/12/2013', 'data-date-format' => 'dd/mm/yyyy', 'data-date-viewMode' => 'years' %>
   <br/>
-  <%= check_box_tag :fetch_votacoes %>
+  <%= check_box_tag :fetch_votacoes, 1, true %>
   <%= label_tag :fetch_votacoes, 'Recuperar votações relacionadas', :class => 'checkbox' %>
   <br/>
   <%= submit_tag 'Buscar proposições desse período', :class => 'btn' %>

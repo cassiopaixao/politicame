@@ -3,9 +3,59 @@ politicame
 
 Projeto da página politica.me
 
+# Descrição do projeto
+
+
 # Instalação
 
-## Script para baixar dados sobre as frequências dos deputados federais às sessões
+## Pré-requisitos
+
+O sistema está sendo desenvolvido em RubyOnRails.
+É necessário que o Ruby 2.0, com o Rails 3.2.14, esteja instalado.
+Um banco de dados MySQL deve estar configurado.
+
+
+## Configuração do banco de dados
+
+Copiados os arquivos para uma pasta (consideraremos "~/politicame"), copie
+o arquivo ~/politicame/rails/politicame/config/database.yml.example para
+~/politicame/rails/politicame/config/database.yml . Edite-o alterando os dados
+para acesso ao banco de dados (note que há seções para configuração do banco
+de dados em diferentes ambientes).
+
+
+## Seed de dados: parte 1
+
+cd ~/politicame/rails/politicame
+bundle install
+rake db:migrate
+rake db:seed_fu
+
+
+## Seed de dados: parte 2
+
+Inicie o servidor:
+
+cd ~/politicame/rails/politicame/
+rails server
+
+Nota: O modo de inicialização do servidor pode variar dependendo do modo como
+instalou o ruby.
+
+Em um navegador, acesse http://localhost:3000/importacao/importar_deputados.
+A página exibirá alguns dados dos deputados recuperados do serviço de dados
+abertos da Câmara. Clique no botão "Atualizar deputados" para atualizar as
+informações dos deputados no banco de dados.
+
+
+## Seed de dados: parte 3
+
+cd ~/politicame/python
+
+Execute os scripts presenca.py e twitter_parser.py de acordo com as instruções
+nas seções seguintes.
+
+### Script para baixar dados sobre as frequências dos deputados federais às sessões
 
 Script: presenca.py
 Linguagem: Python
@@ -15,7 +65,8 @@ Esse script foi desenvolvido em Python e está na pasta python/, com o nome pres
 
 O script recebe, por meio de argumentos, como entrada informações sobre o banco de dados onde está a tabela com os registros dos deputados e data de início e fim da sessões das quais se deseja pegar informações sobre a frequência de cada deputado. Fazendo então a contagem das sessões que cada deputado se fez presente ou faltou, o script atualiza a tabela presenca_sessaos.
 
-## Script para pegar os endereços das contas de twitter de cada deputado
+
+### Script para pegar os endereços das contas de twitter de cada deputado
 
 Script: twitter_parser.py
 Linguagem: Python
@@ -25,6 +76,27 @@ O twitter_parser.py recebe por meio da entrada padrão uma lista formatada com o
 
 O formato do arquivo twitters.txt segue o seguinte padrão para cada linha:
 
-<NOME DO PARLAMENTAR>	<PARTIDO>	<ESTADO>	<ENDEREÇO DA CONTA DO TWITTER>
+<NOME DO PARLAMENTAR>   <PARTIDO>   <ESTADO>    <ENDEREÇO DA CONTA DO TWITTER>
 
 Onde cada coluna é separada por uma tabulação. O script imprime o SQL com as inserções na tabela.
+Esse SQL deve ser executado no banco de dados da aplicação.
+
+
+## Seed de dados: parte 4
+
+Com o servidor inicializado, acesse http://localhost:3000/importacao/proposicoes.
+Defina um período para busca de proposições, certifique-se que a caixa "Recuperar
+votações relacionadas" e clique em "Buscar proposições desse período".
+
+O sistema irá buscar no serviço de dados abertos da Câmara dos Deputados os
+PLs, PLCs, PLNs, PLPs, PLSs, PECs e MPVs apreseentados nesse período, bem como
+as votações que ocorreram dessas proposições. (Observe que será realizada uma
+requisição para cada proposição desse período, assim, o período de busca
+influenciará muito no tempo de execução dessa operação.)
+
+Acesse http://localhost:3000/importacao/set_masters. Nessa página são exibidas
+as proposições que tiveram pelo menos uma votação. Dado o teor das votações,
+selecione as que aprovam ou reprovam as referidas proposições. Ao clicar em
+"Confirmar votações master", o sistema irá buscar e adicionar ao banco os
+votos dos deputados nessas votações, bem como disponibilizar as referidas
+proposições para votação pelos usuários.

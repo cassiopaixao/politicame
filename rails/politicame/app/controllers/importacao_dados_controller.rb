@@ -229,6 +229,8 @@ class ImportacaoDadosController < ApplicationController
 
     @deputados_view = deputados
 
+    flash[:success] = "Deputados atualizados com sucesso!"
+
     render :importar_deputados
 
   end
