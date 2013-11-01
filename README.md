@@ -11,8 +11,12 @@ proposições votadas em plenário e acessa um ranking, que apresenta nas primei
 posições os deputados que votaram de maneira mais semelhante à dele nas mesmas
 proposições.
 
-Com isso, o usuário pode acessar a página do deputado e obter mais dados sobre
-ele.
+Com isso, o usuário pode acessar a página dos deputados de seu interesse e
+obter mais informações sobre eles, como votos em proposições, presença em
+sessões e notícias relacionadas ao mesmo.
+
+A apresentação do PoliticaMe no 1º Hackathon da Câmara dos Deputados pode ser
+visualizada em http://prezi.com/zjzgimygkm2q/politicame-hackathon/
 
 
 # Instalação
