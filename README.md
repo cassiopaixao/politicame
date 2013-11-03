@@ -16,7 +16,7 @@ obter mais informações sobre eles, como votos em proposições, presença em
 sessões e notícias relacionadas ao mesmo.
 
 A apresentação do PoliticaMe no 1º Hackathon da Câmara dos Deputados pode ser
-visualizada em http://prezi.com/zjzgimygkm2q/politicame-hackathon/
+visualizada em http://www.youtube.com/watch?v=XPeSlYp4WQk
 
 
 # Instalação
@@ -25,6 +25,8 @@ visualizada em http://prezi.com/zjzgimygkm2q/politicame-hackathon/
 
 O sistema está sendo desenvolvido em RubyOnRails.
 É necessário que o Ruby 2.0, com o Rails 3.2.14, esteja instalado.
+Para execução de scripts, é necessário que esteja instalado o Python 2.7.4 (ou
+superior).
 Um banco de dados MySQL deve estar configurado.
 
 
