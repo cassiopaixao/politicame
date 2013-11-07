@@ -43,8 +43,8 @@ Politicame::Application.routes.draw do
   match 'ranking' => 'ranking#show', :via => [:get]
   match 'ranking' => 'ranking#show_filtered', :via => [:post]
 
-  match 'deputados' => 'deputados#show', :via => [:get, :post]
-  match 'deputados/ver_pls' => 'deputados#ver_pls', :via => [:get]
+  resources :deputados, :only => [:index, :show]
+  match 'deputados' => 'deputados#index', :via => [:post]
 
   resources :videos, only: [:index, :show]
 end
