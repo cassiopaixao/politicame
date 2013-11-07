@@ -1,21 +1,20 @@
 
 # Copyright 2013 de PoliticaMe/Cassio Paixao e Max Rosan.
-# Este arquivo e parte do programa PoliticaMe. 
-# O PoliticaMe e um software livre; voce pode redistribui-lo e/ou modifica-lo 
+# Este arquivo e parte do programa PoliticaMe.
+# O PoliticaMe e um software livre; voce pode redistribui-lo e/ou modifica-lo
 # dentro dos termos da GNU General Public License.
-# como publicada pela Fundacao do Software Livre (FSF); na versao 3 da Licenca. 
-# Este programa e distribuido na esperanca que possa ser util, 
+# como publicada pela Fundacao do Software Livre (FSF); na versao 3 da Licenca.
+# Este programa e distribuido na esperanca que possa ser util,
 # mas SEM NENHUMA GARANTIA; sem uma garantia implicita de ADEQUACAO a qualquer MERCADO ou APLICACAO EM PARTICULAR.
-# Veja a licenca para maiores detalhes. 
-# Voce deve ter recebido uma copia da GNU General Public License, 
+# Veja a licenca para maiores detalhes.
+# Voce deve ter recebido uma copia da GNU General Public License,
 # sob o titulo "LICENCA.txt", junto com este programa, se nao, acesse http://www.gnu.org/licenses/
 
-import sys, io
+import sys
 import xml.etree.ElementTree as ET
 import commands
 
-import MySQLdb as mdb, sys
-import datetime as dt
+import MySQLdb as mdb
 
 reading = True
 
@@ -100,7 +99,7 @@ if __name__ == "__main__":
 						cur.execute("INSERT INTO presenca_sessaos (`id`, `deputado_id`, `presenca`, `ausencia`, `inicio`, `fim`, `created_at`, `updated_at`) VALUES (NULL, '%s', '%s', '%s', '%s', '%s', CURRENT_DATE(), CURRENT_DATE())" % (dep[0], freqCont, ausCont, dataIniDT, dataFimDT))
 					else:
 						cur.execute("UPDATE presenca_sessaos SET presenca = '%s', ausencia = '%s', inicio = '%s', fim = '%s', updated_at = CURRENT_DATE() WHERE deputado_id = '%s'" % (freqCont, ausCont, dataIniDT, dataFimDT, dep[0]))
-						
+
 
 			else:
 				print "Failed to download file %s" % (ws)

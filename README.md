@@ -33,8 +33,10 @@ Um banco de dados MySQL deve estar configurado.
 
 ## Configuração do banco de dados
 
-Copiados os arquivos para uma pasta (consideraremos "~/politicame"), altere
-o arquivo ~/politicame/rails/politicame/.env.development inserindo os dados
+Copiados os arquivos para uma pasta (consideraremos "~/politicame"), copie
+o arquivo ~/politicame/rails/politicame/.env-example para
+~/politicame/rails/politicame/.env.development . Altere o arquivo
+~/politicame/rails/politicame/.env.development inserindo os dados
 para acesso ao banco de dados.
 
 Caso vá executar a aplicação em outro ambiente, lembre-se de definir as
@@ -69,7 +71,7 @@ $ cd ~/politicame/rails/politicame/
 $ rails server
 
 Nota: O modo de inicialização do servidor pode variar dependendo do modo como
-instalou o ruby/rails.
+instalou o ruby e o rails.
 
 Em um navegador, acesse http://localhost:3000/importacao/importar_deputados.
 A página exibirá alguns dados dos deputados recuperados do serviço de dados
@@ -98,7 +100,7 @@ presenca.py. O script utiliza o WebService
 http://www.camara.gov.br/SitCamaraWS/sessoesreunioes.asmx/ListarPresencasParlamentar
 para baixar os dados da frequência de cada deputado.
 
-O script recebe, por meio de argumentos, como entrada informações sobre o banco
+O script recebe como entrada, por meio de argumentos, informações sobre o banco
 de dados onde está a tabela com os registros dos deputados e data de início e
 fim da sessões das quais se deseja pegar informações sobre a frequência de cada
 deputado. Fazendo então a contagem das sessões que cada deputado se fez presente
@@ -111,7 +113,7 @@ Script: twitter_parser.py
 
 Linguagem: Python
 
-Uso: python twitter_parser.py < twitters.txt
+Uso: python twitter_parser.py {endereço do banco de dados (bd)} {usuário do bd} {senha do bd} {nome do bd} < twitters.txt
 
 O twitter_parser.py recebe por meio da entrada padrão uma lista formatada com
 os nomes de deputados e seus twitters. O arquivo twitters.txt foi criado a partir
@@ -122,8 +124,11 @@ O formato do arquivo twitters.txt segue o seguinte padrão para cada linha:
 
 {NOME DO PARLAMENTAR}   {PARTIDO}   {ESTADO}    {ENDEREÇO DA CONTA DO TWITTER}
 
-Onde cada coluna é separada por uma tabulação. O script imprime o SQL com as inserções na tabela.
-Esse SQL deve ser executado no banco de dados da aplicação.
+Onde cada coluna é separada por uma tabulação.
+
+O script recebe, por meio de argumentos, dados para conexão com o banco de dados,
+e então atualiza a tabela twitters de acordo com as informações do arquivo de
+entrada (no caso do arquivo disponibilizado, twitters.txt).
 
 
 ## Seed de dados: parte 4
