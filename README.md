@@ -41,25 +41,25 @@ de dados em diferentes ambientes).
 
 ## Seed de dados: parte 1
 
-cd ~/politicame/rails/politicame
+$ cd ~/politicame/rails/politicame
 
-bundle install
+$ bundle install
 
-rake db:migrate
+$ rake db:migrate
 
-rake db:seed_fu
+$ rake db:seed_fu
 
 
 ## Seed de dados: parte 2
 
 Inicie o servidor:
 
-cd ~/politicame/rails/politicame/
+$ cd ~/politicame/rails/politicame/
 
-rails server
+$ rails server
 
 Nota: O modo de inicialização do servidor pode variar dependendo do modo como
-instalou o ruby.
+instalou o ruby/rails.
 
 Em um navegador, acesse http://localhost:3000/importacao/importar_deputados.
 A página exibirá alguns dados dos deputados recuperados do serviço de dados
@@ -69,7 +69,7 @@ informações dos deputados no banco de dados.
 
 ## Seed de dados: parte 3
 
-cd ~/politicame/python
+$ cd ~/politicame/python
 
 Execute os scripts presenca.py e twitter_parser.py de acordo com as instruções
 nas seções seguintes.
