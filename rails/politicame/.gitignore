@@ -16,9 +16,9 @@
 
 /public/.htaccess
 
-/config/database.yml*
-
 *~
 
 /db/schema.rb
 /vendor/bundle
+
+/.env.*

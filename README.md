@@ -26,17 +26,27 @@ visualizada em http://www.youtube.com/watch?v=XPeSlYp4WQk
 O sistema está sendo desenvolvido em RubyOnRails.
 É necessário que o Ruby 2.0, com o Rails 3.2.14, esteja instalado.
 Para execução de scripts, é necessário que esteja instalado o Python 2.7.4 (ou
-superior).
+superior), com a biblioteca MySQLdb configurada.
+
 Um banco de dados MySQL deve estar configurado.
 
 
 ## Configuração do banco de dados
 
-Copiados os arquivos para uma pasta (consideraremos "~/politicame"), copie
-o arquivo ~/politicame/rails/politicame/config/database.yml.example para
-~/politicame/rails/politicame/config/database.yml . Edite-o alterando os dados
-para acesso ao banco de dados (note que há seções para configuração do banco
-de dados em diferentes ambientes).
+Copiados os arquivos para uma pasta (consideraremos "~/politicame"), altere
+o arquivo ~/politicame/rails/politicame/.env.development inserindo os dados
+para acesso ao banco de dados.
+
+Caso vá executar a aplicação em outro ambiente, lembre-se de definir as
+seguintes variáveis de ambiente:
+
+POLITICAME_DB_DATABASE -> nome do banco de dados criado;
+
+POLITICAME_DB_USER -> nome do usuário para acesso ao banco de dados criado;
+
+POLITICAME_DB_PASS -> senha do usuário do banco de dados; e
+
+POLITICAME_DB_HOST -> servidor onde se encontra o banco de dados.
 
 
 ## Seed de dados: parte 1
