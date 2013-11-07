@@ -11,9 +11,10 @@
 
 class RankingController < ApplicationController
   before_filter :verify_user_login
+
   def show
-    ranking_hash = calcula_ranking current_user.id
-    @ranking = ranking_hash.to_a.sort {|x,y| y[:rank] <=> x[:rank]}
+    ranking = calcula_ranking2 current_user.id
+    @ranking = ranking.sort {|x,y| y[:rank] <=> x[:rank]}
     @max_rank = @ranking.first.nil? ? 1 : @ranking.first[:rank]
     @min_rank = (@ranking.last.nil? or @ranking.last[:rank] > 0) ? 0 : @ranking.last[:rank]
     @range = (@max_rank.to_i - @min_rank.to_i)
@@ -30,14 +31,14 @@ class RankingController < ApplicationController
     @selected_estado = params[:uf]
     @selected_partido = params[:partido]
 
-    if not params[:uf].empty?
-      @ranking = @ranking.select {|r| r[:uf] == params[:uf]}
-    end
-    if not params[:partido].empty?
-      @ranking = @ranking.select {|r| r[:partido] == params[:partido]}
-    end
-
     fill_estados_and_partidos @ranking
+
+    if @selected_estado.present?
+      @ranking = @ranking.select {|r| r[:deputado].uf == @selected_estado}
+    end
+    if @selected_partido.present?
+      @ranking = @ranking.select {|r| r[:deputado].partido == @selected_partido}
+    end
 
     render :show
   end
@@ -67,12 +68,38 @@ class RankingController < ApplicationController
     result
   end
 
+  def calcula_ranking2(user_id)
+    votos_user = VotoUser.where('user_id', user_id)
+    votacoes_ids = votos_user.pluck(:votacao_id)
+    deputados = Deputado.includes(:voto_deputados).where('voto_deputados.votacao_id', votacoes_ids)
+
+    ranking_list = []
+    deputados.each do |dep|
+      rank_value = 0
+      ambos_votaram = 0
+      dep.voto_deputados.each do |voto_dep|
+        voto_user = votos_user.find { |voto| voto.votacao_id == voto_dep.votacao_id }
+        if voto_user.present?
+          rank_value += voto_user.voto * voto_dep.voto
+          ambos_votaram += 1
+        end
+      end
+      if ambos_votaram > 0
+        rank_value = rank_value.to_f / ambos_votaram
+        ranking_list << { deputado: dep,
+                          rank: rank_value
+                          }
+      end
+    end
+    ranking_list
+  end
+
   def fill_estados_and_partidos(ranking)
     @estados = []
     @partidos = []
     @ranking.each do |r|
-      @estados << r[:uf]
-      @partidos << r[:partido]
+      @estados << r[:deputado].uf
+      @partidos << r[:deputado].partido
     end
     @estados = @estados.uniq.sort
     @partidos = @partidos.uniq.sort

@@ -2,27 +2,23 @@
 <% @estados ||= [] %>
 <% @partidos ||= [] %>
 <script type="text/javascript">
-    $(document).ready($(function() {
+$(document).ready(function() {
   $(".pagination-holder").pagination({
-  items: <%= @ranking.size %>
-    , itemsOnPage: 10,
-    cssStyle: 'bootstrap',
-    prevText: '&laquo;',
-    nextText: '&raquo;',
-    edges: 1,
-    onPageClick: function(pageNumber, event) {
-      $(".pagination-content tr.content").hide();
-      $(".pagination-content tr.content").slice(this.itemsOnPage * (pageNumber - 1), this.itemsOnPage * pageNumber).fadeIn();
-    }, onInit: function() {
-      $(".pagination-holder").pagination('selectPage', 1);
-    },
-    });
-
-    $(".filter select").change(function() {
-      $(this).parent().parent().submit();
-    });
-    })
-    );
+    items: <%= @ranking.size %>
+      , itemsOnPage: 10,
+      cssStyle: 'bootstrap',
+      prevText: '&laquo;',
+      nextText: '&raquo;',
+      edges: 1,
+      onPageClick: function(pageNumber, event) {
+        $(".pagination-content tr.content").hide();
+        $(".pagination-content tr.content").slice(this.itemsOnPage * (pageNumber - 1), this.itemsOnPage * pageNumber).fadeIn();
+      },
+      onInit: function() {
+        $(".pagination-holder").pagination('selectPage', 1);
+        },
+      });
+});
 </script>
 
 <h1>Ranking</h1>
@@ -30,17 +26,11 @@
   Confira os políticos que votam de maneira mais semelhante à sua.
 </p>
 
-<% if @ranking.empty? %>
-<p>
-  É necessário votar em pelo menos uma proposta para visualizar seu ranking personalizado. <a href="<%= url_for :controller => 'proposicao', :action => 'index' %>">Clique aqui para começar!</a>
-</p>
-<% else %>
-
 <div class="filter pull-right">
   <p>
     Filtrar resultados:
   </p>
-  <%= form_tag :controller => 'ranking', :action => 'show' do %>
+  <%= form_tag url_for(:controller => 'ranking', :action => 'show'), :id => 'ranking-filter' do %>
   <div class="input-prepend">
     <span class="add-on">uf</span>
     <%= select_tag :uf, options_for_select(@estados, @selected_estado), :prompt => 'todos', :class => 'input-small' %>
@@ -52,6 +42,16 @@
   <% end %>
 </div>
 
+<% if @ranking.empty? %>
+<p>
+  É necessário votar em pelo menos uma proposta para visualizar seu ranking personalizado. <a href="<%= url_for :controller => 'proposicao', :action => 'index' %>">Clique aqui para começar!</a>
+</p>
+<p>
+  Caso já tenha votado em alguma proposição, os filtros selecionados não retornaram nenhum resultado. <a href="<%= url_for :controller => 'ranking', :action => 'show' %>">Clique aqui para exibir todo o ranking.</a>
+</p>
+
+<% else %>
+
 <table class="pagination-content table-condensed">
   <tr class="header">
     <th>#</th>
@@ -62,7 +62,11 @@
   <% @ranking.each do |rank| %>
   <tr class="content">
     <td><%= ranking += 1 %></td>
-    <td><%= "#{rank[:nome]}, #{rank[:partido]}, #{rank[:uf]}" %></td>
+    <td>
+      <a href="<%= deputado_path(rank[:deputado]) %>">
+        <%= "#{rank[:deputado].nome}, #{rank[:deputado].partido}, #{rank[:deputado].uf}" %>
+      </a>
+    </td>
     <td>
     <div class="progress progress-striped">
       <div class="bar" style="width: <%= ((rank[:rank] - @min_rank) / @range.to_f * 100) %>%;"></div>
@@ -77,3 +81,9 @@
   </div>
 </div>
 <% end %>
+
+<script type="text/javascript">
+$(".filter select").change(function() {
+  $("#ranking-filter").submit();
+});
+</script>
