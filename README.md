@@ -42,33 +42,31 @@ para acesso ao banco de dados.
 Caso vá executar a aplicação em outro ambiente, lembre-se de definir as
 seguintes variáveis de ambiente:
 
+```
 POLITICAME_DB_DATABASE -> nome do banco de dados criado;
-
 POLITICAME_DB_USER -> nome do usuário para acesso ao banco de dados criado;
-
 POLITICAME_DB_PASS -> senha do usuário do banco de dados; e
-
 POLITICAME_DB_HOST -> servidor onde se encontra o banco de dados.
+```
 
 
 ## Seed de dados: parte 1
 
+```
 $ cd ~/politicame/rails/politicame
-
 $ bundle install
-
 $ rake db:migrate
-
 $ rake db:seed_fu
-
+```
 
 ## Seed de dados: parte 2
 
 Inicie o servidor:
 
+```
 $ cd ~/politicame/rails/politicame/
-
 $ rails server
+```
 
 Nota: O modo de inicialização do servidor pode variar dependendo do modo como
 instalou o ruby e o rails.
@@ -81,7 +79,9 @@ informações dos deputados no banco de dados.
 
 ## Seed de dados: parte 3
 
+```
 $ cd ~/politicame/python
+```
 
 Execute os scripts presenca.py e twitter_parser.py de acordo com as instruções
 nas seções seguintes.
@@ -122,7 +122,9 @@ http://blogdosakamoto.blogosfera.uol.com.br/2012/05/03/veja-a-lista-dos-endereco
 
 O formato do arquivo twitters.txt segue o seguinte padrão para cada linha:
 
+```
 {NOME DO PARLAMENTAR}   {PARTIDO}   {ESTADO}    {ENDEREÇO DA CONTA DO TWITTER}
+```
 
 Onde cada coluna é separada por uma tabulação.
 
