@@ -2,27 +2,68 @@
 <script language="JavaScript" type="text/javascript">
   $(document).ready(function() {
     $(".proposta-box .ementa").dotdotdot();
+
+    $("#politicame-img").cursor('hand');
+    $("#politicame-img").onclick(function() {
+      $("#politicame-img").hide();
+      $("#politicame-video").show();
+    });
   });
 </script>
 
+
 <div class="hero-unit">
-  <div class="span3 pull-right">
-    <%= image_tag '/assets/logo/politicame_full.png' %>
+  <div class="span4 pull-right" id="politicame-img">
+    <%= image_tag '/assets/logo/politicame_full.png', :alt => 'PoliticaMe' %>
   </div>
-  <h1>Parabéns, cidadão!</h1>
+  <div class="span4 pull-right hidden" id="politicame-video">
+    youtube video
+  </div>
+
+  <h2>PoliticaMe no Congresso Nacional!</h2>
   <p class="lead">
-    Este site tem a missão de facilitar a sua vida na hora de encontrar candidatos que possam realmente lhe representar no governo.
-    Acreditamos que é isso que busca, e por isso já lhe parabenizamos!
+    A equipe PoliticaMe participou do 1º Hackathon da Câmara dos Deputados, desenvolvendo diversas funcionalidades para facilitar sua vida no momento de escolher seu candidato.
   </p>
-  <p class="lead">
-    Que tal conhecer um pouco sobre nossa proposta para o site?
-  </p>
-  <p>
-    <a href="<%= url_for :action => 'idea' %>" class="btn btn-primary btn-large">Saiba mais &raquo;</a>
-  </p>
+  <ul class="right-arrow">
+    <li><%= link_to 'Apresentação no Hackathon', 'https://www.youtube.com/watch?v=XPeSlYp4WQk', title: 'PoliticaMe - Hackathon Câmara dos Deputados', target: '_blank' %></li>
+    <li><%= link_to 'Câmara Notícias', 'http://www2.camara.leg.br/camaranoticias/noticias/ADMINISTRACAO-PUBLICA/456166-ENCERRADA-MARATONA-HACKER-PROMOVIDA-PELA-CAMARA-LISTA-PREVIA-DE-VENCEDORES-SAI-NO-DIA-18.html', title: 'Lista dos vencedores da maratona hacker promovida pela Câmara sai no dia 18', target: '_blank' %></li>
+    <li><%= link_to 'Jornal das Dez', 'http://g1.globo.com/globo-news/jornal-das-dez/videos/t/todos-os-videos/v/hackers-criam-aplicativos-para-fiscalizar-atuacao-do-congresso/2929376/', title: 'Hackers criam aplicativos para fiscalizar atuação do Congresso', target: '_blank' %></li>
+    <li><%= link_to 'G1 - Politica', 'http://g1.globo.com/politica/noticia/2013/11/hackers-criam-projetos-para-ajudar-populacao-fiscalizar-parlamentares.html', title: 'Hackers criam projetos para ajudar eleitores a fiscalizar parlamentares', target: '_blank' %></li>
+  </ul>
 </div>
 
-<h1>Propostas</h1>
+
+<div class="row">
+  <div class="span3 text-center">
+    <p class="lead">
+      Vote em proposições
+    </p>
+  </div>
+  <div class="span1 text-center">
+    <i class="icon-chevron-right"></i>
+  </div>
+  <div class="span4 text-center">
+    <p class="lead">
+      Veja ranking dos deputados que votam de maneira mais semelhante à sua
+    </p>
+  </div>
+  <div class="span1 text-center">
+    <i class="icon-chevron-right"></i>
+  </div>
+  <div class="span3 text-center">
+    <p class="lead">
+      Acompanhe a atuação dos deputados de seu interesse
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="span12 text-right">
+    <a href="<%= url_for :controller => 'home', :action => 'idea' %>" class="btn btn-primary btn-large"> Saiba mais &raquo;</a>
+  </div>
+</div>
+
+
+<h1>Proposições</h1>
 
 <% if @proposicoes.empty? %>
 <p>
@@ -43,7 +84,7 @@
 </div>
 <div class="row">
   <div class="span12 text-right">
-    <a href="<%= url_for :controller => 'proposicao', :action => 'index' %>" class="btn btn-small">mais propostas &raquo;</a>
+    <a href="<%= url_for :controller => 'proposicao', :action => 'index' %>" class="btn btn-small">mais proposições &raquo;</a>
   </div>
 </div>
 
