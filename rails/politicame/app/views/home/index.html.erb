@@ -3,29 +3,36 @@
   $(document).ready(function() {
     $(".proposta-box .ementa").dotdotdot();
 
-    $("#politicame-img").cursor('hand');
-    $("#politicame-img").onclick(function() {
+    $("#politicame-video").hide();
+
+    $("#politicame-img").click(function() {
       $("#politicame-img").hide();
       $("#politicame-video").show();
+    });
+
+    $('#politicame-img').hover(function() {
+      $(this).css('cursor','pointer');
+      }, function() {
+      $(this).css('cursor','auto');
     });
   });
 </script>
 
 
 <div class="hero-unit">
-  <div class="span4 pull-right" id="politicame-img">
-    <%= image_tag '/assets/logo/politicame_full.png', :alt => 'PoliticaMe' %>
+  <div class="span5 pull-right" id="politicame-img">
+    <%= image_tag '/assets/logo/politicame_full_play.png', :alt => 'PoliticaMe' %>
   </div>
-  <div class="span4 pull-right hidden" id="politicame-video">
-    youtube video
+  <div class="span5 pull-right" id="politicame-video">
+    <iframe width="400" height="288" src="//www.youtube.com/embed/XPeSlYp4WQk" frameborder="0" allowfullscreen></iframe>
   </div>
 
   <h2>PoliticaMe no Congresso Nacional!</h2>
   <p class="lead">
     A equipe PoliticaMe participou do 1º Hackathon da Câmara dos Deputados, desenvolvendo diversas funcionalidades para facilitar sua vida no momento de escolher seu candidato.
   </p>
-  <ul class="right-arrow">
-    <li><%= link_to 'Apresentação no Hackathon', 'https://www.youtube.com/watch?v=XPeSlYp4WQk', title: 'PoliticaMe - Hackathon Câmara dos Deputados', target: '_blank' %></li>
+  <ul>
+    <li><%= link_to 'Video da apresentação', 'https://www.youtube.com/watch?v=XPeSlYp4WQk', title: 'PoliticaMe - Hackathon Câmara dos Deputados', target: '_blank' %></li>
     <li><%= link_to 'Câmara Notícias', 'http://www2.camara.leg.br/camaranoticias/noticias/ADMINISTRACAO-PUBLICA/456166-ENCERRADA-MARATONA-HACKER-PROMOVIDA-PELA-CAMARA-LISTA-PREVIA-DE-VENCEDORES-SAI-NO-DIA-18.html', title: 'Lista dos vencedores da maratona hacker promovida pela Câmara sai no dia 18', target: '_blank' %></li>
     <li><%= link_to 'Jornal das Dez', 'http://g1.globo.com/globo-news/jornal-das-dez/videos/t/todos-os-videos/v/hackers-criam-aplicativos-para-fiscalizar-atuacao-do-congresso/2929376/', title: 'Hackers criam aplicativos para fiscalizar atuação do Congresso', target: '_blank' %></li>
     <li><%= link_to 'G1 - Politica', 'http://g1.globo.com/politica/noticia/2013/11/hackers-criam-projetos-para-ajudar-populacao-fiscalizar-parlamentares.html', title: 'Hackers criam projetos para ajudar eleitores a fiscalizar parlamentares', target: '_blank' %></li>
