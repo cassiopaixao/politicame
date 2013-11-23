@@ -1,17 +1,17 @@
 # Copyright 2013 de PoliticaMe/Cassio Paixao e Max Rosan.
-# Este arquivo e parte do programa PoliticaMe. 
-# O PoliticaMe e um software livre; voce pode redistribui-lo e/ou modifica-lo 
+# Este arquivo e parte do programa PoliticaMe.
+# O PoliticaMe e um software livre; voce pode redistribui-lo e/ou modifica-lo
 # dentro dos termos da GNU General Public License.
-# como publicada pela Fundacao do Software Livre (FSF); na versao 3 da Licenca. 
-# Este programa e distribuido na esperanca que possa ser util, 
+# como publicada pela Fundacao do Software Livre (FSF); na versao 3 da Licenca.
+# Este programa e distribuido na esperanca que possa ser util,
 # mas SEM NENHUMA GARANTIA; sem uma garantia implicita de ADEQUACAO a qualquer MERCADO ou APLICACAO EM PARTICULAR.
-# Veja a licenca para maiores detalhes. 
-# Voce deve ter recebido uma copia da GNU General Public License, 
+# Veja a licenca para maiores detalhes.
+# Voce deve ter recebido uma copia da GNU General Public License,
 # sob o titulo "LICENCA.txt", junto com este programa, se nao, acesse http://www.gnu.org/licenses/
 
 class ProposicaoController < ApplicationController
   before_filter :get_proposicao, :only => [:show, :register_vote]
-  
+
   def index
     proposicoes_ids = Votacao.where(:master => 1).pluck(:proposicao_id)
     # where is necessary here due to pagination
@@ -107,7 +107,7 @@ class ProposicaoController < ApplicationController
         voto.voto = votorel
         voto.save
       end
-      
+
     end
 
     redirect_to :action => 'index'
@@ -124,11 +124,11 @@ class ProposicaoController < ApplicationController
 
     positives  = ProposicaoRelevancia.where(:proposicao_id => @proposicao.id, :voto => 1).count
     negatives  = ProposicaoRelevancia.where(:proposicao_id => @proposicao.id, :voto => 0).count
-    
+
     @proposicoes_relevancia = positives - negatives
 
     @user_signedin = user_signed_in?
-    
+
     if user_signed_in?
       relevancia = ProposicaoRelevancia.where(:proposicao_id => @proposicao.id, :user_id => current_user.id).first
       if !relevancia.nil?

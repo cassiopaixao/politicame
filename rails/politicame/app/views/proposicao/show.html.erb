@@ -1,3 +1,27 @@
+<script>
+  $(function() {
+    $( "#tabs" ).tabs();
+
+    // fix the classes
+    $( ".tabs-bottom .ui-tabs-nav, .tabs-bottom .ui-tabs-nav > *" )
+      .removeClass( "ui-corner-all ui-corner-top" );
+
+    $( ".tabs-bottom" )
+      .removeClass( "ui-corner-all ui-corner-top" );
+
+  });
+</script>
+<style>
+.ui-tabs-nav {
+  border: none;
+  border-bottom: solid gray thin;
+  background: none;
+}
+.tabs-bottom {
+  border: none;
+}
+</style>
+
 <table width="400px" border="0" cellpadding="3">
 	<tr>
 		<td>
@@ -50,22 +74,45 @@
 
 <br/><br/>
 <p>
-  <small>Autor: <%= "#{@proposicao.autor_nome}, #{@proposicao.autor_partido}, #{@proposicao.autor_uf}" %> </small>
+  <small>Autor: <%= "#{@proposicao.autor_nome}, #{@proposicao.autor_partido}, #{@proposicao.autor_uf}" %></small>
+</p>
+<p>
+  <small>Data de apresentação: <%= "#{@proposicao.data_apresentacao.strftime("%d/%m/%Y")}" %></small>
 </p>
 
-<p>
-  <strong>Ementa</strong>
-</p>
-<p>
-  <%= @proposicao.ementa %>
-</p>
+<div id="tabs" class="tabs-bottom">
+  <ul>
+    <% @proposicao.contribuicaos.each do |contribuicao| %>
+      <li><a href="#contr-<%= contribuicao.id %>"><%= contribuicao.rotulo %></a></li>
+    <% end %>
+    <li><a href="#oficial">Redação oficial</a></li>
+  </ul>
+  <div class="tabs-spacer"></div>
+  <% @proposicao.contribuicaos.each do |contribuicao| %>
+    <div id="contr-<%= contribuicao.id %>">
+      <%= raw contribuicao.conteudo %>
+      <p class="text-right">
+        <small>Contribuição: <%= link_to contribuicao.autor, contribuicao.fonte, target: '_blank' %></small>
+      </p>
+    </div>
+  <% end %>
+  <div id="oficial">
+    <p>
+      <strong>Ementa</strong>
+    </p>
+    <p>
+      <%= @proposicao.ementa %>
+    </p>
 
-<p>
-  <strong>Explicação</strong>
-</p>
-<p>
-  <%= @proposicao.ementa_explicacao %>
-</p>
+    <p>
+      <strong>Explicação</strong>
+    </p>
+    <p>
+      <%= @proposicao.ementa_explicacao %>
+    </p>
+  </div>
+</div>
+
 
 <div class="row text-center">
     <a href="<%= url_for :controller => 'proposicao', :action => 'register_vote', :tipo => @proposicao.tipo, :numero => @proposicao.numero, :ano => @proposicao.ano, :vote => 'Sim' %>" class="btn btn-large btn-success"><strong><i class="icon-ok icon-large icon-white"></i> Favor</strong></a>
@@ -76,8 +123,7 @@
 <br/><br/>
 
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
-    var disqus_shortname = 'politicame'; // Required - Replace example with your forum shortname
+    var disqus_shortname = 'politicame';
     var disqus_identifier = '<%= @proposicao.to_s %>';
     var disqus_title = '<%= @proposicao.to_s %>';
     var disqus_config = function () {

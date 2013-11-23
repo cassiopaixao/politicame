@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  autor: MyString
+  fonte: MyString
+  rotulo: MyString
+  conteudo: MyText
+  proposicao_id: 1
+
+two:
+  id: 
+  autor: MyString
+  fonte: MyString
+  rotulo: MyString
+  conteudo: MyText
+  proposicao_id: 1

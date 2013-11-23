@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131107141745) do
+ActiveRecord::Schema.define(:version => 20131123181846) do
+
+  create_table "contribuicaos", :force => true do |t|
+    t.string   "autor"
+    t.string   "fonte"
+    t.string   "rotulo"
+    t.text     "conteudo"
+    t.integer  "proposicao_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "data_requests", :force => true do |t|
     t.string   "host"
