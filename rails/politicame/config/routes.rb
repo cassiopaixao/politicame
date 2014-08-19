@@ -46,5 +46,7 @@ Politicame::Application.routes.draw do
   resources :deputados, :only => [:index, :show]
   match 'deputados' => 'deputados#index', :via => [:post]
 
+  resources :eleicoes2014, :only => [:index, :show]
+
   resources :videos, only: [:index, :show]
 end

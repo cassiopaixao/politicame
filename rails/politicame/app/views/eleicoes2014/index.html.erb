@@ -1,0 +1,18 @@
+<h1>Eleições 2014</h1>
+
+<p>
+  Confira nessa página os estados em que os presidenciáveis são mais populares no Twitter.
+</p>
+
+<div class="row presidenciaveis-box">
+  <% @presidenciaveis.each do |p| %>
+    <div class="span4 text-center presidenciavel-box">
+      <a href="<%= eleicoes2014_path(p) %>" target="_blank">
+        <%= image_tag "eleicoes2014/#{p.slug}.jpg" %>
+        <p class="lead">
+          <%=p.name%>
+        </p>
+        </a>
+    </div>
+  <%end%>
+</div>
